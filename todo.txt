@@ -1,0 +1,32 @@
+1. Function -
+  generate list of the icons
+  icon item - can be dragged/dropped
+  composeable - 
+  theme dependent
+
+
+  ui/event
+
+  component vs templates
+  separation of concerns - coupling vs cohesion
+
+
+
+
+React:
+	virtual dom
+	event loop
+	testability
+
+
+	svg,canvas support
+	web worker
+
+
+	components not template
+	re-render, do'n mutate
+	virtual doc is simple and fast
+	
+
+ 
+	 
