@@ -119,3 +119,103 @@ diagram element
 监控图配置底图显示网格线，用于对齐图元位置；
 改善连线功能，当前直线连接功能使用不便利（待定）；
 
+
+# Flow & interactions
+## Concept
+1. data model
+2. pallet
+3. canvas
+4. propertybox
+
+## flow
+1. scenario 1 - user draw the diagram from scratch
+
+need a atomic-models which useed to store all icon informations(the properties/structure??)  
+need a dia-models which used to restore the canvas, the dia-models is empty by default.  
+* the initialze process -  
+	1. initaliaze the layout - pallet/canvas/property-box  
+	   1.1 user global model to fill the conent of the pallet  
+	   1.2 canvas is empty  
+	   1.3 property box is display the canvas property by default  
+
+* drag a pa-element to canvas, the correponding element will be displayed on the canvas, meanwhile the property box will display the corresponding properties of the element.
+* when update(move...) the element of the canvs the properties of the property box will be update accordingly.
+* when update the properties from property box, the corresponding element on the canvas should be updated accordingly.
+
+## structures of models
+* **group-models**
+```
+{
+	'groupId':{
+		groupName:""
+	}
+}
+```
+* **atomic-models**
+```
+{
+	'atom-id':{
+		name:"",
+		width:"",
+		height:"",
+		groupId:"",
+		status:[
+			{
+				id:"",
+				name:"",
+				image:"",
+				isDefault:true/false
+			}
+		]
+	}
+}
+[{
+	groupName:"",
+	groupId:"",
+	id:"",
+	name:"",
+	width:"",
+	statusList:[
+		{
+			image:"",
+			isDefault:"",
+			name:"",
+			id:""
+		}
+	]
+}]
+```
+* **pallet-model**
+```
+{
+	groupId:{
+		groupName:"",
+		items:[
+			{
+				id:"",
+				name:"",
+				image:"",
+				status:""
+			}
+		]
+	}
+}
+```
+
+* **dia-models**
+```
+{
+	width:1080,
+	height: 768,
+	elements:[
+		{
+			uuid:"",
+			type_id:"", // the id filed comes from `atomic-models`
+			status_id:"" //id from status->id from `atomic-models`
+		}
+	]
+}
+```
+
+
+
