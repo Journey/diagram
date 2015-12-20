@@ -207,13 +207,16 @@ need a dia-models which used to restore the canvas, the dia-models is empty by d
 {
 	width:1080,
 	height: 768,
-	elements:[
-		{
-			uuid:"",
-			type_id:"", // the id filed comes from `atomic-models`
-			status_id:"" //id from status->id from `atomic-models`
+	elements:{
+		"uuid":{
+			typeId:"",
+			statusId:"",
+			xPosition:10,
+			yPosition:10,
+			width:10,
+			height:10
 		}
-	]
+	}
 }
 ```
 

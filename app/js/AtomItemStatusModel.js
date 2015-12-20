@@ -1,11 +1,19 @@
-export default class AtomItemStatusModel{
+class AtomItemStatusModel{
     constructor(id,name,image,isDefault){
-	this.id = id;
+      this.id = id;
 	this.name = name;
 	this.image = image;
-	this.isDefault = isDefault;
+	this._isDefault = isDefault;
     };
-    isDefault(){
-	return !!this.isDefault;
+    get isDefault(){
+	return !!this._isDefault;
     };
+  set isDefault(value){
+    if(this._isDefault === undefined){
+      this._isDefault = !!value;
+    } else {
+      throw new Error("AtomItemStatusModel.isDefault- can not assign value to it");
+    }
+  };
 };
+export {AtomItemStatusModel};

@@ -14,13 +14,13 @@ class AtomModel extends DataModel{
    }
    */
     constructor(oData){
-	this._className = AtomModel.name;
+	//this._className = AtomModel.name;
 	super(oData);
     };
     _processData(oData){
 	//translate json data to Map model data
 	var _mData = new Map();
-	Obejct.keys(oData).forEach(((key)=>{
+	Object.keys(oData).forEach(((key)=>{
 	    let curItem = oData[key];
 	    let atomItemModel = new AtomItemModel(key,curItem.name,curItem.width,curItem.height,curItem.groupId,curItem.statusList);
 	    _mData.set(key,atomItemModel);
@@ -29,23 +29,22 @@ class AtomModel extends DataModel{
     };
     
     getDefaultImageById(id){
-	console.assert(!this.data.has(id),`AtomModel:${id} not exsits`);
-	let item = this.data.get("id");
+	console.assert(this.data.has(id),`AtomModel:${id} not exsits`);
+	let item = this.data.get(id);
 	return item.defaultStatusImage;
 
     };
-    getImagesByIdAndStatus(id,statusId){
-	console.assert(!this.data.has(id),`AtomModel:item id -${id} does not exsited`);
+    getImageByIdAndStatus(id,statusId){
+	console.assert(this.data.has(id),`AtomModel:item id -${id} does not exsited`);
 	let item = this.data.get(id);
 	return item.getStatusImage(statusId);
-	
     };
     getItemNameById(id){
 	let item = this.data.get(id);
 	return item.name;
     };
     getGroupIdByItemId(itemId){
-	console.assert(!this.data.has(id),`AtomModel: item id - ${id} does not exsit`);
+	console.assert(this.data.has(itemId),`AtomModel: item id - ${itemId} does not exsit`);
 	return this.data.get(itemId).groupId;
 	
     };

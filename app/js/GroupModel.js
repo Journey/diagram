@@ -2,7 +2,7 @@ import {DataModel} from "./DataModel";
 
 class GroupModel extends DataModel{
     constructor(mData){
-	this._className = GroupMOdel.name;
+	//this._className = GroupMOdel.name;
 	super(mData);
     };
     getGroupNameById(groupId){

@@ -1,11 +1,13 @@
+"use strict";
 class DataModel{
     constructor(mData){
 	if(!this._className){
 	    this._className = DataModel.name;
 	}
 	var sError = `${this._className}:constructor need a Map type as parameter`;
-	console.assert(!mData instanceof Map, sError);
-	this._mData = this._processData( mData );
+	mData = this._processData( mData );
+      console.assert(mData instanceof Map, sError);
+      this._mData = mData;
     };
     _processData(oData){
 	//override it if neccessary
@@ -19,4 +21,4 @@ class DataModel{
     };
 };
 
-export {DataModel}
+export {DataModel};

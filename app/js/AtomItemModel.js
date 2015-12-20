@@ -7,9 +7,14 @@
 import {DataModel} from "./DataModel";
 import {AtomItemStatusModel} from "./AtomItemStatusModel";
 
-export default class AtomItemModel{
-    constructor(id,name,width,height,groupId,aStatusModels){
-	[this.id,this.name,this.width,this.height,this._groupId] = [...arguments];
+class AtomItemModel{
+  constructor(id,name,width,height,groupId,aStatusModels){
+    //[this.id,this._name,this.width,this.height,this._groupId] = [...arguments];
+    this.id = id;
+    this._name = name;
+    this.width = width;
+    this.height = height;
+    this._groupId = groupId;
 	this.mStatusModels = this._translateStatusFromArrayToMap(aStatusModels);
     };
     _translateStatusFromArrayToMap(aStatusModels){
@@ -20,13 +25,14 @@ export default class AtomItemModel{
 	});
 	return _mRet;
     };
-    get defaultStatus(){
+  get defaultStatus(){
+    var that = this;
 	if(this._defaultStatus === undefined){
-	    this.mStatusModels.forEach(((value)=>{
+	  this.mStatusModels.forEach((value)=>{
 		if(value.isDefault){
-		    this._defaultStatus = value;
+		    that._defaultStatus = value;
 		}
-	    }).bind(this));
+	    });
 	};
 	console.assert(this._defaultStatus !== undefined,`AtomItemModel-${this.name}: does not have default status`);
 	return this._defaultStatus;
@@ -48,11 +54,13 @@ export default class AtomItemModel{
 	return this.defaultStatus.id;
     };
     getStatusImage(statusId){
-	console.assert(!this.mStatusModels.has(statusId),`AtomItemModel: status id -${statusId} does not exsited`);
+	console.assert(this.mStatusModels.has(statusId),`AtomItemModel: status id -${statusId} does not exsited`);
 	return this.mStatusModels.get(statusId).image;
     };
     getStatusName(statusId){
-	console.assert(!this.mStatusModels.has(statusId),`AtomItemModel: status id -${statusId} does not exsited`);
+	console.assert(this.mStatusModels.has(statusId),`AtomItemModel: status id -${statusId} does not exsited`);
 	return this.mStatusModels.get(statusId).name;
     };
 };
+
+export {AtomItemModel};

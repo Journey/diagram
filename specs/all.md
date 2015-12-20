@@ -202,3 +202,12 @@ UML
 Goal
 =================================
 Design is illustrated with UML
+
+
+Questions
+================================
+1. js - constructor: this is not allowed before super??
+2. node debugger
+3. jest - require auto mock the functions? how?
+4. Map.keys() return an MapIterator not an array
+5. unit test spy and mock and stub??
