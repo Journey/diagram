@@ -1,24 +1,32 @@
 {
-  "dependencies": { "react": "~0.14.0", "react-dom": "~0.14.0" },
+  "dependencies": {
+    "react": "~0.14.0",
+    "react-dom": "~0.14.0"
+  },
   "scripts": {
     "test": "jest"
   },
   "devDependencies": {
-    "jest-cli": "^0.8.2",
     "babel-jest": "*",
+    "jest-cli": "^0.8.2",
+    "jest-webpack-alias": "^2.0.0",
     "react-addons-test-utils": "~0.14.0"
   },
-  "jest":{
-    "scriptPreprocessor": "node_modules/babel-jest",
-    "unmockedModulePathPatterns": [ "node_modules/react",
+  "jest": {
+    "scriptPreprocessor":"node_modules/babel-jest",
+    "testRunner": "node_modules/jest-cli/src/testRunners/jasmine/jasmine2.js",
+    "unmockedModulePathPatterns": [
+      "node_modules/react",
       "node_modules/react-dom",
       "node_modules/react-addons-test-utils",
       "node_modules/fbjs"
     ],
-    "testFileExtensions":["js"],
-    "moduleFileExtensions":["js"],
-    "testPathPattern":["DiagramModel.js"],
-    "testPathIgnorePatterns":["/node_modules/","/libs/"]
-  },
-  "jest-testPathPattern":["^[a-zAZ0-9]+.js"]
+    "testFileExtensions": [
+      "jest"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ]
+  }
 }

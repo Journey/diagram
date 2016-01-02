@@ -1,0 +1,1436 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "1.12.8",
+  "hash": "23443979d21b78bb4a1c",
+  "time": 27352,
+  "publicPath": "",
+  "assetsByChunkName": {
+    "main": "diagram.js"
+  },
+  "assets": [
+    {
+      "name": "diagram.js",
+      "size": 40575,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "emitted": true
+    }
+  ],
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "extraAsync": false,
+      "size": 37134,
+      "names": [
+        "main"
+      ],
+      "files": [
+        "diagram.js"
+      ],
+      "hash": "7762b3bb01657b86e5ef",
+      "parents": [],
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\entry.js",
+          "name": "./test/js/entry.js",
+          "index": 0,
+          "index2": 17,
+          "size": 71,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": null,
+          "profile": {
+            "factory": 112,
+            "building": 21047
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [],
+          "source": "\"use strict\";\n\nrequire(\"../../app/css/css.css\");\nrequire(\"./test.jsx\");"
+        },
+        {
+          "id": 1,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\style-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+          "name": "./app/css/css.css",
+          "index": 1,
+          "index2": 3,
+          "size": 913,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\entry.js",
+          "profile": {
+            "factory": 294,
+            "building": 40
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\entry.js",
+              "module": "./test/js/entry.js",
+              "moduleName": "./test/js/entry.js",
+              "type": "cjs require",
+              "userRequest": "../../app/css/css.css",
+              "loc": "3:0-32"
+            }
+          ],
+          "source": "// style-loader: Adds some css to the DOM by adding a <style> tag\n\n// load the styles\nvar content = require(\"!!./../../node_modules/css-loader/index.js!./css.css\");\nif(typeof content === 'string') content = [[module.id, content, '']];\n// add the styles to the DOM\nvar update = require(\"!./../../node_modules/style-loader/addStyles.js\")(content, {});\nif(content.locals) module.exports = content.locals;\n// Hot Module Replacement\nif(module.hot) {\n\t// When the styles change, update the <style> tags\n\tif(!content.locals) {\n\t\tmodule.hot.accept(\"!!./../../node_modules/css-loader/index.js!./css.css\", function() {\n\t\t\tvar newContent = require(\"!!./../../node_modules/css-loader/index.js!./css.css\");\n\t\t\tif(typeof newContent === 'string') newContent = [[module.id, newContent, '']];\n\t\t\tupdate(newContent);\n\t\t});\n\t}\n\t// When the module is disposed, remove the <style> tags\n\tmodule.hot.dispose(function() { update(); });\n}"
+        },
+        {
+          "id": 2,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+          "name": "./~/css-loader!./app/css/css.css",
+          "index": 2,
+          "index2": 1,
+          "size": 369,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\style-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+          "profile": {
+            "factory": 1,
+            "building": 2063
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 1,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\style-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+              "module": "./app/css/css.css",
+              "moduleName": "./app/css/css.css",
+              "type": "cjs require",
+              "userRequest": "!!./../../node_modules/css-loader/index.js!./css.css",
+              "loc": "4:14-77"
+            }
+          ],
+          "source": "exports = module.exports = require(\"./../../node_modules/css-loader/lib/css-base.js\")();\n// imports\n\n\n// module\nexports.push([module.id, \"*[draggable=true]{\\r\\n    -moz-user-select:none;\\r\\n    -khtml-user-drag: element;\\r\\n    -webkit-user-drag: element;\\r\\n    -khtml-user-select: none;\\r\\n    -webkit-user-select: none;\\r\\n    cursor: move;\\r\\n}\", \"\"]);\n\n// exports\n"
+        },
+        {
+          "id": 3,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\lib\\css-base.js",
+          "name": "./~/css-loader/lib/css-base.js",
+          "index": 3,
+          "index2": 0,
+          "size": 1506,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+          "profile": {
+            "factory": 331,
+            "building": 656
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 2,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+              "module": "./~/css-loader!./app/css/css.css",
+              "moduleName": "./~/css-loader!./app/css/css.css",
+              "type": "cjs require",
+              "userRequest": "./../../node_modules/css-loader/lib/css-base.js",
+              "loc": "1:27-85"
+            }
+          ],
+          "source": "/*\r\n\tMIT License http://www.opensource.org/licenses/mit-license.php\r\n\tAuthor Tobias Koppers @sokra\r\n*/\r\n// css base code, injected by the css-loader\r\nmodule.exports = function() {\r\n\tvar list = [];\r\n\r\n\t// return the list of modules as css string\r\n\tlist.toString = function toString() {\r\n\t\tvar result = [];\r\n\t\tfor(var i = 0; i < this.length; i++) {\r\n\t\t\tvar item = this[i];\r\n\t\t\tif(item[2]) {\r\n\t\t\t\tresult.push(\"@media \" + item[2] + \"{\" + item[1] + \"}\");\r\n\t\t\t} else {\r\n\t\t\t\tresult.push(item[1]);\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn result.join(\"\");\r\n\t};\r\n\r\n\t// import a list of modules into the list\r\n\tlist.i = function(modules, mediaQuery) {\r\n\t\tif(typeof modules === \"string\")\r\n\t\t\tmodules = [[null, modules, \"\"]];\r\n\t\tvar alreadyImportedModules = {};\r\n\t\tfor(var i = 0; i < this.length; i++) {\r\n\t\t\tvar id = this[i][0];\r\n\t\t\tif(typeof id === \"number\")\r\n\t\t\t\talreadyImportedModules[id] = true;\r\n\t\t}\r\n\t\tfor(i = 0; i < modules.length; i++) {\r\n\t\t\tvar item = modules[i];\r\n\t\t\t// skip already imported module\r\n\t\t\t// this implementation is not 100% perfect for weird media query combinations\r\n\t\t\t//  when a module is imported multiple times with different media queries.\r\n\t\t\t//  I hope this will never occur (Hey this way we have smaller bundles)\r\n\t\t\tif(typeof item[0] !== \"number\" || !alreadyImportedModules[item[0]]) {\r\n\t\t\t\tif(mediaQuery && !item[2]) {\r\n\t\t\t\t\titem[2] = mediaQuery;\r\n\t\t\t\t} else if(mediaQuery) {\r\n\t\t\t\t\titem[2] = \"(\" + item[2] + \") and (\" + mediaQuery + \")\";\r\n\t\t\t\t}\r\n\t\t\t\tlist.push(item);\r\n\t\t\t}\r\n\t\t}\r\n\t};\r\n\treturn list;\r\n};\r\n"
+        },
+        {
+          "id": 4,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\style-loader\\addStyles.js",
+          "name": "./~/style-loader/addStyles.js",
+          "index": 4,
+          "index2": 2,
+          "size": 7212,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\style-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+          "profile": {
+            "factory": 1987,
+            "building": 506
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 1,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\style-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+              "module": "./app/css/css.css",
+              "moduleName": "./app/css/css.css",
+              "type": "cjs require",
+              "userRequest": "!./../../node_modules/style-loader/addStyles.js",
+              "loc": "7:13-71"
+            }
+          ],
+          "source": "/*\r\n\tMIT License http://www.opensource.org/licenses/mit-license.php\r\n\tAuthor Tobias Koppers @sokra\r\n*/\r\nvar stylesInDom = {},\r\n\tmemoize = function(fn) {\r\n\t\tvar memo;\r\n\t\treturn function () {\r\n\t\t\tif (typeof memo === \"undefined\") memo = fn.apply(this, arguments);\r\n\t\t\treturn memo;\r\n\t\t};\r\n\t},\r\n\tisOldIE = memoize(function() {\r\n\t\treturn /msie [6-9]\\b/.test(window.navigator.userAgent.toLowerCase());\r\n\t}),\r\n\tgetHeadElement = memoize(function () {\r\n\t\treturn document.head || document.getElementsByTagName(\"head\")[0];\r\n\t}),\r\n\tsingletonElement = null,\r\n\tsingletonCounter = 0,\r\n\tstyleElementsInsertedAtTop = [];\r\n\r\nmodule.exports = function(list, options) {\r\n\tif(typeof DEBUG !== \"undefined\" && DEBUG) {\r\n\t\tif(typeof document !== \"object\") throw new Error(\"The style-loader cannot be used in a non-browser environment\");\r\n\t}\r\n\r\n\toptions = options || {};\r\n\t// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>\r\n\t// tags it will allow on a page\r\n\tif (typeof options.singleton === \"undefined\") options.singleton = isOldIE();\r\n\r\n\t// By default, add <style> tags to the bottom of <head>.\r\n\tif (typeof options.insertAt === \"undefined\") options.insertAt = \"bottom\";\r\n\r\n\tvar styles = listToStyles(list);\r\n\taddStylesToDom(styles, options);\r\n\r\n\treturn function update(newList) {\r\n\t\tvar mayRemove = [];\r\n\t\tfor(var i = 0; i < styles.length; i++) {\r\n\t\t\tvar item = styles[i];\r\n\t\t\tvar domStyle = stylesInDom[item.id];\r\n\t\t\tdomStyle.refs--;\r\n\t\t\tmayRemove.push(domStyle);\r\n\t\t}\r\n\t\tif(newList) {\r\n\t\t\tvar newStyles = listToStyles(newList);\r\n\t\t\taddStylesToDom(newStyles, options);\r\n\t\t}\r\n\t\tfor(var i = 0; i < mayRemove.length; i++) {\r\n\t\t\tvar domStyle = mayRemove[i];\r\n\t\t\tif(domStyle.refs === 0) {\r\n\t\t\t\tfor(var j = 0; j < domStyle.parts.length; j++)\r\n\t\t\t\t\tdomStyle.parts[j]();\r\n\t\t\t\tdelete stylesInDom[domStyle.id];\r\n\t\t\t}\r\n\t\t}\r\n\t};\r\n}\r\n\r\nfunction addStylesToDom(styles, options) {\r\n\tfor(var i = 0; i < styles.length; i++) {\r\n\t\tvar item = styles[i];\r\n\t\tvar domStyle = stylesInDom[item.id];\r\n\t\tif(domStyle) {\r\n\t\t\tdomStyle.refs++;\r\n\t\t\tfor(var j = 0; j < domStyle.parts.length; j++) {\r\n\t\t\t\tdomStyle.parts[j](item.parts[j]);\r\n\t\t\t}\r\n\t\t\tfor(; j < item.parts.length; j++) {\r\n\t\t\t\tdomStyle.parts.push(addStyle(item.parts[j], options));\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\tvar parts = [];\r\n\t\t\tfor(var j = 0; j < item.parts.length; j++) {\r\n\t\t\t\tparts.push(addStyle(item.parts[j], options));\r\n\t\t\t}\r\n\t\t\tstylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};\r\n\t\t}\r\n\t}\r\n}\r\n\r\nfunction listToStyles(list) {\r\n\tvar styles = [];\r\n\tvar newStyles = {};\r\n\tfor(var i = 0; i < list.length; i++) {\r\n\t\tvar item = list[i];\r\n\t\tvar id = item[0];\r\n\t\tvar css = item[1];\r\n\t\tvar media = item[2];\r\n\t\tvar sourceMap = item[3];\r\n\t\tvar part = {css: css, media: media, sourceMap: sourceMap};\r\n\t\tif(!newStyles[id])\r\n\t\t\tstyles.push(newStyles[id] = {id: id, parts: [part]});\r\n\t\telse\r\n\t\t\tnewStyles[id].parts.push(part);\r\n\t}\r\n\treturn styles;\r\n}\r\n\r\nfunction insertStyleElement(options, styleElement) {\r\n\tvar head = getHeadElement();\r\n\tvar lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];\r\n\tif (options.insertAt === \"top\") {\r\n\t\tif(!lastStyleElementInsertedAtTop) {\r\n\t\t\thead.insertBefore(styleElement, head.firstChild);\r\n\t\t} else if(lastStyleElementInsertedAtTop.nextSibling) {\r\n\t\t\thead.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);\r\n\t\t} else {\r\n\t\t\thead.appendChild(styleElement);\r\n\t\t}\r\n\t\tstyleElementsInsertedAtTop.push(styleElement);\r\n\t} else if (options.insertAt === \"bottom\") {\r\n\t\thead.appendChild(styleElement);\r\n\t} else {\r\n\t\tthrow new Error(\"Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.\");\r\n\t}\r\n}\r\n\r\nfunction removeStyleElement(styleElement) {\r\n\tstyleElement.parentNode.removeChild(styleElement);\r\n\tvar idx = styleElementsInsertedAtTop.indexOf(styleElement);\r\n\tif(idx >= 0) {\r\n\t\tstyleElementsInsertedAtTop.splice(idx, 1);\r\n\t}\r\n}\r\n\r\nfunction createStyleElement(options) {\r\n\tvar styleElement = document.createElement(\"style\");\r\n\tstyleElement.type = \"text/css\";\r\n\tinsertStyleElement(options, styleElement);\r\n\treturn styleElement;\r\n}\r\n\r\nfunction createLinkElement(options) {\r\n\tvar linkElement = document.createElement(\"link\");\r\n\tlinkElement.rel = \"stylesheet\";\r\n\tinsertStyleElement(options, linkElement);\r\n\treturn linkElement;\r\n}\r\n\r\nfunction addStyle(obj, options) {\r\n\tvar styleElement, update, remove;\r\n\r\n\tif (options.singleton) {\r\n\t\tvar styleIndex = singletonCounter++;\r\n\t\tstyleElement = singletonElement || (singletonElement = createStyleElement(options));\r\n\t\tupdate = applyToSingletonTag.bind(null, styleElement, styleIndex, false);\r\n\t\tremove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);\r\n\t} else if(obj.sourceMap &&\r\n\t\ttypeof URL === \"function\" &&\r\n\t\ttypeof URL.createObjectURL === \"function\" &&\r\n\t\ttypeof URL.revokeObjectURL === \"function\" &&\r\n\t\ttypeof Blob === \"function\" &&\r\n\t\ttypeof btoa === \"function\") {\r\n\t\tstyleElement = createLinkElement(options);\r\n\t\tupdate = updateLink.bind(null, styleElement);\r\n\t\tremove = function() {\r\n\t\t\tremoveStyleElement(styleElement);\r\n\t\t\tif(styleElement.href)\r\n\t\t\t\tURL.revokeObjectURL(styleElement.href);\r\n\t\t};\r\n\t} else {\r\n\t\tstyleElement = createStyleElement(options);\r\n\t\tupdate = applyToTag.bind(null, styleElement);\r\n\t\tremove = function() {\r\n\t\t\tremoveStyleElement(styleElement);\r\n\t\t};\r\n\t}\r\n\r\n\tupdate(obj);\r\n\r\n\treturn function updateStyle(newObj) {\r\n\t\tif(newObj) {\r\n\t\t\tif(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)\r\n\t\t\t\treturn;\r\n\t\t\tupdate(obj = newObj);\r\n\t\t} else {\r\n\t\t\tremove();\r\n\t\t}\r\n\t};\r\n}\r\n\r\nvar replaceText = (function () {\r\n\tvar textStore = [];\r\n\r\n\treturn function (index, replacement) {\r\n\t\ttextStore[index] = replacement;\r\n\t\treturn textStore.filter(Boolean).join('\\n');\r\n\t};\r\n})();\r\n\r\nfunction applyToSingletonTag(styleElement, index, remove, obj) {\r\n\tvar css = remove ? \"\" : obj.css;\r\n\r\n\tif (styleElement.styleSheet) {\r\n\t\tstyleElement.styleSheet.cssText = replaceText(index, css);\r\n\t} else {\r\n\t\tvar cssNode = document.createTextNode(css);\r\n\t\tvar childNodes = styleElement.childNodes;\r\n\t\tif (childNodes[index]) styleElement.removeChild(childNodes[index]);\r\n\t\tif (childNodes.length) {\r\n\t\t\tstyleElement.insertBefore(cssNode, childNodes[index]);\r\n\t\t} else {\r\n\t\t\tstyleElement.appendChild(cssNode);\r\n\t\t}\r\n\t}\r\n}\r\n\r\nfunction applyToTag(styleElement, obj) {\r\n\tvar css = obj.css;\r\n\tvar media = obj.media;\r\n\tvar sourceMap = obj.sourceMap;\r\n\r\n\tif(media) {\r\n\t\tstyleElement.setAttribute(\"media\", media)\r\n\t}\r\n\r\n\tif(styleElement.styleSheet) {\r\n\t\tstyleElement.styleSheet.cssText = css;\r\n\t} else {\r\n\t\twhile(styleElement.firstChild) {\r\n\t\t\tstyleElement.removeChild(styleElement.firstChild);\r\n\t\t}\r\n\t\tstyleElement.appendChild(document.createTextNode(css));\r\n\t}\r\n}\r\n\r\nfunction updateLink(linkElement, obj) {\r\n\tvar css = obj.css;\r\n\tvar media = obj.media;\r\n\tvar sourceMap = obj.sourceMap;\r\n\r\n\tif(sourceMap) {\r\n\t\t// http://stackoverflow.com/a/26603875\r\n\t\tcss += \"\\n/*# sourceMappingURL=data:application/json;base64,\" + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + \" */\";\r\n\t}\r\n\r\n\tvar blob = new Blob([css], { type: \"text/css\" });\r\n\r\n\tvar oldSrc = linkElement.href;\r\n\r\n\tlinkElement.href = URL.createObjectURL(blob);\r\n\r\n\tif(oldSrc)\r\n\t\tURL.revokeObjectURL(oldSrc);\r\n}\r\n"
+        },
+        {
+          "id": 5,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+          "name": "./test/js/test.jsx",
+          "index": 5,
+          "index2": 16,
+          "size": 814,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\entry.js",
+          "profile": {
+            "factory": 48,
+            "building": 241
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\entry.js",
+              "module": "./test/js/entry.js",
+              "moduleName": "./test/js/entry.js",
+              "type": "cjs require",
+              "userRequest": "./test.jsx",
+              "loc": "4:0-21"
+            }
+          ],
+          "source": "\"use strict\";\n\nvar _rawdata = require(\"../../__tests__/data/rawdata.js\");\n\nvar _pallet = require(\"../../app/js/pallet.jsx\");\n\nvar _canvas = require(\"../../app/js/canvas.jsx\");\n\nvar aGroups = [{\n  \"title\": \"微网\",\n  \"items\": [{\n    \"src\": \"css/1.jpg\",\n    \"id\": \"1\",\n    \"name\": \"单晶硅光伏\",\n    \"type\": \"micro\"\n  }, {\n    \"src\": \"css/2.jpg\",\n    \"id\": \"2\",\n    \"name\": \"多晶硅光伏\",\n    \"type\": \"micro\"\n  }]\n}, {\n  \"title\": \"光热\",\n  \"items\": [{\n    \"src\": \"css/3.jpg\",\n    \"id\": \"1\",\n    \"name\": \"储油罐\",\n    \"type\": \"micro\"\n  }, {\n    \"src\": \"css/4.jpg\",\n    \"id\": \"2\",\n    \"name\": \"绑点\",\n    \"type\": \"micro\"\n  }]\n}];\nReactDOM.render(React.createElement(\n  \"div\",\n  null,\n  React.createElement(_pallet.Pallet, { model: _rawdata.oPalletModel }),\n  React.createElement(_canvas.Canvas, null)\n), document.getElementById('example'));"
+        },
+        {
+          "id": 6,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+          "name": "./__tests__/data/rawdata.js",
+          "index": 6,
+          "index2": 10,
+          "size": 1847,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+          "profile": {
+            "factory": 2034,
+            "building": 997
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 5,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+              "module": "./test/js/test.jsx",
+              "moduleName": "./test/js/test.jsx",
+              "type": "cjs require",
+              "userRequest": "../../__tests__/data/rawdata.js",
+              "loc": "3:15-57"
+            }
+          ],
+          "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.oPalletModel = exports.oAtomModel = exports.oGroupModel = undefined;\n\nvar _GroupModel = require('../../app/js/GroupModel');\n\nvar _AtomModel = require('../../app/js/AtomModel');\n\nvar _PalletModel = require('../../app/js/PalletModel');\n\nfunction groupData() {\n  var map = new Map();\n  map.set(\"groupId1\", { groupName: \"group name 1\" });\n  map.set(\"groupId2\", { groupName: \"group name 2\" });\n  return map;\n};\n\nfunction atomData() {\n  var atomData = {\n    \"item-id-1\": {\n      name: \"item name 1\",\n      width: 50,\n      height: 50,\n      groupId: \"groupId1\",\n      statusList: [{\n        id: \"status-1\",\n        name: \"status name 1\",\n        image: \"status-image-1\",\n        isDefault: true\n      }, {\n        id: \"status-2\",\n        name: \"status name 2\",\n        image: \"status-image-1\",\n        isDefault: false\n      }]\n    },\n    \"item-id-2\": {\n      name: \"item name 2\",\n      width: 50,\n      height: 50,\n      groupId: \"groupId1\",\n      statusList: [{\n        id: \"status-3\",\n        name: \"status name 2\",\n        image: \"status image 2\",\n        isDefault: true\n      }]\n    },\n    \"item-id-3\": {\n      name: \"item name 3\",\n      width: 50,\n      height: 50,\n      groupId: \"groupId2\",\n      statusList: [{\n        id: \"status-3\",\n        name: \"status name 3\",\n        image: \"status image 2\",\n        isDefault: true\n      }]\n    }\n  };\n  return atomData;\n};\nfunction groupModel() {\n  return new _GroupModel.GroupModel(groupData());\n}\nfunction atomModel() {\n  return new _AtomModel.AtomModel(atomData());\n}\n\nvar oGroupModel = groupModel();\nvar oAtomModel = atomModel();\nvar oPalletModel = new _PalletModel.PalletModel(oAtomModel, oGroupModel);\n\nexports.oGroupModel = oGroupModel;\nexports.oAtomModel = oAtomModel;\nexports.oPalletModel = oPalletModel;"
+        },
+        {
+          "id": 7,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\GroupModel.js",
+          "name": "./app/js/GroupModel.js",
+          "index": 7,
+          "index2": 5,
+          "size": 2619,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+          "profile": {
+            "factory": 68,
+            "building": 664
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 6,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+              "module": "./__tests__/data/rawdata.js",
+              "moduleName": "./__tests__/data/rawdata.js",
+              "type": "cjs require",
+              "userRequest": "../../app/js/GroupModel",
+              "loc": "8:18-52"
+            }
+          ],
+          "source": "\"use strict\";\n\nfunction _typeof(obj) { return obj && typeof Symbol !== \"undefined\" && obj.constructor === Symbol ? \"symbol\" : typeof obj; }\n\nvar _createClass = (function () {\n\t\t\tfunction defineProperties(target, props) {\n\t\t\t\t\t\tfor (var i = 0; i < props.length; i++) {\n\t\t\t\t\t\t\t\t\tvar descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if (\"value\" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);\n\t\t\t\t\t\t}\n\t\t\t}return function (Constructor, protoProps, staticProps) {\n\t\t\t\t\t\tif (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;\n\t\t\t};\n})();\n\nObject.defineProperty(exports, \"__esModule\", {\n\t\t\tvalue: true\n});\nexports.GroupModel = undefined;\n\nvar _DataModel2 = require(\"./DataModel\");\n\nfunction _classCallCheck(instance, Constructor) {\n\t\t\tif (!(instance instanceof Constructor)) {\n\t\t\t\t\t\tthrow new TypeError(\"Cannot call a class as a function\");\n\t\t\t}\n}\n\nfunction _possibleConstructorReturn(self, call) {\n\t\t\tif (!self) {\n\t\t\t\t\t\tthrow new ReferenceError(\"this hasn't been initialised - super() hasn't been called\");\n\t\t\t}return call && ((typeof call === \"undefined\" ? \"undefined\" : _typeof(call)) === \"object\" || typeof call === \"function\") ? call : self;\n}\n\nfunction _inherits(subClass, superClass) {\n\t\t\tif (typeof superClass !== \"function\" && superClass !== null) {\n\t\t\t\t\t\tthrow new TypeError(\"Super expression must either be null or a function, not \" + (typeof superClass === \"undefined\" ? \"undefined\" : _typeof(superClass)));\n\t\t\t}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;\n}\n\nvar GroupModel = (function (_DataModel) {\n\t\t\t_inherits(GroupModel, _DataModel);\n\n\t\t\tfunction GroupModel(mData) {\n\t\t\t\t\t\t_classCallCheck(this, GroupModel);\n\n\t\t\t\t\t\t//this._className = GroupMOdel.name;\n\t\t\t\t\t\treturn _possibleConstructorReturn(this, Object.getPrototypeOf(GroupModel).call(this, mData));\n\t\t\t}\n\n\t\t\t_createClass(GroupModel, [{\n\t\t\t\t\t\tkey: \"getGroupNameById\",\n\t\t\t\t\t\tvalue: function getGroupNameById(groupId) {\n\t\t\t\t\t\t\t\t\tconsole.assert(this.data.has(groupId), \"GroupModel.getGroupNameById, need a validate groupId\");\n\t\t\t\t\t\t\t\t\tvar oGroupInfo = this.data.get(groupId);\n\t\t\t\t\t\t\t\t\treturn oGroupInfo.groupName;\n\t\t\t\t\t\t}\n\t\t\t}]);\n\n\t\t\treturn GroupModel;\n})(_DataModel2.DataModel);\n\n;\n\nexports.GroupModel = GroupModel;"
+        },
+        {
+          "id": 8,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\DataModel.js",
+          "name": "./app/js/DataModel.js",
+          "index": 8,
+          "index2": 4,
+          "size": 1695,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\GroupModel.js",
+          "profile": {
+            "factory": 1202,
+            "building": 225
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 7,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\GroupModel.js",
+              "module": "./app/js/GroupModel.js",
+              "moduleName": "./app/js/GroupModel.js",
+              "type": "cjs require",
+              "userRequest": "./DataModel",
+              "loc": "20:18-40"
+            },
+            {
+              "moduleId": 9,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomModel.js",
+              "module": "./app/js/AtomModel.js",
+              "moduleName": "./app/js/AtomModel.js",
+              "type": "cjs require",
+              "userRequest": "./DataModel",
+              "loc": "20:18-40"
+            },
+            {
+              "moduleId": 10,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomItemModel.js",
+              "module": "./app/js/AtomItemModel.js",
+              "moduleName": "./app/js/AtomItemModel.js",
+              "type": "cjs require",
+              "userRequest": "./DataModel",
+              "loc": "23:17-39"
+            }
+          ],
+          "source": "\"use strict\";\n\nvar _createClass = (function () {\n   function defineProperties(target, props) {\n      for (var i = 0; i < props.length; i++) {\n         var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if (\"value\" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);\n      }\n   }return function (Constructor, protoProps, staticProps) {\n      if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;\n   };\n})();\n\nObject.defineProperty(exports, \"__esModule\", {\n   value: true\n});\n\nfunction _classCallCheck(instance, Constructor) {\n   if (!(instance instanceof Constructor)) {\n      throw new TypeError(\"Cannot call a class as a function\");\n   }\n}\n\nvar DataModel = (function () {\n   function DataModel(mData) {\n      _classCallCheck(this, DataModel);\n\n      if (!this._className) {\n         this._className = DataModel.name;\n      }\n      var sError = this._className + \":constructor need a Map type as parameter\";\n      mData = this._processData(mData);\n      console.assert(mData instanceof Map, sError);\n      this._mData = mData;\n   }\n\n   _createClass(DataModel, [{\n      key: \"_processData\",\n      value: function _processData(oData) {\n         //override it if neccessary\n         return oData;\n      }\n   }, {\n      key: \"data\",\n      get: function get() {\n         return this._mData;\n      },\n      set: function set(value) {\n         throw new Error(this._className + \":- you can not set value to groupData\");\n      }\n   }]);\n\n   return DataModel;\n})();\n\n;\n\nexports.DataModel = DataModel;"
+        },
+        {
+          "id": 9,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomModel.js",
+          "name": "./app/js/AtomModel.js",
+          "index": 9,
+          "index2": 8,
+          "size": 4329,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+          "profile": {
+            "factory": 69,
+            "building": 1306,
+            "dependencies": 561
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 6,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+              "module": "./__tests__/data/rawdata.js",
+              "moduleName": "./__tests__/data/rawdata.js",
+              "type": "cjs require",
+              "userRequest": "../../app/js/AtomModel",
+              "loc": "10:17-50"
+            },
+            {
+              "moduleId": 12,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\PalletModel.js",
+              "module": "./app/js/PalletModel.js",
+              "moduleName": "./app/js/PalletModel.js",
+              "type": "cjs require",
+              "userRequest": "./AtomModel",
+              "loc": "18:17-39"
+            }
+          ],
+          "source": "\"use strict\";\n\nfunction _typeof(obj) { return obj && typeof Symbol !== \"undefined\" && obj.constructor === Symbol ? \"symbol\" : typeof obj; }\n\nvar _createClass = (function () {\n   function defineProperties(target, props) {\n      for (var i = 0; i < props.length; i++) {\n         var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if (\"value\" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);\n      }\n   }return function (Constructor, protoProps, staticProps) {\n      if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;\n   };\n})();\n\nObject.defineProperty(exports, \"__esModule\", {\n   value: true\n});\nexports.AtomModel = undefined;\n\nvar _DataModel2 = require(\"./DataModel\");\n\nvar _AtomItemModel = require(\"./AtomItemModel\");\n\nfunction _classCallCheck(instance, Constructor) {\n   if (!(instance instanceof Constructor)) {\n      throw new TypeError(\"Cannot call a class as a function\");\n   }\n}\n\nfunction _possibleConstructorReturn(self, call) {\n   if (!self) {\n      throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\");\n   }return call && ((typeof call === \"undefined\" ? \"undefined\" : _typeof(call)) === \"object\" || typeof call === \"function\") ? call : self;\n}\n\nfunction _inherits(subClass, superClass) {\n   if (typeof superClass !== \"function\" && superClass !== null) {\n      throw new TypeError(\"Super expression must either be null or a function, not \" + (typeof superClass === \"undefined\" ? \"undefined\" : _typeof(superClass)));\n   }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;\n} /**\r\n   * @the data model class for the yuxin js, will provide variouse data formates for the application\r\n   * @name AtomModel.js\r\n   * @author \r\n   * @license \r\n   */\n\nvar AtomModel = (function (_DataModel) {\n   _inherits(AtomModel, _DataModel);\n\n   /** mData - data format:\r\n    {\r\n     id: AtomItemModelInstance\r\n    }\r\n    */\n\n   function AtomModel(oData) {\n      _classCallCheck(this, AtomModel);\n\n      //this._className = AtomModel.name;\n      return _possibleConstructorReturn(this, Object.getPrototypeOf(AtomModel).call(this, oData));\n   }\n\n   _createClass(AtomModel, [{\n      key: \"_processData\",\n      value: function _processData(oData) {\n         //translate json data to Map model data\n         var _mData = new Map();\n         Object.keys(oData).forEach((function (key) {\n            var curItem = oData[key];\n            var atomItemModel = new _AtomItemModel.AtomItemModel(key, curItem.name, curItem.width, curItem.height, curItem.groupId, curItem.statusList);\n            _mData.set(key, atomItemModel);\n         }).bind(this));\n         return _mData;\n      }\n   }, {\n      key: \"getDefaultImageById\",\n      value: function getDefaultImageById(id) {\n         console.assert(this.data.has(id), \"AtomModel:\" + id + \" not exsits\");\n         var item = this.data.get(id);\n         return item.defaultStatusImage;\n      }\n   }, {\n      key: \"getImageByIdAndStatus\",\n      value: function getImageByIdAndStatus(id, statusId) {\n         console.assert(this.data.has(id), \"AtomModel:item id -\" + id + \" does not exsited\");\n         var item = this.data.get(id);\n         return item.getStatusImage(statusId);\n      }\n   }, {\n      key: \"getItemNameById\",\n      value: function getItemNameById(id) {\n         var item = this.data.get(id);\n         return item.name;\n      }\n   }, {\n      key: \"getGroupIdByItemId\",\n      value: function getGroupIdByItemId(itemId) {\n         console.assert(this.data.has(itemId), \"AtomModel: item id - \" + itemId + \" does not exsit\");\n         return this.data.get(itemId).groupId;\n      }\n   }, {\n      key: \"getDefaultStatusById\",\n      value: function getDefaultStatusById(itemId) {\n         console.assert(this.data.has(itemId), \"AtomModel-\" + itemId + \" does not exsit\");\n         return this.data.get(itemId).defaultStatus;\n      }\n   }]);\n\n   return AtomModel;\n})(_DataModel2.DataModel);\n\n;\n\nexports.AtomModel = AtomModel;"
+        },
+        {
+          "id": 10,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomItemModel.js",
+          "name": "./app/js/AtomItemModel.js",
+          "index": 10,
+          "index2": 7,
+          "size": 3985,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomModel.js",
+          "profile": {
+            "factory": 562,
+            "building": 609,
+            "dependencies": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 9,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomModel.js",
+              "module": "./app/js/AtomModel.js",
+              "moduleName": "./app/js/AtomModel.js",
+              "type": "cjs require",
+              "userRequest": "./AtomItemModel",
+              "loc": "22:21-47"
+            }
+          ],
+          "source": "\"use strict\";\n\nvar _createClass = (function () {\n   function defineProperties(target, props) {\n      for (var i = 0; i < props.length; i++) {\n         var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if (\"value\" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);\n      }\n   }return function (Constructor, protoProps, staticProps) {\n      if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;\n   };\n})(); /**\r\n       * @the data model class for the yuxin js, will provide variouse data formates for the application\r\n       * @name AtomModel.js\r\n       * @author \r\n       * @license \r\n       */\n\nObject.defineProperty(exports, \"__esModule\", {\n   value: true\n});\nexports.AtomItemModel = undefined;\n\nvar _DataModel = require(\"./DataModel\");\n\nvar _AtomItemStatusModel = require(\"./AtomItemStatusModel\");\n\nfunction _classCallCheck(instance, Constructor) {\n   if (!(instance instanceof Constructor)) {\n      throw new TypeError(\"Cannot call a class as a function\");\n   }\n}\n\nvar AtomItemModel = (function () {\n   function AtomItemModel(id, name, width, height, groupId, aStatusModels) {\n      _classCallCheck(this, AtomItemModel);\n\n      //[this.id,this._name,this.width,this.height,this._groupId] = [...arguments];\n      this.id = id;\n      this._name = name;\n      this.width = width;\n      this.height = height;\n      this._groupId = groupId;\n      this.mStatusModels = this._translateStatusFromArrayToMap(aStatusModels);\n   }\n\n   _createClass(AtomItemModel, [{\n      key: \"_translateStatusFromArrayToMap\",\n      value: function _translateStatusFromArrayToMap(aStatusModels) {\n         var _mRet = new Map();\n         aStatusModels.forEach(function (oStatus) {\n            var id = oStatus.id;\n            var name = oStatus.name;\n            var image = oStatus.image;\n            var isDefault = oStatus.isDefault;\n\n            _mRet.set(id, new _AtomItemStatusModel.AtomItemStatusModel(oStatus.id, name, image, isDefault));\n         });\n         return _mRet;\n      }\n   }, {\n      key: \"isDefaultStatus\",\n      value: function isDefaultStatus(statusId) {\n         console.log(this.mStatusModels.has(statusId), \"AtomItemModel:status id-\" + statusId + \" does not exist\");\n         return this.mStatusModels.get(statusId).isDefault;\n      }\n   }, {\n      key: \"getStatusImage\",\n      value: function getStatusImage(statusId) {\n         console.assert(this.mStatusModels.has(statusId), \"AtomItemModel: status id -\" + statusId + \" does not exsited\");\n         return this.mStatusModels.get(statusId).image;\n      }\n   }, {\n      key: \"getStatusName\",\n      value: function getStatusName(statusId) {\n         console.assert(this.mStatusModels.has(statusId), \"AtomItemModel: status id -\" + statusId + \" does not exsited\");\n         return this.mStatusModels.get(statusId).name;\n      }\n   }, {\n      key: \"defaultStatus\",\n      get: function get() {\n         var that = this;\n         if (this._defaultStatus === undefined) {\n            this.mStatusModels.forEach(function (value) {\n               if (value.isDefault) {\n                  that._defaultStatus = value;\n               }\n            });\n         };\n         console.assert(this._defaultStatus !== undefined, \"AtomItemModel-\" + this.name + \": does not have default status\");\n         return this._defaultStatus;\n      }\n   }, {\n      key: \"groupId\",\n      get: function get() {\n         return this._groupId;\n      }\n   }, {\n      key: \"name\",\n      get: function get() {\n         return this._name;\n      }\n   }, {\n      key: \"defaultStatusImage\",\n      get: function get() {\n         return this.defaultStatus.image;\n      }\n   }, {\n      key: \"defaultStatusId\",\n      get: function get() {\n         return this.defaultStatus.id;\n      }\n   }]);\n\n   return AtomItemModel;\n})();\n\n;\n\nexports.AtomItemModel = AtomItemModel;"
+        },
+        {
+          "id": 11,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomItemStatusModel.js",
+          "name": "./app/js/AtomItemStatusModel.js",
+          "index": 11,
+          "index2": 6,
+          "size": 1529,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomItemModel.js",
+          "profile": {
+            "factory": 5,
+            "building": 230
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 10,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomItemModel.js",
+              "module": "./app/js/AtomItemModel.js",
+              "moduleName": "./app/js/AtomItemModel.js",
+              "type": "cjs require",
+              "userRequest": "./AtomItemStatusModel",
+              "loc": "25:27-59"
+            }
+          ],
+          "source": "\"use strict\";\n\nvar _createClass = (function () {\n  function defineProperties(target, props) {\n    for (var i = 0; i < props.length; i++) {\n      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if (\"value\" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);\n    }\n  }return function (Constructor, protoProps, staticProps) {\n    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;\n  };\n})();\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nfunction _classCallCheck(instance, Constructor) {\n  if (!(instance instanceof Constructor)) {\n    throw new TypeError(\"Cannot call a class as a function\");\n  }\n}\n\nvar AtomItemStatusModel = (function () {\n  function AtomItemStatusModel(id, name, image, isDefault) {\n    _classCallCheck(this, AtomItemStatusModel);\n\n    this.id = id;\n    this.name = name;\n    this.image = image;\n    this._isDefault = isDefault;\n  }\n\n  _createClass(AtomItemStatusModel, [{\n    key: \"isDefault\",\n    get: function get() {\n      return !!this._isDefault;\n    },\n    set: function set(value) {\n      if (this._isDefault === undefined) {\n        this._isDefault = !!value;\n      } else {\n        throw new Error(\"AtomItemStatusModel.isDefault- can not assign value to it\");\n      }\n    }\n  }]);\n\n  return AtomItemStatusModel;\n})();\n\n;\nexports.AtomItemStatusModel = AtomItemStatusModel;"
+        },
+        {
+          "id": 12,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\PalletModel.js",
+          "name": "./app/js/PalletModel.js",
+          "index": 12,
+          "index2": 9,
+          "size": 3346,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+          "profile": {
+            "factory": 70,
+            "building": 1862,
+            "dependencies": 2
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 6,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+              "module": "./__tests__/data/rawdata.js",
+              "moduleName": "./__tests__/data/rawdata.js",
+              "type": "cjs require",
+              "userRequest": "../../app/js/PalletModel",
+              "loc": "12:19-54"
+            }
+          ],
+          "source": "\"use strict\";\n\nvar _createClass = (function () {\n  function defineProperties(target, props) {\n    for (var i = 0; i < props.length; i++) {\n      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if (\"value\" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);\n    }\n  }return function (Constructor, protoProps, staticProps) {\n    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;\n  };\n})();\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.PalletModel = undefined;\n\nvar _AtomModel = require(\"./AtomModel\");\n\nfunction _classCallCheck(instance, Constructor) {\n  if (!(instance instanceof Constructor)) {\n    throw new TypeError(\"Cannot call a class as a function\");\n  }\n}\n\nvar PalletItemModel = function PalletItemModel(id, sName, image) {\n  _classCallCheck(this, PalletItemModel);\n\n  this.id = id;\n  this.name = sName;\n  this.image = image;\n  this.width = 50;\n  this.height = 50;\n};\n\n;\n\nvar PalletModel = (function () {\n  function PalletModel(atomModel, groupModel) {\n    _classCallCheck(this, PalletModel);\n\n    var map = new Map();\n    var _iteratorNormalCompletion = true;\n    var _didIteratorError = false;\n    var _iteratorError = undefined;\n\n    try {\n      for (var _iterator = groupModel.data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n        var group = _step.value;\n\n        var groupId = group[0];\n        map.set(groupId, {\n          \"groupName\": groupModel.getGroupNameById(groupId),\n          \"items\": []\n        });\n      }\n    } catch (err) {\n      _didIteratorError = true;\n      _iteratorError = err;\n    } finally {\n      try {\n        if (!_iteratorNormalCompletion && _iterator.return) {\n          _iterator.return();\n        }\n      } finally {\n        if (_didIteratorError) {\n          throw _iteratorError;\n        }\n      }\n    }\n\n    ;\n\n    var _iteratorNormalCompletion2 = true;\n    var _didIteratorError2 = false;\n    var _iteratorError2 = undefined;\n\n    try {\n      for (var _iterator2 = atomModel.data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {\n        var item = _step2.value;\n\n        var itemId = item[0];\n        var groupId = atomModel.getGroupIdByItemId(itemId);\n        var name = atomModel.getItemNameById(itemId);\n        var image = atomModel.getDefaultImageById(itemId);\n        console.assert(map.has(groupId), \"GroupModel does not have groupId-\" + groupId + \" from AtomModel\");\n        map.get(groupId).items.push(new PalletItemModel(itemId, name, image));\n      }\n    } catch (err) {\n      _didIteratorError2 = true;\n      _iteratorError2 = err;\n    } finally {\n      try {\n        if (!_iteratorNormalCompletion2 && _iterator2.return) {\n          _iterator2.return();\n        }\n      } finally {\n        if (_didIteratorError2) {\n          throw _iteratorError2;\n        }\n      }\n    }\n\n    this._mData = map;\n  }\n\n  _createClass(PalletModel, [{\n    key: \"data\",\n    get: function get() {\n      return this._mData;\n    }\n  }]);\n\n  return PalletModel;\n})();\n\nexports.PalletModel = PalletModel;"
+        },
+        {
+          "id": 13,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\pallet.jsx",
+          "name": "./app/js/pallet.jsx",
+          "index": 13,
+          "index2": 12,
+          "size": 2626,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+          "profile": {
+            "factory": 2030,
+            "building": 407
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 5,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+              "module": "./test/js/test.jsx",
+              "moduleName": "./test/js/test.jsx",
+              "type": "cjs require",
+              "userRequest": "../../app/js/pallet.jsx",
+              "loc": "5:14-48"
+            }
+          ],
+          "source": "\n/**\r\n * @Define Pallet Component. The Component is composed by Group Component which is composed by Item Component.\r\n * @name pallet.jsx\r\n * @author Journey\r\n * @license BSD\r\n */\n\n'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Pallet = undefined;\n\nvar _uuid = require('./uuid');\n\n/**\r\n* Depends on UUID function\r\n* @param {} function\r\n* @returns {} \r\n*/\n\n/* Item Component is displayed via an image + text. And will capture the drag event of the element.\r\n   The component depends on html5's drag&drop capability:\r\n   the html5's data attribute - \r\n   The configration data is like:\r\n   {\r\n     src:\"\",\r\n     name:\"\",\r\n     id:\"\",\r\n     type:\"\"\r\n   }\r\n */\n\nvar Item = React.createClass({\n  displayName: 'Item',\n\n  drag: function drag(event) {\n    event.dataTransfer.setData(\"text/plain\", event.target.dataset.id);\n    event.dataTransfer.dropEffect = \"copy\";\n    event.dataTransfer.effectAllowed = \"copyMove\";\n  },\n  render: function render() {\n    return React.createElement(\n      'li',\n      null,\n      'n   ',\n      React.createElement('img', { src: this.props.config.image, 'data-id': this.props.config.id, alt: this.props.config.name, title: this.props.config.name, draggable: 'true', onDragStart: this.drag })\n    );\n  }\n});\n\nvar Group = React.createClass({\n  displayName: 'Group',\n\n  render: function render() {\n    function createItem(oConfig) {\n      return React.createElement(Item, { config: oConfig });\n    };\n    return React.createElement(\n      'div',\n      { className: 'pallet-group' },\n      React.createElement(\n        'h4',\n        null,\n        this.props.title\n      ),\n      React.createElement(\n        'ul',\n        null,\n        this.props.items.map(createItem)\n      )\n    );\n  }\n});\n\nvar Pallet = React.createClass({\n  displayName: 'Pallet',\n\n  render: function render() {\n    var aGroups = [];\n    this.props.model.data.forEach(function (groupModel) {\n      aGroups.push(React.createElement(Group, { title: oGroup.groupName, items: oGroup.items }));\n    });\n    return React.createElement(\n      'div',\n      { className: 'pallet' },\n      React.createElement(\n        'h3',\n        null,\n        '图元列表'\n      ),\n      React.createElement(\n        'div',\n        { className: 'pallet-content' },\n        this.props.model.data.forEach(function (oGroup) {\n          return React.createElement(Group, { title: oGroup.groupName, items: oGroup.items });\n        })\n        /*for(let [groupId, oGroup] of this.props.model){\r\n          <Group title={oGroup.groupName} items={oGroup.items}></Group>\r\n        }*/\n\n      )\n    );\n  }\n});\n\nexports.Pallet = Pallet;"
+        },
+        {
+          "id": 14,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\uuid.js",
+          "name": "./app/js/uuid.js",
+          "index": 14,
+          "index2": 11,
+          "size": 540,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\pallet.jsx",
+          "profile": {
+            "factory": 617,
+            "building": 122
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 13,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\pallet.jsx",
+              "module": "./app/js/pallet.jsx",
+              "moduleName": "./app/js/pallet.jsx",
+              "type": "cjs require",
+              "userRequest": "./uuid",
+              "loc": "16:12-29"
+            },
+            {
+              "moduleId": 15,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\canvas.jsx",
+              "module": "./app/js/canvas.jsx",
+              "moduleName": "./app/js/canvas.jsx",
+              "type": "cjs require",
+              "userRequest": "./uuid",
+              "loc": "13:12-29"
+            },
+            {
+              "moduleId": 16,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\element.jsx",
+              "module": "./app/js/element.jsx",
+              "moduleName": "./app/js/element.jsx",
+              "type": "cjs require",
+              "userRequest": "./uuid",
+              "loc": "13:12-29"
+            }
+          ],
+          "source": "/**\r\n * @Define UUID Component - used to generate the uuid;\r\n * @name uuid.js\r\n * @author journey\r\n * @license BSD\r\n */\n\n\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nvar uuidTemplate = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx';\nfunction generateUUID() {\n    return uuidTemplate.replace(/[xy]/g, function (c) {\n        var r = crypto.getRandomValues(new Uint8Array(1))[0] % 16 | 0,\n            v = c == 'x' ? r : r & 0x3 | 0x8;\n        return v.toString(16);\n    });\n};\n\nexports.generateUUID = generateUUID;"
+        },
+        {
+          "id": 15,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\canvas.jsx",
+          "name": "./app/js/canvas.jsx",
+          "index": 15,
+          "index2": 15,
+          "size": 2157,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+          "profile": {
+            "factory": 2031,
+            "building": 709,
+            "dependencies": 316
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 5,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+              "module": "./test/js/test.jsx",
+              "moduleName": "./test/js/test.jsx",
+              "type": "cjs require",
+              "userRequest": "../../app/js/canvas.jsx",
+              "loc": "7:14-48"
+            }
+          ],
+          "source": "/**\r\n * The Canvas Component. is a drop zone which allowed drop an `pa-element`\r\n * @param {object} yuxin - global object\r\n * @return the Canvas Component\r\n */\n\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Canvas = undefined;\n\nvar _uuid = require(\"./uuid\");\n\nvar _element = require(\"./element.jsx\");\n\nvar _config = require(\"./config\");\n\nvar Canvas = React.createClass({\n  displayName: \"Canvas\",\n\n  getInitialState: function getInitialState() {\n    return {\n      width: 1024,\n      height: 768,\n      gridSize: 10,\n      elements: [],\n      selectedElement: null\n    };\n  },\n  dragOver: function dragOver(evt) {\n    evt.preventDefault();\n    evt.dataTransfer.dropEffect = \"move\";\n  },\n  drop: function drop(event) {\n    var elementType = event.dataTransfer.getData(\"text\");\n    var oElemConfig = this.getElementConfigByType(elementType);\n    this.state.elements.push(oElemConfig);\n    this.setState({ \"elements\": this.state.elements });\n    event.dataTransfer.clearData();\n    event.preventDefault();\n  },\n  getElementConfigByType: function getElementConfigByType(eleType) {\n    var oConfig = _config.ElementsConfig[eleType];\n    if (!oConfig) {}\n    //todo - fixed now\n    return {\n      width: 74,\n      height: 74,\n      x: 70,\n      y: 70,\n      image: \"css/1.jpg\",\n      key: (0, _uuid.generateUUID)()\n    };\n  },\n  onElementUpdate: function onElementUpdate() {\n    console.log(\"on element update event triggered\");\n  },\n  onElementSelectionChange: function onElementSelectionChange(element) {\n    this.setState({ selectedElement: element });\n  },\n  createElement: function createElement(element) {\n    return React.createElement(_element.Element, { config: element, key: element.key, update: \"{this.onElementUpdate} onSelect={this.onSelect}\" });\n  },\n  render: function render() {\n    return React.createElement(\n      \"div\",\n      { className: \"canvas\" },\n      React.createElement(\n        \"svg\",\n        { width: this.state.width, height: this.state.height, onDrop: this.drop, onDragOver: this.dragOver },\n        this.state.elements.map(this.createElement)\n      )\n    );\n  }\n});\n\nexports.Canvas = Canvas;"
+        },
+        {
+          "id": 16,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\element.jsx",
+          "name": "./app/js/element.jsx",
+          "index": 16,
+          "index2": 13,
+          "size": 1430,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\canvas.jsx",
+          "profile": {
+            "factory": 316,
+            "building": 218,
+            "dependencies": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 15,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\canvas.jsx",
+              "module": "./app/js/canvas.jsx",
+              "moduleName": "./app/js/canvas.jsx",
+              "type": "cjs require",
+              "userRequest": "./element.jsx",
+              "loc": "15:15-39"
+            }
+          ],
+          "source": "/**\r\n * The Canvas Component. is a drop zone which allowed drop an `pa-element`\r\n * @param {object} yuxin - global object\r\n * @return the Element Component\r\n */\n\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Element = undefined;\n\nvar _uuid = require(\"./uuid\");\n\nvar Element = React.createClass({\n  displayName: \"Element\",\n\n  createImageMarkup: function createImageMarkup() {\n    return {\n      __html: \"<image x=\\\"0\\\" y=\\\"0\\\" height=\" + this.props.config.height + \" width=\" + this.props.config.width + \" xlink:href=\" + this.props.config.image + \"></image>\"\n    };\n  },\n  toggleSelection: function toggleSelection() {\n    console.log(\"double click Element\");\n  },\n  /**\r\n   * @description render ca-element with properties\r\n   * @param {} function\r\n   * @returns {} \r\n   */\n  render: function render() {\n    //todo:: react does not support image tag now.\n    return React.createElement(\n      \"g\",\n      { onDoubleClick: this.toggleSelection, className: \"ca-element\", transform: \"translate(\" + this.props.config.x + \",\" + this.props.config.y + \")\" },\n      React.createElement(\n        \"g\",\n        { className: \"ca-border\" },\n        React.createElement(\"rect\", { width: this.props.config.width, height: this.props.config.width })\n      ),\n      React.createElement(\"g\", { className: \"ca-img\", dangerouslySetInnerHTML: this.createImageMarkup() })\n    );\n  }\n});\n\nexports.Element = Element;"
+        },
+        {
+          "id": 17,
+          "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\config.js",
+          "name": "./app/js/config.js",
+          "index": 17,
+          "index2": 14,
+          "size": 146,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "assets": [],
+          "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\canvas.jsx",
+          "profile": {
+            "factory": 317,
+            "building": 256
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "reasons": [
+            {
+              "moduleId": 15,
+              "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\canvas.jsx",
+              "module": "./app/js/canvas.jsx",
+              "moduleName": "./app/js/canvas.jsx",
+              "type": "cjs require",
+              "userRequest": "./config",
+              "loc": "17:14-33"
+            }
+          ],
+          "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar ElementsConfig = {};\n\nexports.ElementsConfig = ElementsConfig;"
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\entry.js",
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\entry.js",
+          "moduleName": "./test/js/entry.js",
+          "loc": "",
+          "name": "main",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\entry.js",
+      "name": "./test/js/entry.js",
+      "index": 0,
+      "index2": 17,
+      "size": 71,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": null,
+      "profile": {
+        "factory": 112,
+        "building": 21047
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [],
+      "source": "\"use strict\";\n\nrequire(\"../../app/css/css.css\");\nrequire(\"./test.jsx\");"
+    },
+    {
+      "id": 1,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\style-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+      "name": "./app/css/css.css",
+      "index": 1,
+      "index2": 3,
+      "size": 913,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\entry.js",
+      "profile": {
+        "factory": 294,
+        "building": 40
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\entry.js",
+          "module": "./test/js/entry.js",
+          "moduleName": "./test/js/entry.js",
+          "type": "cjs require",
+          "userRequest": "../../app/css/css.css",
+          "loc": "3:0-32"
+        }
+      ],
+      "source": "// style-loader: Adds some css to the DOM by adding a <style> tag\n\n// load the styles\nvar content = require(\"!!./../../node_modules/css-loader/index.js!./css.css\");\nif(typeof content === 'string') content = [[module.id, content, '']];\n// add the styles to the DOM\nvar update = require(\"!./../../node_modules/style-loader/addStyles.js\")(content, {});\nif(content.locals) module.exports = content.locals;\n// Hot Module Replacement\nif(module.hot) {\n\t// When the styles change, update the <style> tags\n\tif(!content.locals) {\n\t\tmodule.hot.accept(\"!!./../../node_modules/css-loader/index.js!./css.css\", function() {\n\t\t\tvar newContent = require(\"!!./../../node_modules/css-loader/index.js!./css.css\");\n\t\t\tif(typeof newContent === 'string') newContent = [[module.id, newContent, '']];\n\t\t\tupdate(newContent);\n\t\t});\n\t}\n\t// When the module is disposed, remove the <style> tags\n\tmodule.hot.dispose(function() { update(); });\n}"
+    },
+    {
+      "id": 2,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+      "name": "./~/css-loader!./app/css/css.css",
+      "index": 2,
+      "index2": 1,
+      "size": 369,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\style-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+      "profile": {
+        "factory": 1,
+        "building": 2063
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 1,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\style-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+          "module": "./app/css/css.css",
+          "moduleName": "./app/css/css.css",
+          "type": "cjs require",
+          "userRequest": "!!./../../node_modules/css-loader/index.js!./css.css",
+          "loc": "4:14-77"
+        }
+      ],
+      "source": "exports = module.exports = require(\"./../../node_modules/css-loader/lib/css-base.js\")();\n// imports\n\n\n// module\nexports.push([module.id, \"*[draggable=true]{\\r\\n    -moz-user-select:none;\\r\\n    -khtml-user-drag: element;\\r\\n    -webkit-user-drag: element;\\r\\n    -khtml-user-select: none;\\r\\n    -webkit-user-select: none;\\r\\n    cursor: move;\\r\\n}\", \"\"]);\n\n// exports\n"
+    },
+    {
+      "id": 3,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\lib\\css-base.js",
+      "name": "./~/css-loader/lib/css-base.js",
+      "index": 3,
+      "index2": 0,
+      "size": 1506,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+      "profile": {
+        "factory": 331,
+        "building": 656
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 2,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+          "module": "./~/css-loader!./app/css/css.css",
+          "moduleName": "./~/css-loader!./app/css/css.css",
+          "type": "cjs require",
+          "userRequest": "./../../node_modules/css-loader/lib/css-base.js",
+          "loc": "1:27-85"
+        }
+      ],
+      "source": "/*\r\n\tMIT License http://www.opensource.org/licenses/mit-license.php\r\n\tAuthor Tobias Koppers @sokra\r\n*/\r\n// css base code, injected by the css-loader\r\nmodule.exports = function() {\r\n\tvar list = [];\r\n\r\n\t// return the list of modules as css string\r\n\tlist.toString = function toString() {\r\n\t\tvar result = [];\r\n\t\tfor(var i = 0; i < this.length; i++) {\r\n\t\t\tvar item = this[i];\r\n\t\t\tif(item[2]) {\r\n\t\t\t\tresult.push(\"@media \" + item[2] + \"{\" + item[1] + \"}\");\r\n\t\t\t} else {\r\n\t\t\t\tresult.push(item[1]);\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn result.join(\"\");\r\n\t};\r\n\r\n\t// import a list of modules into the list\r\n\tlist.i = function(modules, mediaQuery) {\r\n\t\tif(typeof modules === \"string\")\r\n\t\t\tmodules = [[null, modules, \"\"]];\r\n\t\tvar alreadyImportedModules = {};\r\n\t\tfor(var i = 0; i < this.length; i++) {\r\n\t\t\tvar id = this[i][0];\r\n\t\t\tif(typeof id === \"number\")\r\n\t\t\t\talreadyImportedModules[id] = true;\r\n\t\t}\r\n\t\tfor(i = 0; i < modules.length; i++) {\r\n\t\t\tvar item = modules[i];\r\n\t\t\t// skip already imported module\r\n\t\t\t// this implementation is not 100% perfect for weird media query combinations\r\n\t\t\t//  when a module is imported multiple times with different media queries.\r\n\t\t\t//  I hope this will never occur (Hey this way we have smaller bundles)\r\n\t\t\tif(typeof item[0] !== \"number\" || !alreadyImportedModules[item[0]]) {\r\n\t\t\t\tif(mediaQuery && !item[2]) {\r\n\t\t\t\t\titem[2] = mediaQuery;\r\n\t\t\t\t} else if(mediaQuery) {\r\n\t\t\t\t\titem[2] = \"(\" + item[2] + \") and (\" + mediaQuery + \")\";\r\n\t\t\t\t}\r\n\t\t\t\tlist.push(item);\r\n\t\t\t}\r\n\t\t}\r\n\t};\r\n\treturn list;\r\n};\r\n"
+    },
+    {
+      "id": 4,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\style-loader\\addStyles.js",
+      "name": "./~/style-loader/addStyles.js",
+      "index": 4,
+      "index2": 2,
+      "size": 7212,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\style-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+      "profile": {
+        "factory": 1987,
+        "building": 506
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 1,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\style-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\css-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\css\\css.css",
+          "module": "./app/css/css.css",
+          "moduleName": "./app/css/css.css",
+          "type": "cjs require",
+          "userRequest": "!./../../node_modules/style-loader/addStyles.js",
+          "loc": "7:13-71"
+        }
+      ],
+      "source": "/*\r\n\tMIT License http://www.opensource.org/licenses/mit-license.php\r\n\tAuthor Tobias Koppers @sokra\r\n*/\r\nvar stylesInDom = {},\r\n\tmemoize = function(fn) {\r\n\t\tvar memo;\r\n\t\treturn function () {\r\n\t\t\tif (typeof memo === \"undefined\") memo = fn.apply(this, arguments);\r\n\t\t\treturn memo;\r\n\t\t};\r\n\t},\r\n\tisOldIE = memoize(function() {\r\n\t\treturn /msie [6-9]\\b/.test(window.navigator.userAgent.toLowerCase());\r\n\t}),\r\n\tgetHeadElement = memoize(function () {\r\n\t\treturn document.head || document.getElementsByTagName(\"head\")[0];\r\n\t}),\r\n\tsingletonElement = null,\r\n\tsingletonCounter = 0,\r\n\tstyleElementsInsertedAtTop = [];\r\n\r\nmodule.exports = function(list, options) {\r\n\tif(typeof DEBUG !== \"undefined\" && DEBUG) {\r\n\t\tif(typeof document !== \"object\") throw new Error(\"The style-loader cannot be used in a non-browser environment\");\r\n\t}\r\n\r\n\toptions = options || {};\r\n\t// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>\r\n\t// tags it will allow on a page\r\n\tif (typeof options.singleton === \"undefined\") options.singleton = isOldIE();\r\n\r\n\t// By default, add <style> tags to the bottom of <head>.\r\n\tif (typeof options.insertAt === \"undefined\") options.insertAt = \"bottom\";\r\n\r\n\tvar styles = listToStyles(list);\r\n\taddStylesToDom(styles, options);\r\n\r\n\treturn function update(newList) {\r\n\t\tvar mayRemove = [];\r\n\t\tfor(var i = 0; i < styles.length; i++) {\r\n\t\t\tvar item = styles[i];\r\n\t\t\tvar domStyle = stylesInDom[item.id];\r\n\t\t\tdomStyle.refs--;\r\n\t\t\tmayRemove.push(domStyle);\r\n\t\t}\r\n\t\tif(newList) {\r\n\t\t\tvar newStyles = listToStyles(newList);\r\n\t\t\taddStylesToDom(newStyles, options);\r\n\t\t}\r\n\t\tfor(var i = 0; i < mayRemove.length; i++) {\r\n\t\t\tvar domStyle = mayRemove[i];\r\n\t\t\tif(domStyle.refs === 0) {\r\n\t\t\t\tfor(var j = 0; j < domStyle.parts.length; j++)\r\n\t\t\t\t\tdomStyle.parts[j]();\r\n\t\t\t\tdelete stylesInDom[domStyle.id];\r\n\t\t\t}\r\n\t\t}\r\n\t};\r\n}\r\n\r\nfunction addStylesToDom(styles, options) {\r\n\tfor(var i = 0; i < styles.length; i++) {\r\n\t\tvar item = styles[i];\r\n\t\tvar domStyle = stylesInDom[item.id];\r\n\t\tif(domStyle) {\r\n\t\t\tdomStyle.refs++;\r\n\t\t\tfor(var j = 0; j < domStyle.parts.length; j++) {\r\n\t\t\t\tdomStyle.parts[j](item.parts[j]);\r\n\t\t\t}\r\n\t\t\tfor(; j < item.parts.length; j++) {\r\n\t\t\t\tdomStyle.parts.push(addStyle(item.parts[j], options));\r\n\t\t\t}\r\n\t\t} else {\r\n\t\t\tvar parts = [];\r\n\t\t\tfor(var j = 0; j < item.parts.length; j++) {\r\n\t\t\t\tparts.push(addStyle(item.parts[j], options));\r\n\t\t\t}\r\n\t\t\tstylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};\r\n\t\t}\r\n\t}\r\n}\r\n\r\nfunction listToStyles(list) {\r\n\tvar styles = [];\r\n\tvar newStyles = {};\r\n\tfor(var i = 0; i < list.length; i++) {\r\n\t\tvar item = list[i];\r\n\t\tvar id = item[0];\r\n\t\tvar css = item[1];\r\n\t\tvar media = item[2];\r\n\t\tvar sourceMap = item[3];\r\n\t\tvar part = {css: css, media: media, sourceMap: sourceMap};\r\n\t\tif(!newStyles[id])\r\n\t\t\tstyles.push(newStyles[id] = {id: id, parts: [part]});\r\n\t\telse\r\n\t\t\tnewStyles[id].parts.push(part);\r\n\t}\r\n\treturn styles;\r\n}\r\n\r\nfunction insertStyleElement(options, styleElement) {\r\n\tvar head = getHeadElement();\r\n\tvar lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];\r\n\tif (options.insertAt === \"top\") {\r\n\t\tif(!lastStyleElementInsertedAtTop) {\r\n\t\t\thead.insertBefore(styleElement, head.firstChild);\r\n\t\t} else if(lastStyleElementInsertedAtTop.nextSibling) {\r\n\t\t\thead.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);\r\n\t\t} else {\r\n\t\t\thead.appendChild(styleElement);\r\n\t\t}\r\n\t\tstyleElementsInsertedAtTop.push(styleElement);\r\n\t} else if (options.insertAt === \"bottom\") {\r\n\t\thead.appendChild(styleElement);\r\n\t} else {\r\n\t\tthrow new Error(\"Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.\");\r\n\t}\r\n}\r\n\r\nfunction removeStyleElement(styleElement) {\r\n\tstyleElement.parentNode.removeChild(styleElement);\r\n\tvar idx = styleElementsInsertedAtTop.indexOf(styleElement);\r\n\tif(idx >= 0) {\r\n\t\tstyleElementsInsertedAtTop.splice(idx, 1);\r\n\t}\r\n}\r\n\r\nfunction createStyleElement(options) {\r\n\tvar styleElement = document.createElement(\"style\");\r\n\tstyleElement.type = \"text/css\";\r\n\tinsertStyleElement(options, styleElement);\r\n\treturn styleElement;\r\n}\r\n\r\nfunction createLinkElement(options) {\r\n\tvar linkElement = document.createElement(\"link\");\r\n\tlinkElement.rel = \"stylesheet\";\r\n\tinsertStyleElement(options, linkElement);\r\n\treturn linkElement;\r\n}\r\n\r\nfunction addStyle(obj, options) {\r\n\tvar styleElement, update, remove;\r\n\r\n\tif (options.singleton) {\r\n\t\tvar styleIndex = singletonCounter++;\r\n\t\tstyleElement = singletonElement || (singletonElement = createStyleElement(options));\r\n\t\tupdate = applyToSingletonTag.bind(null, styleElement, styleIndex, false);\r\n\t\tremove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);\r\n\t} else if(obj.sourceMap &&\r\n\t\ttypeof URL === \"function\" &&\r\n\t\ttypeof URL.createObjectURL === \"function\" &&\r\n\t\ttypeof URL.revokeObjectURL === \"function\" &&\r\n\t\ttypeof Blob === \"function\" &&\r\n\t\ttypeof btoa === \"function\") {\r\n\t\tstyleElement = createLinkElement(options);\r\n\t\tupdate = updateLink.bind(null, styleElement);\r\n\t\tremove = function() {\r\n\t\t\tremoveStyleElement(styleElement);\r\n\t\t\tif(styleElement.href)\r\n\t\t\t\tURL.revokeObjectURL(styleElement.href);\r\n\t\t};\r\n\t} else {\r\n\t\tstyleElement = createStyleElement(options);\r\n\t\tupdate = applyToTag.bind(null, styleElement);\r\n\t\tremove = function() {\r\n\t\t\tremoveStyleElement(styleElement);\r\n\t\t};\r\n\t}\r\n\r\n\tupdate(obj);\r\n\r\n\treturn function updateStyle(newObj) {\r\n\t\tif(newObj) {\r\n\t\t\tif(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)\r\n\t\t\t\treturn;\r\n\t\t\tupdate(obj = newObj);\r\n\t\t} else {\r\n\t\t\tremove();\r\n\t\t}\r\n\t};\r\n}\r\n\r\nvar replaceText = (function () {\r\n\tvar textStore = [];\r\n\r\n\treturn function (index, replacement) {\r\n\t\ttextStore[index] = replacement;\r\n\t\treturn textStore.filter(Boolean).join('\\n');\r\n\t};\r\n})();\r\n\r\nfunction applyToSingletonTag(styleElement, index, remove, obj) {\r\n\tvar css = remove ? \"\" : obj.css;\r\n\r\n\tif (styleElement.styleSheet) {\r\n\t\tstyleElement.styleSheet.cssText = replaceText(index, css);\r\n\t} else {\r\n\t\tvar cssNode = document.createTextNode(css);\r\n\t\tvar childNodes = styleElement.childNodes;\r\n\t\tif (childNodes[index]) styleElement.removeChild(childNodes[index]);\r\n\t\tif (childNodes.length) {\r\n\t\t\tstyleElement.insertBefore(cssNode, childNodes[index]);\r\n\t\t} else {\r\n\t\t\tstyleElement.appendChild(cssNode);\r\n\t\t}\r\n\t}\r\n}\r\n\r\nfunction applyToTag(styleElement, obj) {\r\n\tvar css = obj.css;\r\n\tvar media = obj.media;\r\n\tvar sourceMap = obj.sourceMap;\r\n\r\n\tif(media) {\r\n\t\tstyleElement.setAttribute(\"media\", media)\r\n\t}\r\n\r\n\tif(styleElement.styleSheet) {\r\n\t\tstyleElement.styleSheet.cssText = css;\r\n\t} else {\r\n\t\twhile(styleElement.firstChild) {\r\n\t\t\tstyleElement.removeChild(styleElement.firstChild);\r\n\t\t}\r\n\t\tstyleElement.appendChild(document.createTextNode(css));\r\n\t}\r\n}\r\n\r\nfunction updateLink(linkElement, obj) {\r\n\tvar css = obj.css;\r\n\tvar media = obj.media;\r\n\tvar sourceMap = obj.sourceMap;\r\n\r\n\tif(sourceMap) {\r\n\t\t// http://stackoverflow.com/a/26603875\r\n\t\tcss += \"\\n/*# sourceMappingURL=data:application/json;base64,\" + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + \" */\";\r\n\t}\r\n\r\n\tvar blob = new Blob([css], { type: \"text/css\" });\r\n\r\n\tvar oldSrc = linkElement.href;\r\n\r\n\tlinkElement.href = URL.createObjectURL(blob);\r\n\r\n\tif(oldSrc)\r\n\t\tURL.revokeObjectURL(oldSrc);\r\n}\r\n"
+    },
+    {
+      "id": 5,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+      "name": "./test/js/test.jsx",
+      "index": 5,
+      "index2": 16,
+      "size": 814,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\entry.js",
+      "profile": {
+        "factory": 48,
+        "building": 241
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\entry.js",
+          "module": "./test/js/entry.js",
+          "moduleName": "./test/js/entry.js",
+          "type": "cjs require",
+          "userRequest": "./test.jsx",
+          "loc": "4:0-21"
+        }
+      ],
+      "source": "\"use strict\";\n\nvar _rawdata = require(\"../../__tests__/data/rawdata.js\");\n\nvar _pallet = require(\"../../app/js/pallet.jsx\");\n\nvar _canvas = require(\"../../app/js/canvas.jsx\");\n\nvar aGroups = [{\n  \"title\": \"微网\",\n  \"items\": [{\n    \"src\": \"css/1.jpg\",\n    \"id\": \"1\",\n    \"name\": \"单晶硅光伏\",\n    \"type\": \"micro\"\n  }, {\n    \"src\": \"css/2.jpg\",\n    \"id\": \"2\",\n    \"name\": \"多晶硅光伏\",\n    \"type\": \"micro\"\n  }]\n}, {\n  \"title\": \"光热\",\n  \"items\": [{\n    \"src\": \"css/3.jpg\",\n    \"id\": \"1\",\n    \"name\": \"储油罐\",\n    \"type\": \"micro\"\n  }, {\n    \"src\": \"css/4.jpg\",\n    \"id\": \"2\",\n    \"name\": \"绑点\",\n    \"type\": \"micro\"\n  }]\n}];\nReactDOM.render(React.createElement(\n  \"div\",\n  null,\n  React.createElement(_pallet.Pallet, { model: _rawdata.oPalletModel }),\n  React.createElement(_canvas.Canvas, null)\n), document.getElementById('example'));"
+    },
+    {
+      "id": 6,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+      "name": "./__tests__/data/rawdata.js",
+      "index": 6,
+      "index2": 10,
+      "size": 1847,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+      "profile": {
+        "factory": 2034,
+        "building": 997
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 5,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+          "module": "./test/js/test.jsx",
+          "moduleName": "./test/js/test.jsx",
+          "type": "cjs require",
+          "userRequest": "../../__tests__/data/rawdata.js",
+          "loc": "3:15-57"
+        }
+      ],
+      "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.oPalletModel = exports.oAtomModel = exports.oGroupModel = undefined;\n\nvar _GroupModel = require('../../app/js/GroupModel');\n\nvar _AtomModel = require('../../app/js/AtomModel');\n\nvar _PalletModel = require('../../app/js/PalletModel');\n\nfunction groupData() {\n  var map = new Map();\n  map.set(\"groupId1\", { groupName: \"group name 1\" });\n  map.set(\"groupId2\", { groupName: \"group name 2\" });\n  return map;\n};\n\nfunction atomData() {\n  var atomData = {\n    \"item-id-1\": {\n      name: \"item name 1\",\n      width: 50,\n      height: 50,\n      groupId: \"groupId1\",\n      statusList: [{\n        id: \"status-1\",\n        name: \"status name 1\",\n        image: \"status-image-1\",\n        isDefault: true\n      }, {\n        id: \"status-2\",\n        name: \"status name 2\",\n        image: \"status-image-1\",\n        isDefault: false\n      }]\n    },\n    \"item-id-2\": {\n      name: \"item name 2\",\n      width: 50,\n      height: 50,\n      groupId: \"groupId1\",\n      statusList: [{\n        id: \"status-3\",\n        name: \"status name 2\",\n        image: \"status image 2\",\n        isDefault: true\n      }]\n    },\n    \"item-id-3\": {\n      name: \"item name 3\",\n      width: 50,\n      height: 50,\n      groupId: \"groupId2\",\n      statusList: [{\n        id: \"status-3\",\n        name: \"status name 3\",\n        image: \"status image 2\",\n        isDefault: true\n      }]\n    }\n  };\n  return atomData;\n};\nfunction groupModel() {\n  return new _GroupModel.GroupModel(groupData());\n}\nfunction atomModel() {\n  return new _AtomModel.AtomModel(atomData());\n}\n\nvar oGroupModel = groupModel();\nvar oAtomModel = atomModel();\nvar oPalletModel = new _PalletModel.PalletModel(oAtomModel, oGroupModel);\n\nexports.oGroupModel = oGroupModel;\nexports.oAtomModel = oAtomModel;\nexports.oPalletModel = oPalletModel;"
+    },
+    {
+      "id": 7,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\GroupModel.js",
+      "name": "./app/js/GroupModel.js",
+      "index": 7,
+      "index2": 5,
+      "size": 2619,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+      "profile": {
+        "factory": 68,
+        "building": 664
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 6,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+          "module": "./__tests__/data/rawdata.js",
+          "moduleName": "./__tests__/data/rawdata.js",
+          "type": "cjs require",
+          "userRequest": "../../app/js/GroupModel",
+          "loc": "8:18-52"
+        }
+      ],
+      "source": "\"use strict\";\n\nfunction _typeof(obj) { return obj && typeof Symbol !== \"undefined\" && obj.constructor === Symbol ? \"symbol\" : typeof obj; }\n\nvar _createClass = (function () {\n\t\t\tfunction defineProperties(target, props) {\n\t\t\t\t\t\tfor (var i = 0; i < props.length; i++) {\n\t\t\t\t\t\t\t\t\tvar descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if (\"value\" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);\n\t\t\t\t\t\t}\n\t\t\t}return function (Constructor, protoProps, staticProps) {\n\t\t\t\t\t\tif (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;\n\t\t\t};\n})();\n\nObject.defineProperty(exports, \"__esModule\", {\n\t\t\tvalue: true\n});\nexports.GroupModel = undefined;\n\nvar _DataModel2 = require(\"./DataModel\");\n\nfunction _classCallCheck(instance, Constructor) {\n\t\t\tif (!(instance instanceof Constructor)) {\n\t\t\t\t\t\tthrow new TypeError(\"Cannot call a class as a function\");\n\t\t\t}\n}\n\nfunction _possibleConstructorReturn(self, call) {\n\t\t\tif (!self) {\n\t\t\t\t\t\tthrow new ReferenceError(\"this hasn't been initialised - super() hasn't been called\");\n\t\t\t}return call && ((typeof call === \"undefined\" ? \"undefined\" : _typeof(call)) === \"object\" || typeof call === \"function\") ? call : self;\n}\n\nfunction _inherits(subClass, superClass) {\n\t\t\tif (typeof superClass !== \"function\" && superClass !== null) {\n\t\t\t\t\t\tthrow new TypeError(\"Super expression must either be null or a function, not \" + (typeof superClass === \"undefined\" ? \"undefined\" : _typeof(superClass)));\n\t\t\t}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;\n}\n\nvar GroupModel = (function (_DataModel) {\n\t\t\t_inherits(GroupModel, _DataModel);\n\n\t\t\tfunction GroupModel(mData) {\n\t\t\t\t\t\t_classCallCheck(this, GroupModel);\n\n\t\t\t\t\t\t//this._className = GroupMOdel.name;\n\t\t\t\t\t\treturn _possibleConstructorReturn(this, Object.getPrototypeOf(GroupModel).call(this, mData));\n\t\t\t}\n\n\t\t\t_createClass(GroupModel, [{\n\t\t\t\t\t\tkey: \"getGroupNameById\",\n\t\t\t\t\t\tvalue: function getGroupNameById(groupId) {\n\t\t\t\t\t\t\t\t\tconsole.assert(this.data.has(groupId), \"GroupModel.getGroupNameById, need a validate groupId\");\n\t\t\t\t\t\t\t\t\tvar oGroupInfo = this.data.get(groupId);\n\t\t\t\t\t\t\t\t\treturn oGroupInfo.groupName;\n\t\t\t\t\t\t}\n\t\t\t}]);\n\n\t\t\treturn GroupModel;\n})(_DataModel2.DataModel);\n\n;\n\nexports.GroupModel = GroupModel;"
+    },
+    {
+      "id": 8,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\DataModel.js",
+      "name": "./app/js/DataModel.js",
+      "index": 8,
+      "index2": 4,
+      "size": 1695,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\GroupModel.js",
+      "profile": {
+        "factory": 1202,
+        "building": 225
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 7,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\GroupModel.js",
+          "module": "./app/js/GroupModel.js",
+          "moduleName": "./app/js/GroupModel.js",
+          "type": "cjs require",
+          "userRequest": "./DataModel",
+          "loc": "20:18-40"
+        },
+        {
+          "moduleId": 9,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomModel.js",
+          "module": "./app/js/AtomModel.js",
+          "moduleName": "./app/js/AtomModel.js",
+          "type": "cjs require",
+          "userRequest": "./DataModel",
+          "loc": "20:18-40"
+        },
+        {
+          "moduleId": 10,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomItemModel.js",
+          "module": "./app/js/AtomItemModel.js",
+          "moduleName": "./app/js/AtomItemModel.js",
+          "type": "cjs require",
+          "userRequest": "./DataModel",
+          "loc": "23:17-39"
+        }
+      ],
+      "source": "\"use strict\";\n\nvar _createClass = (function () {\n   function defineProperties(target, props) {\n      for (var i = 0; i < props.length; i++) {\n         var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if (\"value\" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);\n      }\n   }return function (Constructor, protoProps, staticProps) {\n      if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;\n   };\n})();\n\nObject.defineProperty(exports, \"__esModule\", {\n   value: true\n});\n\nfunction _classCallCheck(instance, Constructor) {\n   if (!(instance instanceof Constructor)) {\n      throw new TypeError(\"Cannot call a class as a function\");\n   }\n}\n\nvar DataModel = (function () {\n   function DataModel(mData) {\n      _classCallCheck(this, DataModel);\n\n      if (!this._className) {\n         this._className = DataModel.name;\n      }\n      var sError = this._className + \":constructor need a Map type as parameter\";\n      mData = this._processData(mData);\n      console.assert(mData instanceof Map, sError);\n      this._mData = mData;\n   }\n\n   _createClass(DataModel, [{\n      key: \"_processData\",\n      value: function _processData(oData) {\n         //override it if neccessary\n         return oData;\n      }\n   }, {\n      key: \"data\",\n      get: function get() {\n         return this._mData;\n      },\n      set: function set(value) {\n         throw new Error(this._className + \":- you can not set value to groupData\");\n      }\n   }]);\n\n   return DataModel;\n})();\n\n;\n\nexports.DataModel = DataModel;"
+    },
+    {
+      "id": 9,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomModel.js",
+      "name": "./app/js/AtomModel.js",
+      "index": 9,
+      "index2": 8,
+      "size": 4329,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+      "profile": {
+        "factory": 69,
+        "building": 1306,
+        "dependencies": 561
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 6,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+          "module": "./__tests__/data/rawdata.js",
+          "moduleName": "./__tests__/data/rawdata.js",
+          "type": "cjs require",
+          "userRequest": "../../app/js/AtomModel",
+          "loc": "10:17-50"
+        },
+        {
+          "moduleId": 12,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\PalletModel.js",
+          "module": "./app/js/PalletModel.js",
+          "moduleName": "./app/js/PalletModel.js",
+          "type": "cjs require",
+          "userRequest": "./AtomModel",
+          "loc": "18:17-39"
+        }
+      ],
+      "source": "\"use strict\";\n\nfunction _typeof(obj) { return obj && typeof Symbol !== \"undefined\" && obj.constructor === Symbol ? \"symbol\" : typeof obj; }\n\nvar _createClass = (function () {\n   function defineProperties(target, props) {\n      for (var i = 0; i < props.length; i++) {\n         var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if (\"value\" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);\n      }\n   }return function (Constructor, protoProps, staticProps) {\n      if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;\n   };\n})();\n\nObject.defineProperty(exports, \"__esModule\", {\n   value: true\n});\nexports.AtomModel = undefined;\n\nvar _DataModel2 = require(\"./DataModel\");\n\nvar _AtomItemModel = require(\"./AtomItemModel\");\n\nfunction _classCallCheck(instance, Constructor) {\n   if (!(instance instanceof Constructor)) {\n      throw new TypeError(\"Cannot call a class as a function\");\n   }\n}\n\nfunction _possibleConstructorReturn(self, call) {\n   if (!self) {\n      throw new ReferenceError(\"this hasn't been initialised - super() hasn't been called\");\n   }return call && ((typeof call === \"undefined\" ? \"undefined\" : _typeof(call)) === \"object\" || typeof call === \"function\") ? call : self;\n}\n\nfunction _inherits(subClass, superClass) {\n   if (typeof superClass !== \"function\" && superClass !== null) {\n      throw new TypeError(\"Super expression must either be null or a function, not \" + (typeof superClass === \"undefined\" ? \"undefined\" : _typeof(superClass)));\n   }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;\n} /**\r\n   * @the data model class for the yuxin js, will provide variouse data formates for the application\r\n   * @name AtomModel.js\r\n   * @author \r\n   * @license \r\n   */\n\nvar AtomModel = (function (_DataModel) {\n   _inherits(AtomModel, _DataModel);\n\n   /** mData - data format:\r\n    {\r\n     id: AtomItemModelInstance\r\n    }\r\n    */\n\n   function AtomModel(oData) {\n      _classCallCheck(this, AtomModel);\n\n      //this._className = AtomModel.name;\n      return _possibleConstructorReturn(this, Object.getPrototypeOf(AtomModel).call(this, oData));\n   }\n\n   _createClass(AtomModel, [{\n      key: \"_processData\",\n      value: function _processData(oData) {\n         //translate json data to Map model data\n         var _mData = new Map();\n         Object.keys(oData).forEach((function (key) {\n            var curItem = oData[key];\n            var atomItemModel = new _AtomItemModel.AtomItemModel(key, curItem.name, curItem.width, curItem.height, curItem.groupId, curItem.statusList);\n            _mData.set(key, atomItemModel);\n         }).bind(this));\n         return _mData;\n      }\n   }, {\n      key: \"getDefaultImageById\",\n      value: function getDefaultImageById(id) {\n         console.assert(this.data.has(id), \"AtomModel:\" + id + \" not exsits\");\n         var item = this.data.get(id);\n         return item.defaultStatusImage;\n      }\n   }, {\n      key: \"getImageByIdAndStatus\",\n      value: function getImageByIdAndStatus(id, statusId) {\n         console.assert(this.data.has(id), \"AtomModel:item id -\" + id + \" does not exsited\");\n         var item = this.data.get(id);\n         return item.getStatusImage(statusId);\n      }\n   }, {\n      key: \"getItemNameById\",\n      value: function getItemNameById(id) {\n         var item = this.data.get(id);\n         return item.name;\n      }\n   }, {\n      key: \"getGroupIdByItemId\",\n      value: function getGroupIdByItemId(itemId) {\n         console.assert(this.data.has(itemId), \"AtomModel: item id - \" + itemId + \" does not exsit\");\n         return this.data.get(itemId).groupId;\n      }\n   }, {\n      key: \"getDefaultStatusById\",\n      value: function getDefaultStatusById(itemId) {\n         console.assert(this.data.has(itemId), \"AtomModel-\" + itemId + \" does not exsit\");\n         return this.data.get(itemId).defaultStatus;\n      }\n   }]);\n\n   return AtomModel;\n})(_DataModel2.DataModel);\n\n;\n\nexports.AtomModel = AtomModel;"
+    },
+    {
+      "id": 10,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomItemModel.js",
+      "name": "./app/js/AtomItemModel.js",
+      "index": 10,
+      "index2": 7,
+      "size": 3985,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomModel.js",
+      "profile": {
+        "factory": 562,
+        "building": 609,
+        "dependencies": 1
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 9,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomModel.js",
+          "module": "./app/js/AtomModel.js",
+          "moduleName": "./app/js/AtomModel.js",
+          "type": "cjs require",
+          "userRequest": "./AtomItemModel",
+          "loc": "22:21-47"
+        }
+      ],
+      "source": "\"use strict\";\n\nvar _createClass = (function () {\n   function defineProperties(target, props) {\n      for (var i = 0; i < props.length; i++) {\n         var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if (\"value\" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);\n      }\n   }return function (Constructor, protoProps, staticProps) {\n      if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;\n   };\n})(); /**\r\n       * @the data model class for the yuxin js, will provide variouse data formates for the application\r\n       * @name AtomModel.js\r\n       * @author \r\n       * @license \r\n       */\n\nObject.defineProperty(exports, \"__esModule\", {\n   value: true\n});\nexports.AtomItemModel = undefined;\n\nvar _DataModel = require(\"./DataModel\");\n\nvar _AtomItemStatusModel = require(\"./AtomItemStatusModel\");\n\nfunction _classCallCheck(instance, Constructor) {\n   if (!(instance instanceof Constructor)) {\n      throw new TypeError(\"Cannot call a class as a function\");\n   }\n}\n\nvar AtomItemModel = (function () {\n   function AtomItemModel(id, name, width, height, groupId, aStatusModels) {\n      _classCallCheck(this, AtomItemModel);\n\n      //[this.id,this._name,this.width,this.height,this._groupId] = [...arguments];\n      this.id = id;\n      this._name = name;\n      this.width = width;\n      this.height = height;\n      this._groupId = groupId;\n      this.mStatusModels = this._translateStatusFromArrayToMap(aStatusModels);\n   }\n\n   _createClass(AtomItemModel, [{\n      key: \"_translateStatusFromArrayToMap\",\n      value: function _translateStatusFromArrayToMap(aStatusModels) {\n         var _mRet = new Map();\n         aStatusModels.forEach(function (oStatus) {\n            var id = oStatus.id;\n            var name = oStatus.name;\n            var image = oStatus.image;\n            var isDefault = oStatus.isDefault;\n\n            _mRet.set(id, new _AtomItemStatusModel.AtomItemStatusModel(oStatus.id, name, image, isDefault));\n         });\n         return _mRet;\n      }\n   }, {\n      key: \"isDefaultStatus\",\n      value: function isDefaultStatus(statusId) {\n         console.log(this.mStatusModels.has(statusId), \"AtomItemModel:status id-\" + statusId + \" does not exist\");\n         return this.mStatusModels.get(statusId).isDefault;\n      }\n   }, {\n      key: \"getStatusImage\",\n      value: function getStatusImage(statusId) {\n         console.assert(this.mStatusModels.has(statusId), \"AtomItemModel: status id -\" + statusId + \" does not exsited\");\n         return this.mStatusModels.get(statusId).image;\n      }\n   }, {\n      key: \"getStatusName\",\n      value: function getStatusName(statusId) {\n         console.assert(this.mStatusModels.has(statusId), \"AtomItemModel: status id -\" + statusId + \" does not exsited\");\n         return this.mStatusModels.get(statusId).name;\n      }\n   }, {\n      key: \"defaultStatus\",\n      get: function get() {\n         var that = this;\n         if (this._defaultStatus === undefined) {\n            this.mStatusModels.forEach(function (value) {\n               if (value.isDefault) {\n                  that._defaultStatus = value;\n               }\n            });\n         };\n         console.assert(this._defaultStatus !== undefined, \"AtomItemModel-\" + this.name + \": does not have default status\");\n         return this._defaultStatus;\n      }\n   }, {\n      key: \"groupId\",\n      get: function get() {\n         return this._groupId;\n      }\n   }, {\n      key: \"name\",\n      get: function get() {\n         return this._name;\n      }\n   }, {\n      key: \"defaultStatusImage\",\n      get: function get() {\n         return this.defaultStatus.image;\n      }\n   }, {\n      key: \"defaultStatusId\",\n      get: function get() {\n         return this.defaultStatus.id;\n      }\n   }]);\n\n   return AtomItemModel;\n})();\n\n;\n\nexports.AtomItemModel = AtomItemModel;"
+    },
+    {
+      "id": 11,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomItemStatusModel.js",
+      "name": "./app/js/AtomItemStatusModel.js",
+      "index": 11,
+      "index2": 6,
+      "size": 1529,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomItemModel.js",
+      "profile": {
+        "factory": 5,
+        "building": 230
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 10,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\AtomItemModel.js",
+          "module": "./app/js/AtomItemModel.js",
+          "moduleName": "./app/js/AtomItemModel.js",
+          "type": "cjs require",
+          "userRequest": "./AtomItemStatusModel",
+          "loc": "25:27-59"
+        }
+      ],
+      "source": "\"use strict\";\n\nvar _createClass = (function () {\n  function defineProperties(target, props) {\n    for (var i = 0; i < props.length; i++) {\n      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if (\"value\" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);\n    }\n  }return function (Constructor, protoProps, staticProps) {\n    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;\n  };\n})();\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nfunction _classCallCheck(instance, Constructor) {\n  if (!(instance instanceof Constructor)) {\n    throw new TypeError(\"Cannot call a class as a function\");\n  }\n}\n\nvar AtomItemStatusModel = (function () {\n  function AtomItemStatusModel(id, name, image, isDefault) {\n    _classCallCheck(this, AtomItemStatusModel);\n\n    this.id = id;\n    this.name = name;\n    this.image = image;\n    this._isDefault = isDefault;\n  }\n\n  _createClass(AtomItemStatusModel, [{\n    key: \"isDefault\",\n    get: function get() {\n      return !!this._isDefault;\n    },\n    set: function set(value) {\n      if (this._isDefault === undefined) {\n        this._isDefault = !!value;\n      } else {\n        throw new Error(\"AtomItemStatusModel.isDefault- can not assign value to it\");\n      }\n    }\n  }]);\n\n  return AtomItemStatusModel;\n})();\n\n;\nexports.AtomItemStatusModel = AtomItemStatusModel;"
+    },
+    {
+      "id": 12,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\PalletModel.js",
+      "name": "./app/js/PalletModel.js",
+      "index": 12,
+      "index2": 9,
+      "size": 3346,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+      "profile": {
+        "factory": 70,
+        "building": 1862,
+        "dependencies": 2
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 6,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\__tests__\\data\\rawdata.js",
+          "module": "./__tests__/data/rawdata.js",
+          "moduleName": "./__tests__/data/rawdata.js",
+          "type": "cjs require",
+          "userRequest": "../../app/js/PalletModel",
+          "loc": "12:19-54"
+        }
+      ],
+      "source": "\"use strict\";\n\nvar _createClass = (function () {\n  function defineProperties(target, props) {\n    for (var i = 0; i < props.length; i++) {\n      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if (\"value\" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);\n    }\n  }return function (Constructor, protoProps, staticProps) {\n    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;\n  };\n})();\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.PalletModel = undefined;\n\nvar _AtomModel = require(\"./AtomModel\");\n\nfunction _classCallCheck(instance, Constructor) {\n  if (!(instance instanceof Constructor)) {\n    throw new TypeError(\"Cannot call a class as a function\");\n  }\n}\n\nvar PalletItemModel = function PalletItemModel(id, sName, image) {\n  _classCallCheck(this, PalletItemModel);\n\n  this.id = id;\n  this.name = sName;\n  this.image = image;\n  this.width = 50;\n  this.height = 50;\n};\n\n;\n\nvar PalletModel = (function () {\n  function PalletModel(atomModel, groupModel) {\n    _classCallCheck(this, PalletModel);\n\n    var map = new Map();\n    var _iteratorNormalCompletion = true;\n    var _didIteratorError = false;\n    var _iteratorError = undefined;\n\n    try {\n      for (var _iterator = groupModel.data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {\n        var group = _step.value;\n\n        var groupId = group[0];\n        map.set(groupId, {\n          \"groupName\": groupModel.getGroupNameById(groupId),\n          \"items\": []\n        });\n      }\n    } catch (err) {\n      _didIteratorError = true;\n      _iteratorError = err;\n    } finally {\n      try {\n        if (!_iteratorNormalCompletion && _iterator.return) {\n          _iterator.return();\n        }\n      } finally {\n        if (_didIteratorError) {\n          throw _iteratorError;\n        }\n      }\n    }\n\n    ;\n\n    var _iteratorNormalCompletion2 = true;\n    var _didIteratorError2 = false;\n    var _iteratorError2 = undefined;\n\n    try {\n      for (var _iterator2 = atomModel.data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {\n        var item = _step2.value;\n\n        var itemId = item[0];\n        var groupId = atomModel.getGroupIdByItemId(itemId);\n        var name = atomModel.getItemNameById(itemId);\n        var image = atomModel.getDefaultImageById(itemId);\n        console.assert(map.has(groupId), \"GroupModel does not have groupId-\" + groupId + \" from AtomModel\");\n        map.get(groupId).items.push(new PalletItemModel(itemId, name, image));\n      }\n    } catch (err) {\n      _didIteratorError2 = true;\n      _iteratorError2 = err;\n    } finally {\n      try {\n        if (!_iteratorNormalCompletion2 && _iterator2.return) {\n          _iterator2.return();\n        }\n      } finally {\n        if (_didIteratorError2) {\n          throw _iteratorError2;\n        }\n      }\n    }\n\n    this._mData = map;\n  }\n\n  _createClass(PalletModel, [{\n    key: \"data\",\n    get: function get() {\n      return this._mData;\n    }\n  }]);\n\n  return PalletModel;\n})();\n\nexports.PalletModel = PalletModel;"
+    },
+    {
+      "id": 13,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\pallet.jsx",
+      "name": "./app/js/pallet.jsx",
+      "index": 13,
+      "index2": 12,
+      "size": 2626,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+      "profile": {
+        "factory": 2030,
+        "building": 407
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 5,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+          "module": "./test/js/test.jsx",
+          "moduleName": "./test/js/test.jsx",
+          "type": "cjs require",
+          "userRequest": "../../app/js/pallet.jsx",
+          "loc": "5:14-48"
+        }
+      ],
+      "source": "\n/**\r\n * @Define Pallet Component. The Component is composed by Group Component which is composed by Item Component.\r\n * @name pallet.jsx\r\n * @author Journey\r\n * @license BSD\r\n */\n\n'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Pallet = undefined;\n\nvar _uuid = require('./uuid');\n\n/**\r\n* Depends on UUID function\r\n* @param {} function\r\n* @returns {} \r\n*/\n\n/* Item Component is displayed via an image + text. And will capture the drag event of the element.\r\n   The component depends on html5's drag&drop capability:\r\n   the html5's data attribute - \r\n   The configration data is like:\r\n   {\r\n     src:\"\",\r\n     name:\"\",\r\n     id:\"\",\r\n     type:\"\"\r\n   }\r\n */\n\nvar Item = React.createClass({\n  displayName: 'Item',\n\n  drag: function drag(event) {\n    event.dataTransfer.setData(\"text/plain\", event.target.dataset.id);\n    event.dataTransfer.dropEffect = \"copy\";\n    event.dataTransfer.effectAllowed = \"copyMove\";\n  },\n  render: function render() {\n    return React.createElement(\n      'li',\n      null,\n      'n   ',\n      React.createElement('img', { src: this.props.config.image, 'data-id': this.props.config.id, alt: this.props.config.name, title: this.props.config.name, draggable: 'true', onDragStart: this.drag })\n    );\n  }\n});\n\nvar Group = React.createClass({\n  displayName: 'Group',\n\n  render: function render() {\n    function createItem(oConfig) {\n      return React.createElement(Item, { config: oConfig });\n    };\n    return React.createElement(\n      'div',\n      { className: 'pallet-group' },\n      React.createElement(\n        'h4',\n        null,\n        this.props.title\n      ),\n      React.createElement(\n        'ul',\n        null,\n        this.props.items.map(createItem)\n      )\n    );\n  }\n});\n\nvar Pallet = React.createClass({\n  displayName: 'Pallet',\n\n  render: function render() {\n    var aGroups = [];\n    this.props.model.data.forEach(function (groupModel) {\n      aGroups.push(React.createElement(Group, { title: oGroup.groupName, items: oGroup.items }));\n    });\n    return React.createElement(\n      'div',\n      { className: 'pallet' },\n      React.createElement(\n        'h3',\n        null,\n        '图元列表'\n      ),\n      React.createElement(\n        'div',\n        { className: 'pallet-content' },\n        this.props.model.data.forEach(function (oGroup) {\n          return React.createElement(Group, { title: oGroup.groupName, items: oGroup.items });\n        })\n        /*for(let [groupId, oGroup] of this.props.model){\r\n          <Group title={oGroup.groupName} items={oGroup.items}></Group>\r\n        }*/\n\n      )\n    );\n  }\n});\n\nexports.Pallet = Pallet;"
+    },
+    {
+      "id": 14,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\uuid.js",
+      "name": "./app/js/uuid.js",
+      "index": 14,
+      "index2": 11,
+      "size": 540,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\pallet.jsx",
+      "profile": {
+        "factory": 617,
+        "building": 122
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 13,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\pallet.jsx",
+          "module": "./app/js/pallet.jsx",
+          "moduleName": "./app/js/pallet.jsx",
+          "type": "cjs require",
+          "userRequest": "./uuid",
+          "loc": "16:12-29"
+        },
+        {
+          "moduleId": 15,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\canvas.jsx",
+          "module": "./app/js/canvas.jsx",
+          "moduleName": "./app/js/canvas.jsx",
+          "type": "cjs require",
+          "userRequest": "./uuid",
+          "loc": "13:12-29"
+        },
+        {
+          "moduleId": 16,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\element.jsx",
+          "module": "./app/js/element.jsx",
+          "moduleName": "./app/js/element.jsx",
+          "type": "cjs require",
+          "userRequest": "./uuid",
+          "loc": "13:12-29"
+        }
+      ],
+      "source": "/**\r\n * @Define UUID Component - used to generate the uuid;\r\n * @name uuid.js\r\n * @author journey\r\n * @license BSD\r\n */\n\n\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\nvar uuidTemplate = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx';\nfunction generateUUID() {\n    return uuidTemplate.replace(/[xy]/g, function (c) {\n        var r = crypto.getRandomValues(new Uint8Array(1))[0] % 16 | 0,\n            v = c == 'x' ? r : r & 0x3 | 0x8;\n        return v.toString(16);\n    });\n};\n\nexports.generateUUID = generateUUID;"
+    },
+    {
+      "id": 15,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\canvas.jsx",
+      "name": "./app/js/canvas.jsx",
+      "index": 15,
+      "index2": 15,
+      "size": 2157,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+      "profile": {
+        "factory": 2031,
+        "building": 709,
+        "dependencies": 316
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 5,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\test\\js\\test.jsx",
+          "module": "./test/js/test.jsx",
+          "moduleName": "./test/js/test.jsx",
+          "type": "cjs require",
+          "userRequest": "../../app/js/canvas.jsx",
+          "loc": "7:14-48"
+        }
+      ],
+      "source": "/**\r\n * The Canvas Component. is a drop zone which allowed drop an `pa-element`\r\n * @param {object} yuxin - global object\r\n * @return the Canvas Component\r\n */\n\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Canvas = undefined;\n\nvar _uuid = require(\"./uuid\");\n\nvar _element = require(\"./element.jsx\");\n\nvar _config = require(\"./config\");\n\nvar Canvas = React.createClass({\n  displayName: \"Canvas\",\n\n  getInitialState: function getInitialState() {\n    return {\n      width: 1024,\n      height: 768,\n      gridSize: 10,\n      elements: [],\n      selectedElement: null\n    };\n  },\n  dragOver: function dragOver(evt) {\n    evt.preventDefault();\n    evt.dataTransfer.dropEffect = \"move\";\n  },\n  drop: function drop(event) {\n    var elementType = event.dataTransfer.getData(\"text\");\n    var oElemConfig = this.getElementConfigByType(elementType);\n    this.state.elements.push(oElemConfig);\n    this.setState({ \"elements\": this.state.elements });\n    event.dataTransfer.clearData();\n    event.preventDefault();\n  },\n  getElementConfigByType: function getElementConfigByType(eleType) {\n    var oConfig = _config.ElementsConfig[eleType];\n    if (!oConfig) {}\n    //todo - fixed now\n    return {\n      width: 74,\n      height: 74,\n      x: 70,\n      y: 70,\n      image: \"css/1.jpg\",\n      key: (0, _uuid.generateUUID)()\n    };\n  },\n  onElementUpdate: function onElementUpdate() {\n    console.log(\"on element update event triggered\");\n  },\n  onElementSelectionChange: function onElementSelectionChange(element) {\n    this.setState({ selectedElement: element });\n  },\n  createElement: function createElement(element) {\n    return React.createElement(_element.Element, { config: element, key: element.key, update: \"{this.onElementUpdate} onSelect={this.onSelect}\" });\n  },\n  render: function render() {\n    return React.createElement(\n      \"div\",\n      { className: \"canvas\" },\n      React.createElement(\n        \"svg\",\n        { width: this.state.width, height: this.state.height, onDrop: this.drop, onDragOver: this.dragOver },\n        this.state.elements.map(this.createElement)\n      )\n    );\n  }\n});\n\nexports.Canvas = Canvas;"
+    },
+    {
+      "id": 16,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\element.jsx",
+      "name": "./app/js/element.jsx",
+      "index": 16,
+      "index2": 13,
+      "size": 1430,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\canvas.jsx",
+      "profile": {
+        "factory": 316,
+        "building": 218,
+        "dependencies": 1
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 15,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\canvas.jsx",
+          "module": "./app/js/canvas.jsx",
+          "moduleName": "./app/js/canvas.jsx",
+          "type": "cjs require",
+          "userRequest": "./element.jsx",
+          "loc": "15:15-39"
+        }
+      ],
+      "source": "/**\r\n * The Canvas Component. is a drop zone which allowed drop an `pa-element`\r\n * @param {object} yuxin - global object\r\n * @return the Element Component\r\n */\n\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Element = undefined;\n\nvar _uuid = require(\"./uuid\");\n\nvar Element = React.createClass({\n  displayName: \"Element\",\n\n  createImageMarkup: function createImageMarkup() {\n    return {\n      __html: \"<image x=\\\"0\\\" y=\\\"0\\\" height=\" + this.props.config.height + \" width=\" + this.props.config.width + \" xlink:href=\" + this.props.config.image + \"></image>\"\n    };\n  },\n  toggleSelection: function toggleSelection() {\n    console.log(\"double click Element\");\n  },\n  /**\r\n   * @description render ca-element with properties\r\n   * @param {} function\r\n   * @returns {} \r\n   */\n  render: function render() {\n    //todo:: react does not support image tag now.\n    return React.createElement(\n      \"g\",\n      { onDoubleClick: this.toggleSelection, className: \"ca-element\", transform: \"translate(\" + this.props.config.x + \",\" + this.props.config.y + \")\" },\n      React.createElement(\n        \"g\",\n        { className: \"ca-border\" },\n        React.createElement(\"rect\", { width: this.props.config.width, height: this.props.config.width })\n      ),\n      React.createElement(\"g\", { className: \"ca-img\", dangerouslySetInnerHTML: this.createImageMarkup() })\n    );\n  }\n});\n\nexports.Element = Element;"
+    },
+    {
+      "id": 17,
+      "identifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\config.js",
+      "name": "./app/js/config.js",
+      "index": 17,
+      "index2": 14,
+      "size": 146,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "assets": [],
+      "issuer": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\canvas.jsx",
+      "profile": {
+        "factory": 317,
+        "building": 256
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "reasons": [
+        {
+          "moduleId": 15,
+          "moduleIdentifier": "C:\\Users\\i074615\\Documents\\GitHub\\diagram\\node_modules\\babel-loader\\index.js!C:\\Users\\i074615\\Documents\\GitHub\\diagram\\app\\js\\canvas.jsx",
+          "module": "./app/js/canvas.jsx",
+          "moduleName": "./app/js/canvas.jsx",
+          "type": "cjs require",
+          "userRequest": "./config",
+          "loc": "17:14-33"
+        }
+      ],
+      "source": "\"use strict\";\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar ElementsConfig = {};\n\nexports.ElementsConfig = ElementsConfig;"
+    }
+  ],
+  "filteredModules": 0,
+  "children": []
+}

@@ -1,3 +1,4 @@
+
 SetUp
 =============================================
 1. webpack - npm install webpack -g
@@ -14,6 +15,10 @@ SetUp
 
 
 pain point
+----
+1. test jsx, need react-dom - how 
+2. jsx/js to browser supported code.
+3. use babel + webpack to transform
 
 
 Babel
@@ -25,6 +30,9 @@ Babel
 webpack
 -----------------------------------------------------------
 ### bundler for webmodules
+* target: browser
+* __transforming/bundling/packaging__ just about any resource or asset
+
 Html5
 =============================================================
 svg
@@ -45,7 +53,7 @@ the expected dev mode -
 * module depend easy manage
 
 
-webpack / broserfy
+webpack / browserfy
 ---------------------------------------------------
 webpack + babel + es6 + react
 
@@ -189,6 +197,7 @@ Vimperator
 8. f/F highlight links
 9. d: close tab
 10. O/o: alter / open url
+11. / search, then <CR>, n/N - next/prev,
 
 UML
 ==========================================================
@@ -211,3 +220,15 @@ Questions
 3. jest - require auto mock the functions? how?
 4. Map.keys() return an MapIterator not an array
 5. unit test spy and mock and stub??
+6. js catch assert errors???
+7. how to define custom errors/exceptions
+8. js decorations?
+9. js multi inheritance?
+10. serialize/unserialize the object
+11. set jest options - test
+12. jsx/react/babel/jest/kamra - babel's logical
+
+SubTasks
+--------------
+1. pallet model to pallet.jsx
+

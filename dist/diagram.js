@@ -405,9 +405,11 @@
 
 	"use strict";
 
-	var _pallet = __webpack_require__(6);
+	var _rawdata = __webpack_require__(6);
 
-	var _canvas = __webpack_require__(8);
+	var _pallet = __webpack_require__(13);
+
+	var _canvas = __webpack_require__(15);
 
 	var aGroups = [{
 	  "title": "微网",
@@ -439,12 +441,649 @@
 	ReactDOM.render(React.createElement(
 	  "div",
 	  null,
-	  React.createElement(_pallet.Pallet, { title: "Toolbox", items: aGroups }),
+	  React.createElement(_pallet.Pallet, { model: _rawdata.oPalletModel }),
 	  React.createElement(_canvas.Canvas, null)
 	), document.getElementById('example'));
 
 /***/ },
 /* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.oPalletModel = exports.oAtomModel = exports.oGroupModel = undefined;
+
+	var _GroupModel = __webpack_require__(7);
+
+	var _AtomModel = __webpack_require__(9);
+
+	var _PalletModel = __webpack_require__(12);
+
+	function groupData() {
+	  var map = new Map();
+	  map.set("groupId1", { groupName: "group name 1" });
+	  map.set("groupId2", { groupName: "group name 2" });
+	  return map;
+	};
+
+	function atomData() {
+	  var atomData = {
+	    "item-id-1": {
+	      name: "item name 1",
+	      width: 50,
+	      height: 50,
+	      groupId: "groupId1",
+	      statusList: [{
+	        id: "status-1",
+	        name: "status name 1",
+	        image: "css/1.jpg",
+	        isDefault: true
+	      }, {
+	        id: "status-2",
+	        name: "status name 2",
+	        image: "css/2.jpg",
+	        isDefault: false
+	      }]
+	    },
+	    "item-id-2": {
+	      name: "item name 2",
+	      width: 50,
+	      height: 50,
+	      groupId: "groupId1",
+	      statusList: [{
+	        id: "status-3",
+	        name: "status name 2",
+	        image: "css/3.jpg",
+	        isDefault: true
+	      }]
+	    },
+	    "item-id-3": {
+	      name: "item name 3",
+	      width: 50,
+	      height: 50,
+	      groupId: "groupId2",
+	      statusList: [{
+	        id: "status-3",
+	        name: "status name 3",
+	        image: "css/4.jpg",
+	        isDefault: true
+	      }]
+	    }
+	  };
+	  return atomData;
+	};
+	function groupModel() {
+	  return new _GroupModel.GroupModel(groupData());
+	}
+	function atomModel() {
+	  return new _AtomModel.AtomModel(atomData());
+	}
+
+	var oGroupModel = groupModel();
+	var oAtomModel = atomModel();
+	var oPalletModel = new _PalletModel.PalletModel(oAtomModel, oGroupModel);
+
+	exports.oGroupModel = oGroupModel;
+	exports.oAtomModel = oAtomModel;
+	exports.oPalletModel = oPalletModel;
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+
+	var _createClass = (function () {
+				function defineProperties(target, props) {
+							for (var i = 0; i < props.length; i++) {
+										var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+							}
+				}return function (Constructor, protoProps, staticProps) {
+							if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+				};
+	})();
+
+	Object.defineProperty(exports, "__esModule", {
+				value: true
+	});
+	exports.GroupModel = undefined;
+
+	var _DataModel2 = __webpack_require__(8);
+
+	function _classCallCheck(instance, Constructor) {
+				if (!(instance instanceof Constructor)) {
+							throw new TypeError("Cannot call a class as a function");
+				}
+	}
+
+	function _possibleConstructorReturn(self, call) {
+				if (!self) {
+							throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+				}return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	}
+
+	function _inherits(subClass, superClass) {
+				if (typeof superClass !== "function" && superClass !== null) {
+							throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+				}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	}
+
+	var GroupModel = (function (_DataModel) {
+				_inherits(GroupModel, _DataModel);
+
+				function GroupModel(mData) {
+							_classCallCheck(this, GroupModel);
+
+							//this._className = GroupMOdel.name;
+							return _possibleConstructorReturn(this, Object.getPrototypeOf(GroupModel).call(this, mData));
+				}
+
+				_createClass(GroupModel, [{
+							key: "getGroupNameById",
+							value: function getGroupNameById(groupId) {
+										console.assert(this.data.has(groupId), "GroupModel.getGroupNameById, need a validate groupId");
+										var oGroupInfo = this.data.get(groupId);
+										return oGroupInfo.groupName;
+							}
+				}]);
+
+				return GroupModel;
+	})(_DataModel2.DataModel);
+
+	;
+
+	exports.GroupModel = GroupModel;
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var _createClass = (function () {
+	   function defineProperties(target, props) {
+	      for (var i = 0; i < props.length; i++) {
+	         var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	      }
+	   }return function (Constructor, protoProps, staticProps) {
+	      if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	   };
+	})();
+
+	Object.defineProperty(exports, "__esModule", {
+	   value: true
+	});
+
+	function _classCallCheck(instance, Constructor) {
+	   if (!(instance instanceof Constructor)) {
+	      throw new TypeError("Cannot call a class as a function");
+	   }
+	}
+
+	var DataModel = (function () {
+	   function DataModel(mData) {
+	      _classCallCheck(this, DataModel);
+
+	      if (!this._className) {
+	         this._className = DataModel.name;
+	      }
+	      var sError = this._className + ":constructor need a Map type as parameter";
+	      mData = this._processData(mData);
+	      console.assert(mData instanceof Map, sError);
+	      this._mData = mData;
+	   }
+
+	   _createClass(DataModel, [{
+	      key: "_processData",
+	      value: function _processData(oData) {
+	         //override it if neccessary
+	         return oData;
+	      }
+	   }, {
+	      key: "data",
+	      get: function get() {
+	         return this._mData;
+	      },
+	      set: function set(value) {
+	         throw new Error(this._className + ":- you can not set value to groupData");
+	      }
+	   }]);
+
+	   return DataModel;
+	})();
+
+	;
+
+	exports.DataModel = DataModel;
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+
+	var _createClass = (function () {
+	   function defineProperties(target, props) {
+	      for (var i = 0; i < props.length; i++) {
+	         var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	      }
+	   }return function (Constructor, protoProps, staticProps) {
+	      if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	   };
+	})();
+
+	Object.defineProperty(exports, "__esModule", {
+	   value: true
+	});
+	exports.AtomModel = undefined;
+
+	var _DataModel2 = __webpack_require__(8);
+
+	var _AtomItemModel = __webpack_require__(10);
+
+	function _classCallCheck(instance, Constructor) {
+	   if (!(instance instanceof Constructor)) {
+	      throw new TypeError("Cannot call a class as a function");
+	   }
+	}
+
+	function _possibleConstructorReturn(self, call) {
+	   if (!self) {
+	      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+	   }return call && ((typeof call === "undefined" ? "undefined" : _typeof(call)) === "object" || typeof call === "function") ? call : self;
+	}
+
+	function _inherits(subClass, superClass) {
+	   if (typeof superClass !== "function" && superClass !== null) {
+	      throw new TypeError("Super expression must either be null or a function, not " + (typeof superClass === "undefined" ? "undefined" : _typeof(superClass)));
+	   }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+	} /**
+	   * @the data model class for the yuxin js, will provide variouse data formates for the application
+	   * @name AtomModel.js
+	   * @author 
+	   * @license 
+	   */
+
+	var AtomModel = (function (_DataModel) {
+	   _inherits(AtomModel, _DataModel);
+
+	   /** mData - data format:
+	    {
+	     id: AtomItemModelInstance
+	    }
+	    */
+
+	   function AtomModel(oData) {
+	      _classCallCheck(this, AtomModel);
+
+	      //this._className = AtomModel.name;
+	      return _possibleConstructorReturn(this, Object.getPrototypeOf(AtomModel).call(this, oData));
+	   }
+
+	   _createClass(AtomModel, [{
+	      key: "_processData",
+	      value: function _processData(oData) {
+	         //translate json data to Map model data
+	         var _mData = new Map();
+	         Object.keys(oData).forEach((function (key) {
+	            var curItem = oData[key];
+	            var atomItemModel = new _AtomItemModel.AtomItemModel(key, curItem.name, curItem.width, curItem.height, curItem.groupId, curItem.statusList);
+	            _mData.set(key, atomItemModel);
+	         }).bind(this));
+	         return _mData;
+	      }
+	   }, {
+	      key: "getDefaultImageById",
+	      value: function getDefaultImageById(id) {
+	         console.assert(this.data.has(id), "AtomModel:" + id + " not exsits");
+	         var item = this.data.get(id);
+	         return item.defaultStatusImage;
+	      }
+	   }, {
+	      key: "getImageByIdAndStatus",
+	      value: function getImageByIdAndStatus(id, statusId) {
+	         console.assert(this.data.has(id), "AtomModel:item id -" + id + " does not exsited");
+	         var item = this.data.get(id);
+	         return item.getStatusImage(statusId);
+	      }
+	   }, {
+	      key: "getItemNameById",
+	      value: function getItemNameById(id) {
+	         var item = this.data.get(id);
+	         return item.name;
+	      }
+	   }, {
+	      key: "getGroupIdByItemId",
+	      value: function getGroupIdByItemId(itemId) {
+	         console.assert(this.data.has(itemId), "AtomModel: item id - " + itemId + " does not exsit");
+	         return this.data.get(itemId).groupId;
+	      }
+	   }, {
+	      key: "getDefaultStatusById",
+	      value: function getDefaultStatusById(itemId) {
+	         console.assert(this.data.has(itemId), "AtomModel-" + itemId + " does not exsit");
+	         return this.data.get(itemId).defaultStatus;
+	      }
+	   }]);
+
+	   return AtomModel;
+	})(_DataModel2.DataModel);
+
+	;
+
+	exports.AtomModel = AtomModel;
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () {
+	   function defineProperties(target, props) {
+	      for (var i = 0; i < props.length; i++) {
+	         var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	      }
+	   }return function (Constructor, protoProps, staticProps) {
+	      if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	   };
+	})(); /**
+	       * @the data model class for the yuxin js, will provide variouse data formates for the application
+	       * @name AtomModel.js
+	       * @author 
+	       * @license 
+	       */
+
+	Object.defineProperty(exports, "__esModule", {
+	   value: true
+	});
+	exports.AtomItemModel = undefined;
+
+	var _DataModel = __webpack_require__(8);
+
+	var _AtomItemStatusModel = __webpack_require__(11);
+
+	function _classCallCheck(instance, Constructor) {
+	   if (!(instance instanceof Constructor)) {
+	      throw new TypeError("Cannot call a class as a function");
+	   }
+	}
+
+	var AtomItemModel = (function () {
+	   function AtomItemModel(id, name, width, height, groupId, aStatusModels) {
+	      _classCallCheck(this, AtomItemModel);
+
+	      //[this.id,this._name,this.width,this.height,this._groupId] = [...arguments];
+	      this.id = id;
+	      this._name = name;
+	      this.width = width;
+	      this.height = height;
+	      this._groupId = groupId;
+	      this.mStatusModels = this._translateStatusFromArrayToMap(aStatusModels);
+	   }
+
+	   _createClass(AtomItemModel, [{
+	      key: "_translateStatusFromArrayToMap",
+	      value: function _translateStatusFromArrayToMap(aStatusModels) {
+	         var _mRet = new Map();
+	         aStatusModels.forEach(function (oStatus) {
+	            var id = oStatus.id;
+	            var name = oStatus.name;
+	            var image = oStatus.image;
+	            var isDefault = oStatus.isDefault;
+
+	            _mRet.set(id, new _AtomItemStatusModel.AtomItemStatusModel(oStatus.id, name, image, isDefault));
+	         });
+	         return _mRet;
+	      }
+	   }, {
+	      key: "isDefaultStatus",
+	      value: function isDefaultStatus(statusId) {
+	         console.log(this.mStatusModels.has(statusId), "AtomItemModel:status id-" + statusId + " does not exist");
+	         return this.mStatusModels.get(statusId).isDefault;
+	      }
+	   }, {
+	      key: "getStatusImage",
+	      value: function getStatusImage(statusId) {
+	         console.assert(this.mStatusModels.has(statusId), "AtomItemModel: status id -" + statusId + " does not exsited");
+	         return this.mStatusModels.get(statusId).image;
+	      }
+	   }, {
+	      key: "getStatusName",
+	      value: function getStatusName(statusId) {
+	         console.assert(this.mStatusModels.has(statusId), "AtomItemModel: status id -" + statusId + " does not exsited");
+	         return this.mStatusModels.get(statusId).name;
+	      }
+	   }, {
+	      key: "defaultStatus",
+	      get: function get() {
+	         var that = this;
+	         if (this._defaultStatus === undefined) {
+	            this.mStatusModels.forEach(function (value) {
+	               if (value.isDefault) {
+	                  that._defaultStatus = value;
+	               }
+	            });
+	         };
+	         console.assert(this._defaultStatus !== undefined, "AtomItemModel-" + this.name + ": does not have default status");
+	         return this._defaultStatus;
+	      }
+	   }, {
+	      key: "groupId",
+	      get: function get() {
+	         return this._groupId;
+	      }
+	   }, {
+	      key: "name",
+	      get: function get() {
+	         return this._name;
+	      }
+	   }, {
+	      key: "defaultStatusImage",
+	      get: function get() {
+	         return this.defaultStatus.image;
+	      }
+	   }, {
+	      key: "defaultStatusId",
+	      get: function get() {
+	         return this.defaultStatus.id;
+	      }
+	   }]);
+
+	   return AtomItemModel;
+	})();
+
+	;
+
+	exports.AtomItemModel = AtomItemModel;
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	var _createClass = (function () {
+	  function defineProperties(target, props) {
+	    for (var i = 0; i < props.length; i++) {
+	      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	    }
+	  }return function (Constructor, protoProps, staticProps) {
+	    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	  };
+	})();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	function _classCallCheck(instance, Constructor) {
+	  if (!(instance instanceof Constructor)) {
+	    throw new TypeError("Cannot call a class as a function");
+	  }
+	}
+
+	var AtomItemStatusModel = (function () {
+	  function AtomItemStatusModel(id, name, image, isDefault) {
+	    _classCallCheck(this, AtomItemStatusModel);
+
+	    this.id = id;
+	    this.name = name;
+	    this.image = image;
+	    this._isDefault = isDefault;
+	  }
+
+	  _createClass(AtomItemStatusModel, [{
+	    key: "isDefault",
+	    get: function get() {
+	      return !!this._isDefault;
+	    },
+	    set: function set(value) {
+	      if (this._isDefault === undefined) {
+	        this._isDefault = !!value;
+	      } else {
+	        throw new Error("AtomItemStatusModel.isDefault- can not assign value to it");
+	      }
+	    }
+	  }]);
+
+	  return AtomItemStatusModel;
+	})();
+
+	;
+	exports.AtomItemStatusModel = AtomItemStatusModel;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _createClass = (function () {
+	  function defineProperties(target, props) {
+	    for (var i = 0; i < props.length; i++) {
+	      var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+	    }
+	  }return function (Constructor, protoProps, staticProps) {
+	    if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;
+	  };
+	})();
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.PalletModel = undefined;
+
+	var _AtomModel = __webpack_require__(9);
+
+	function _classCallCheck(instance, Constructor) {
+	  if (!(instance instanceof Constructor)) {
+	    throw new TypeError("Cannot call a class as a function");
+	  }
+	}
+
+	var PalletItemModel = function PalletItemModel(id, sName, image) {
+	  _classCallCheck(this, PalletItemModel);
+
+	  this.id = id;
+	  this.name = sName;
+	  this.image = image;
+	  this.width = 50;
+	  this.height = 50;
+	};
+
+	;
+
+	var PalletModel = (function () {
+	  function PalletModel(atomModel, groupModel) {
+	    _classCallCheck(this, PalletModel);
+
+	    var map = new Map();
+	    var _iteratorNormalCompletion = true;
+	    var _didIteratorError = false;
+	    var _iteratorError = undefined;
+
+	    try {
+	      for (var _iterator = groupModel.data[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	        var group = _step.value;
+
+	        var groupId = group[0];
+	        map.set(groupId, {
+	          "groupName": groupModel.getGroupNameById(groupId),
+	          "items": []
+	        });
+	      }
+	    } catch (err) {
+	      _didIteratorError = true;
+	      _iteratorError = err;
+	    } finally {
+	      try {
+	        if (!_iteratorNormalCompletion && _iterator.return) {
+	          _iterator.return();
+	        }
+	      } finally {
+	        if (_didIteratorError) {
+	          throw _iteratorError;
+	        }
+	      }
+	    }
+
+	    ;
+
+	    var _iteratorNormalCompletion2 = true;
+	    var _didIteratorError2 = false;
+	    var _iteratorError2 = undefined;
+
+	    try {
+	      for (var _iterator2 = atomModel.data[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+	        var item = _step2.value;
+
+	        var itemId = item[0];
+	        var groupId = atomModel.getGroupIdByItemId(itemId);
+	        var name = atomModel.getItemNameById(itemId);
+	        var image = atomModel.getDefaultImageById(itemId);
+	        console.assert(map.has(groupId), "GroupModel does not have groupId-" + groupId + " from AtomModel");
+	        map.get(groupId).items.push(new PalletItemModel(itemId, name, image));
+	      }
+	    } catch (err) {
+	      _didIteratorError2 = true;
+	      _iteratorError2 = err;
+	    } finally {
+	      try {
+	        if (!_iteratorNormalCompletion2 && _iterator2.return) {
+	          _iterator2.return();
+	        }
+	      } finally {
+	        if (_didIteratorError2) {
+	          throw _iteratorError2;
+	        }
+	      }
+	    }
+
+	    this._mData = map;
+	  }
+
+	  _createClass(PalletModel, [{
+	    key: "data",
+	    get: function get() {
+	      return this._mData;
+	    }
+	  }]);
+
+	  return PalletModel;
+	})();
+
+	exports.PalletModel = PalletModel;
+
+/***/ },
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	
@@ -462,7 +1101,7 @@
 	});
 	exports.Pallet = undefined;
 
-	var _uuid = __webpack_require__(7);
+	var _uuid = __webpack_require__(14);
 
 	/**
 	* Depends on UUID function
@@ -489,13 +1128,13 @@
 	    event.dataTransfer.setData("text/plain", event.target.dataset.id);
 	    event.dataTransfer.dropEffect = "copy";
 	    event.dataTransfer.effectAllowed = "copyMove";
-	    //event.target.style.cursor = "move";
 	  },
 	  render: function render() {
 	    return React.createElement(
 	      'li',
 	      null,
-	      React.createElement('img', { src: this.props.config.src, 'data-id': this.props.config.id, alt: this.props.config.name, title: this.props.config.name, draggable: 'true', onDragStart: this.drag })
+	      'n   ',
+	      React.createElement('img', { src: this.props.config.image, 'data-id': this.props.config.id, alt: this.props.config.name, title: this.props.config.name, draggable: 'true', onDragStart: this.drag })
 	    );
 	  }
 	});
@@ -528,21 +1167,22 @@
 	  displayName: 'Pallet',
 
 	  render: function render() {
-	    function createGroup(oGroup) {
-	      return React.createElement(Group, { key: (0, _uuid.generateUUID)(), title: oGroup.title, items: oGroup.items });
-	    };
+	    var aGroups = [];
+	    this.props.model.data.forEach(function (groupModel) {
+	      aGroups.push(React.createElement(Group, { key: (0, _uuid.generateUUID)(), title: groupModel.groupName, items: groupModel.items }));
+	    });
 	    return React.createElement(
 	      'div',
 	      { className: 'pallet' },
 	      React.createElement(
 	        'h3',
 	        null,
-	        this.props.title
+	        '图元列表'
 	      ),
 	      React.createElement(
 	        'div',
 	        { className: 'pallet-content' },
-	        this.props.items.map(createGroup)
+	        aGroups
 	      )
 	    );
 	  }
@@ -551,7 +1191,7 @@
 	exports.Pallet = Pallet;
 
 /***/ },
-/* 7 */
+/* 14 */
 /***/ function(module, exports) {
 
 	/**
@@ -578,7 +1218,7 @@
 	exports.generateUUID = generateUUID;
 
 /***/ },
-/* 8 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -593,11 +1233,11 @@
 	});
 	exports.Canvas = undefined;
 
-	var _uuid = __webpack_require__(7);
+	var _uuid = __webpack_require__(14);
 
-	var _element = __webpack_require__(9);
+	var _element = __webpack_require__(16);
 
-	var _config = __webpack_require__(10);
+	var _config = __webpack_require__(17);
 
 	var Canvas = React.createClass({
 	  displayName: "Canvas",
@@ -607,7 +1247,8 @@
 	      width: 1024,
 	      height: 768,
 	      gridSize: 10,
-	      elements: []
+	      elements: [],
+	      selectedElement: null
 	    };
 	  },
 	  dragOver: function dragOver(evt) {
@@ -638,8 +1279,11 @@
 	  onElementUpdate: function onElementUpdate() {
 	    console.log("on element update event triggered");
 	  },
+	  onElementSelectionChange: function onElementSelectionChange(element) {
+	    this.setState({ selectedElement: element });
+	  },
 	  createElement: function createElement(element) {
-	    return React.createElement(_element.Element, { config: element, key: element.key, update: "{this.onElementUpdate}" });
+	    return React.createElement(_element.Element, { config: element, key: element.key, update: "{this.onElementUpdate} onSelect={this.onSelect}" });
 	  },
 	  render: function render() {
 	    return React.createElement(
@@ -657,7 +1301,7 @@
 	exports.Canvas = Canvas;
 
 /***/ },
-/* 9 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -672,7 +1316,7 @@
 	});
 	exports.Element = undefined;
 
-	var _uuid = __webpack_require__(7);
+	var _uuid = __webpack_require__(14);
 
 	var Element = React.createClass({
 	  displayName: "Element",
@@ -708,7 +1352,7 @@
 	exports.Element = Element;
 
 /***/ },
-/* 10 */
+/* 17 */
 /***/ function(module, exports) {
 
 	"use strict";

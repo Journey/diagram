@@ -4,7 +4,12 @@ jest.dontMock('../../app/js/AtomItemModel');
 var aim = require('../../app/js/AtomItemModel');
 
 describe("AtomItemModel Test",()=>{
-  let [id,name,width,height,groupId] = ["id-1","name-1",50,40,1];
+  var id = "id-1";
+  var name = "name-1";
+  var width = 50;
+  var height = 40;
+  var groupId = 1;
+  
   var aStatusModels = [
     {id:"status-id1",name:"status-name1",image:"image1.jpg",isDefault:false},
     {id:"status-id2",name:"status-name2",image:"image2.jpg",isDefault:true}

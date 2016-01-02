@@ -35,7 +35,7 @@ import {generateUUID} from './uuid';
     render: function(){
       return (
 	<li>
-	  <img src={this.props.config.src} data-id={this.props.config.id} alt={this.props.config.name} title={this.props.config.name} draggable="true" onDragStart={this.drag} />
+n	  <img src={this.props.config.image} data-id={this.props.config.id} alt={this.props.config.name} title={this.props.config.name} draggable="true" onDragStart={this.drag} />
 	</li>
       )
     }
@@ -59,14 +59,17 @@ import {generateUUID} from './uuid';
 
   var Pallet = React.createClass({
     render: function(){
-      function createGroup(oGroup){
-	return <Group key={generateUUID()} title={oGroup.title} items={oGroup.items}></Group>
-      };
+      var aGroups = [];
+      this.props.model.data.forEach( (groupModel)=>{
+	aGroups.push(<Group key={generateUUID()} title={groupModel.groupName} items={groupModel.items}></Group>);
+      });
       return (
 	<div className="pallet">
-	<h3>{this.props.title}</h3>
+	<h3>图元列表</h3>
 	<div className="pallet-content">
-	{this.props.items.map(createGroup)}
+	  {
+	    aGroups
+	  }
 	</div>
 	</div>
       );

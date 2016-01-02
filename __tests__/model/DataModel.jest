@@ -20,6 +20,6 @@ describe("DataModel Test",()=>{
     var ins = new model.DataModel(map);
     expect(()=>{
       ins.data = "lala";
-    }).toThrow("DataModel:- you can not set value to groupData");
+    }).toThrowError("DataModel:- you can not set value to groupData");
   });
 });

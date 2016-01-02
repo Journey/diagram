@@ -4,9 +4,6 @@ import {PropertyModel} from "./PropertyModel";
 import {AtomModel} from "./AtomModel";
 import {GroupModel} from "./GroupModel";
 import {GroupModel} from "./GroupModel";
-import {Pallet} from "./pallet.jsx";
-import {Canvas} from "./canvas.jsx";
-import {Property} from "./property.jsx";
 
 export default class Component{
   constructor(atomData,groupData){
@@ -71,17 +68,6 @@ export default class Component{
       oMap.get(groupId).items.push({id:itemId,name:name,image:image});
     });
     return oMap;
-  };
-  render(domId){
-    console.assert(domId,"Component.render needs an domId as the parameter");
-    /*
-       ReactDOM.render(
-       <div>
-       <Pallet title="Toolbox" items={aGroups}></Pallet>
-       <Canvas></Canvas>
-       </div>,
-       document.getElementById(domId));
-     */
   };
 }
 

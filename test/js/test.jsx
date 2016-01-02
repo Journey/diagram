@@ -1,3 +1,4 @@
+import {oPalletModel} from "../../__tests__/data/rawdata.js";
 import {Pallet} from "../../app/js/pallet.jsx";
 import {Canvas} from "../../app/js/canvas.jsx";
 
@@ -39,7 +40,7 @@ var aGroups = [
 ];
 ReactDOM.render(
   <div>
-    <Pallet title="Toolbox" items={aGroups}></Pallet>
+    <Pallet model={oPalletModel}></Pallet>
     <Canvas></Canvas>
   </div>,
   document.getElementById('example'));

@@ -1,11 +1,11 @@
 class DiagramItemModel{
-  constructor(type_id,status_id,x_position,y_position,widht,height){
+  constructor(type_id,status_id,x_position,y_position,width,height){
     console.assert(type_id !== undefined,`DiagramModel.constructor invalide type ${type_id}`);
-    console.assert(status_id !== undefined,`DiagramModel.constructor invalide type ${status_id}`);
-    console.assert(x_position >= 0,`DiagramModel.constructor invalide x postition ${x_position}`);
+    console.assert(status_id !== undefined,`DiagramModel.constructor invalide status ${status_id}`);
+    console.assert(x_position >= 0,`DiagramModel.constructor invalide x position ${x_position}`);
     console.assert(y_position >= 0,`DiagramModel.constructor invalide y position ${y_position}`);
-    console.assert(width>0,`DiagramModel.constructor invalide type ${width}`);
-    console.assert(height>0,`DiagramModel.constructor invalide type ${height}`);
+    console.assert(width>0,`DiagramModel.constructor invalide width ${width}`);
+    console.assert(height>0,`DiagramModel.constructor invalide height ${height}`);
     
     this.typeId = type_id;
     this.statusId = status_id;

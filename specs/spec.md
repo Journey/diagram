@@ -19,10 +19,6 @@ terms
 * name -
 * status
  
-
-
-
-
 #*canvas* - the drawning area
 
 `canvas` - the whole canvas
@@ -58,6 +54,8 @@ uuid
 * position
 * status -the image may different if the status is changed
 
+> single responsibility
+> 连接点： 绑点， text: 名字，position
 ## characteristic
 * draggable - when dragged will align the icon to the latest grid (top-left)
 * resize
@@ -219,6 +217,8 @@ need a dia-models which used to restore the canvas, the dia-models is empty by d
 	}
 }
 ```
+
+* **property-models**
 
 
 
