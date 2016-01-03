@@ -52,6 +52,14 @@ class AtomModel extends DataModel{
 	console.assert(this.data.has(itemId),`AtomModel-${itemId} does not exsit`);
 	return this.data.get(itemId).defaultStatus;
     };
+    getImageSizeById(itemId){
+	console.assert(this.data.has(itemId),`AtomModel-${itemId} does not exsit`);
+	var item = this.data.get(itemId);
+	return {
+	    width: item.width,
+	    height: item.height
+	};
+    };
 };
 
 export {AtomModel};

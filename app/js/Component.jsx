@@ -16,7 +16,11 @@ var Component = React.createClass({
 	  <Pallet model={this.props.model.palletModel}></Pallet>
 	</div>
 	<div className="mid-col">
-	  <Canvas model={this.props.model.canvasModel}></Canvas>
+	  <Canvas
+		  model={this.props.model.canvasModel}
+		  getElementImageById={this.props.model.getElementDefaultImageById.bind(this.props.model)}
+		  getElementSizeById={this.props.model.getElementImageSizeById.bind(this.props.model)}>
+	  </Canvas>
 	</div>
 	<div className="last-col">
 	  <Property model={this.props.model.propertyModel}></Property>

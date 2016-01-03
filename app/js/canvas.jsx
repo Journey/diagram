@@ -6,7 +6,6 @@
 "use strict";
 import {generateUUID} from "./uuid";
 import {Element} from "./element.jsx";
-import {ElementsConfig} from "./config";
 var Canvas = React.createClass({
   getInitialState: function(){
     return {
@@ -14,6 +13,7 @@ var Canvas = React.createClass({
 	height: 768,
 	gridSize: 10,
       elements:[],
+      links:[],
       selectedElement: null
     }
   },
@@ -23,25 +23,28 @@ var Canvas = React.createClass({
   },
   drop: function(event){
     var elementType = event.dataTransfer.getData("text");
-    var oElemConfig = this.getElementConfigByType(elementType);
-    this.state.elements.push(oElemConfig);
+
+    var elementImage = this.props.getElementImageById(elementType);
+    var elementSize = this.props.getElementSizeById(elementType);
+    var elementPosition = this.getPosition(event);
+    
+    this.state.elements.push({
+      width: elementSize.width,
+      height: elementSize.height,
+      x: elementPosition.x,
+      y: elementPosition.y,
+      image:elementImage.image,
+      typeId:elementType,
+      key:generateUUID()
+    });
     this.setState({"elements": this.state.elements});
     event.dataTransfer.clearData();
     event.preventDefault();
   },
-  getElementConfigByType: function(eleType){
-    var oConfig = ElementsConfig[eleType];
-    if(!oConfig){
-      
-    }
-    //todo - fixed now
+  getPosition: function(evt){
     return {
-      width: 74,
-      height: 74,
-      x: 70,
-      y: 70,
-      image:"css/1.jpg",
-      key: generateUUID()
+      x: 30,
+      y: 40
     };
   },
   onElementUpdate: function(){

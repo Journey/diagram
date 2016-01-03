@@ -9,6 +9,16 @@ function groupData(){
   return map;
 };
 
+function jsonGroupData(){
+    return {
+	"groupId1":{"groupName": "group name 1"},
+	"groupId2":{"groupName": "group name 2"}
+    };
+}
+function jsonAtomData(){
+    return atomData();
+}
+
 function atomData(){
   var atomData = {
     "item-id-1":{
@@ -67,4 +77,4 @@ var oGroupModel = groupModel();
 var oAtomModel = atomModel();
 var oPalletModel = new PalletModel(oAtomModel, oGroupModel);
 
-export {groupData,atomData,oGroupModel, oAtomModel, oPalletModel};
+export {jsonGroupData,jsonAtomData,oGroupModel, oAtomModel, oPalletModel};

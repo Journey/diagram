@@ -208,15 +208,18 @@ need a dia-models which used to restore the canvas, the dia-models is empty by d
 	elements:{
 		"uuid":{
 			typeId:"",
+			image:"",
 			statusId:"",
 			xPosition:10,
 			yPosition:10,
 			width:10,
 			height:10
 		}
-	}
+	}，
+	links:{}	
 }
 ```
+
 
 * **property-models**
 
