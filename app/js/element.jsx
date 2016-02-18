@@ -9,6 +9,7 @@ import {Actions} from "./Actions";
 import {Store} from "./Store";
 import {Utility} from "./utility";
 import {Position} from "./Position";
+import {MagnetPorts} from "./MagnetPorts.jsx";
 var Element = React.createClass({
   getInitialState: function() {
     return {
@@ -17,7 +18,7 @@ var Element = React.createClass({
     };
   },
   /**
-   * event triggered when double clicked on the 
+   * event triggered when double clicked on the element
    */
   dbclick: function(){
     Actions.changeSelection(this);
@@ -50,6 +51,7 @@ var Element = React.createClass({
 	<g className="ca-img">
 	  <image x="0" y="0" height={this.props.config.height} width={this.props.config.width} xlinkHref={this.props.config.image}></image>
 	</g>
+	<MagnetPorts />
       </g>
     );
   }

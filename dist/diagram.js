@@ -84,7 +84,7 @@
 
 
 	// module
-	exports.push([module.id, "*[draggable=true]{\r\n    -moz-user-select:none;\r\n    -khtml-user-drag: element;\r\n    -webkit-user-drag: element;\r\n    -khtml-user-select: none;\r\n    -webkit-user-select: none;\r\n    cursor: move;\r\n}\r\n.diagram-component{\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n.diagram-component>div{\r\n    border: 1px solid #ccc;\r\n}\r\n.first-col{\r\n    width: 300px;\r\n}\r\n.mid-col{\r\n    flex-grow: 1;\r\n}\r\n.last-col{\r\n    width: 300px;\r\n}\r\n\r\n\r\n/*canvas begin*/\r\n.ca-grids path{\r\n    stroke: #ccc;\r\n    stroke-opacity: 0.3;\r\n}", ""]);
+	exports.push([module.id, "*[draggable=true]{\r\n    -moz-user-select:none;\r\n    -khtml-user-drag: element;\r\n    -webkit-user-drag: element;\r\n    -khtml-user-select: none;\r\n    -webkit-user-select: none;\r\n    cursor: move;\r\n}\r\n.diagram-component{\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n.diagram-component>div{\r\n    border: 1px solid #ccc;\r\n}\r\n.first-col{\r\n    width: 300px;\r\n}\r\n.mid-col{\r\n    flex-grow: 1;\r\n}\r\n.last-col{\r\n    width: 300px;\r\n}\r\n\r\n.pallet img{\r\n    width: 50px;\r\n    height: 50px;\r\n}\r\n\r\n\r\n/*canvas begin*/\r\n.ca-grids path{\r\n    stroke: #ccc;\r\n    stroke-opacity: 0.3;\r\n}", ""]);
 
 	// exports
 
@@ -1431,7 +1431,7 @@
 
 	var _canvas = __webpack_require__(25);
 
-	var _property = __webpack_require__(30);
+	var _property = __webpack_require__(31);
 
 	var Component = React.createClass({
 	  displayName: "Component",
@@ -1953,7 +1953,7 @@
 
 	var _element = __webpack_require__(26);
 
-	var _Grid = __webpack_require__(29);
+	var _Grid = __webpack_require__(30);
 
 	var _utility = __webpack_require__(28);
 
@@ -2093,6 +2093,8 @@
 
 	var _Position = __webpack_require__(24);
 
+	var _MagnetPorts = __webpack_require__(29);
+
 	var Element = React.createClass({
 	  displayName: "Element",
 
@@ -2103,7 +2105,7 @@
 	    };
 	  },
 	  /**
-	   * event triggered when double clicked on the 
+	   * event triggered when double clicked on the element
 	   */
 	  dbclick: function dbclick() {
 	    _Actions.Actions.changeSelection(this);
@@ -2140,7 +2142,8 @@
 	        "g",
 	        { className: "ca-img" },
 	        React.createElement("image", { x: "0", y: "0", height: this.props.config.height, width: this.props.config.width, xlinkHref: this.props.config.image })
-	      )
+	      ),
+	      React.createElement(_MagnetPorts.MagnetPorts, null)
 	    );
 	  }
 	});
@@ -2214,19 +2217,78 @@
 
 /***/ },
 /* 29 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * @fileOverview MangnentPorts Class: use in ca-element which is used to draw lines between ca-elements
+	 * @name MagnetPorts.jsx
+	 * @author your name <journey@gmail.com>
+	 * @license TBD
+	 */
 
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	/**
-	 * @grid lines for canvas
-	 * @name LineForCanvas.jsx
-	 * @author 
-	 * @license 
-	 */
+	exports.MagnetPorts = undefined;
+
+	var _uuid = __webpack_require__(17);
+
+	var _Actions = __webpack_require__(27);
+
+	var _Store = __webpack_require__(18);
+
+	var _utility = __webpack_require__(28);
+
+	var _Position = __webpack_require__(24);
+
+	var MagnetPorts = React.createClass({
+	  displayName: "MagnetPorts",
+
+	  getPositions: function getPositions() {
+	    var width = this.props.width;
+	    var height = this.props.height;
+	    width = width ? width : 50;
+	    height = height ? height : 50;
+	    var positions = [];
+	    positions.push({ x: width / 2, y: 0 });
+	    positions.push({ x: width, y: height / 2 });
+	    positions.push({ x: width / 2, y: height });
+	    positions.push({ x: 0, y: height / 2 });
+	    return positions;
+	  },
+
+	  /**
+	   * @description render MagnetPorts
+	   * @param {} function
+	   * @returns {} 
+	   */
+	  render: function render() {
+	    return React.createElement(
+	      "g",
+	      { className: "magnet-ports" },
+	      this.getPositions().map(function (position) {
+	        return React.createElement("circle", { r: "6", key: (0, _uuid.generateUUID)(), fill: "f1c40f", stroke: "#000", opcity: "0.9", transform: "translate(" + position.x + "," + position.y + ")" });
+	      })
+	    );
+	  }
+	});
+
+	exports.MagnetPorts = MagnetPorts;
+
+/***/ },
+/* 30 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.Grid = undefined;
+
+	var _uuid = __webpack_require__(17);
 
 	var Grid = React.createClass({
 	  displayName: "Grid",
@@ -2239,14 +2301,30 @@
 	    //generat vertical lines
 	    for (var inx = 1, count = width / gridSize; inx < count; inx++) {
 	      var line = "M" + inx * gridSize + " 0 v" + height + " Z";
-	      lines.push(React.createElement("path", { d: line, className: "grid-line grid-v-line" }));
+	      lines.push(React.createElement("path", { key: (0, _uuid.generateUUID)(), d: line, className: "grid-line grid-v-line" }));
 	    }
 	    //generate horizontal lines
 	    for (var inx = 1, count = height / gridSize; inx < count; inx++) {
 	      var line = "M0 " + inx * gridSize + " h" + width;
-	      lines.push(React.createElement("path", { d: line, className: "grid-line grid-h-line" }));
+	      lines.push(React.createElement("path", { key: (0, _uuid.generateUUID)(), d: line, className: "grid-line grid-h-line" }));
 	    }
 	    return lines;
+	  },
+	  getPoints: function getPoints() {
+	    var width = this.props.width;
+	    var height = this.props.height;
+	    var gridSize = this.props.gridSize;
+	    var points = [];
+	    //generat vertical lines
+	    for (var inx = 1, count = width / gridSize; inx < count; inx++) {
+	      var x = inx * gridSize - 0.5;
+	      for (var _inx = 1, _count = height / gridSize; _inx < _count; _inx++) {
+	        var y = _inx * gridSize - 0.5;
+	        var translate = "translate(" + x + "," + y + ")";
+	        points.push(React.createElement("circle", { key: (0, _uuid.generateUUID)(), className: "port", opcity: "0.9", fill: "#f1c40f", transform: translate, r: "1" }));
+	      }
+	    }
+	    return points;
 	  },
 	  render: function render() {
 	    return React.createElement(
@@ -2255,12 +2333,17 @@
 	      this.getLines()
 	    );
 	  }
-	});
+	}); /**
+	     * @grid lines for canvas
+	     * @name LineForCanvas.jsx
+	     * @author 
+	     * @license 
+	     */
 
 	exports.Grid = Grid;
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

@@ -235,6 +235,7 @@ Pending Questions -
 * grid system
 * property area models
 * interaction with property area
+* in Grid.jsx: use points is slower than use lines? 
 
 
 UML related
@@ -245,8 +246,12 @@ UML related
 4. state change
 
 
+
 Line
 ------
 
 * element has magnet point
 * line has 
+
+
+Progress: magnet ports
