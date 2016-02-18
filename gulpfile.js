@@ -17,10 +17,9 @@ gulp.task('server', function() {
             if (error !== null) {
                 console.log("error when start server:" + error);
             } else {
-                console.log("stdout:" + stdout)
+                console.log("stdout:" + stdout);
             }
-        }
-    )
+        });
 });
 
 var files = [];
@@ -40,5 +39,5 @@ gulp.task("watch", function() {
         .pipe(karma({
             configFile: "karma.config.js",
             action: 'watch'
-        }))
+        }));
 });

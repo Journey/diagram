@@ -18,7 +18,8 @@ terms
 * id - 
 * name -
 * status
- 
+
+
 #*canvas* - the drawning area
 
 `canvas` - the whole canvas
@@ -224,4 +225,28 @@ need a dia-models which used to restore the canvas, the dia-models is empty by d
 * **property-models**
 
 
+Pending Questions -
+------
+* data flow -
++ state or property??
++ call back?eventbus?or others?
+* serialization - toJson, drawFromJson
+* router
+* grid system
+* property area models
+* interaction with property area
 
+
+UML related
+---
+1. data model
+2. class relationship
+3. interaction between differenct component
+4. state change
+
+
+Line
+------
+
+* element has magnet point
+* line has 

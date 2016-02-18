@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: './',
 
 
     // frameworks to use
@@ -15,8 +15,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'app/js/**.js',
-        'specs/**/*.js'
+        'app/libs/react.js',
+        'app/libs/react-dom.js',
+	'specs/*.spec.js'
     ],
 
 
@@ -31,8 +32,38 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-
+	//"app/js/*.js$":['babel','webpack'],
+	//"app/js/*.jsx$":['babel','webpack'],
+	"/Users/i074615/Documents/GitHub/diagram/specs/*.spec.js":['webpack','sourcemap']
     },
+      webpack:{
+	  devtool:'inline-source-map',
+	  module:{
+	      loaders:[
+		  {
+		      exclude:/node_modules/,
+		      loader:'babel-loader',
+		      test:/\.jsx?$/
+		  }
+	      ]
+	  }
+      },
+      webpackMiddleware: {
+	  noInfo: true,
+      },
+      babelPreprocessor:{
+	  options:{
+	      presets: ['es2015','react'],
+	      sourceMap:'inline'
+	  },
+	  filename: function (file) {
+	      return file.originalPath;
+              return file.originalPath.replace(/\.js$/, '.es5.js');
+	  },
+	  sourceFileName: function (file) {
+              return file.originalPath;
+	  }
+      },
 
 
     // test results reporter to use
@@ -58,7 +89,7 @@ module.exports = function(config) {
     autoWatch: true,
 
 
-    // start these browsers
+    // start these browsers - Chrome,PhantomJS
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
 

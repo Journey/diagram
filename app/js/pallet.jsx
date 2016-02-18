@@ -8,7 +8,8 @@
 
 'use strict';
 import {generateUUID} from './uuid';
- /**
+import {Position} from './Position';
+/**
 * Depends on UUID function
 * @param {} function
 * @returns {} 
@@ -28,6 +29,7 @@ import {generateUUID} from './uuid';
   
   var Item = React.createClass({
     drag: function(event){
+      Position.logMistakes(event, ReactDOM.findDOMNode(this) );
       event.dataTransfer.setData("text/plain", event.target.dataset.id);
       event.dataTransfer.dropEffect = "copy";
       event.dataTransfer.effectAllowed = "copyMove";

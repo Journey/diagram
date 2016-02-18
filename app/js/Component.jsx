@@ -5,10 +5,17 @@
  */
 "use strict";
 import {generateUUID} from "./uuid";
+import {Store} from "./Store";
 import {Pallet} from "./pallet.jsx";
 import {Canvas} from "./canvas.jsx";
 import {Property} from "./property.jsx";
 var Component = React.createClass({
+  componentDidMount: function(){
+    //Store.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    //Store.removeChangeListener(this._onChange);
+  },
   render: function(){
     return (
       <div className="diagram-component">

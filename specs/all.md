@@ -52,6 +52,11 @@ how jsx work with requiresjs - need plugins
 the expected dev mode -
 * module depend easy manage
 
+DOM
+---
+* how to get the position of the element, relative to the document node?
+getBoundingClientRect/getClientRects
+
 
 webpack / browserfy
 ---------------------------------------------------
@@ -91,7 +96,8 @@ ES6
 # template string
 `this is ${this.test}`
  
-# const
+ # const
+ 意味着变量标示符的值只能赋值一次   
 const a = 5;
 
 
@@ -170,6 +176,21 @@ the common compoent in the top level
 + add inverse data flow  
 so the state change event will be passed from the common component in the top level too.
 
+# Flux
+the view progates an action to a central diapatcher, to the various stores(holds variouse data and business logic) which update all of the views that are affected.
+* Dispatcher - simple mechanism for distributing the action to the stores.
+* Store - contain the application state and logic. registeters itselt with diapatcher and provide it witha a callback - action as prameter,update the state of the store based on action, the n>**broadcast** an event decaring the state changed, so the view will query the new state and update themslves.
+* View -
+* controller-view: top,  get the data from the storesand to pass this data down the chain of its desendants.
+* actor - privides the dispatch with a new action
+
+Dispatcher - central hub
+Store - depend on Dispatcher/(Constants),register the callback to the dispatcher
+View - depends on the Store - usually register the callback to Sotres EventEmmit Channel.
+Action - depend on Dispatcher, provide interface to ui, the interface will call dispatch method
+
+# Redux
+
 
 
 # searchable product data table using react
@@ -199,6 +220,14 @@ Vimperator
 10. O/o: alter / open url
 11. / search, then <CR>, n/N - next/prev,
 
+JS
+============
+1. Object.assign(target, ...sources)
+2. Promise - new Promise(execute)/(function(success,fail){})
+   Promise.all/race/resolve/reject
+   Promise.prototype.then(success,fail)
+   Promise.prototype.catch(callback)
+   Promise.prototype.catch(fail)
 UML
 ==========================================================
 ## specification
@@ -227,6 +256,7 @@ Questions
 10. serialize/unserialize the object
 11. set jest options - test
 12. jsx/react/babel/jest/kamra - babel's logical
+13. **extend react to support svg images**
 
 SubTasks
 --------------
@@ -234,3 +264,57 @@ SubTasks
 
 
 orthogonal/ manhattan/metro router
+
+jest - slow, why?
+karma - unit test + babel + webpack
+
+
+OOP
+---
+* open/close priciple,开闭原则 - 对扩展开放，对修改关闭。information hidding(信息隐藏)。
+利用抽象类，接口 + 继承实现
+description 1: Meyer's open/closed principle  
+	对修改关闭-  
+		前提是模块是well-defined, statble description(the interface in the sense of information hiding); 有一个定义良好，描述清晰的接口.
+		在这一原则下，当该模块被其他模块引用之后，该模块不该发生改动
+	对扩展open - add fields/functions
+
+description 2: Polymorphic open/close principle.接口/抽象类不会变， 实现可变  
+	user abstract class - define interface, and the infterface is closed.
+	use inheritance from abstrat base classes as the open
+
+* Liskov substitution principle,李氏替换原则 -
+问题由来 - FunctionA is solved by Class A; Function(FunctionA & FunctionA') is the extsion of FunctionA which solved by Class  A', and A' is the extision of A, then A' may break Function  
+`Let q(x) be a property provable about objects x of type T. Then q(y) should be true for objects y of type S where S is a subtype of T.`
+子类可以增加自己的方法，但是不可以覆盖父类的非抽象方法，如果重写的话，要保证输入参数（前置条件）比父类的宽松，输出参数（后置条件）比父类的严格
+解决方式 - Design By Contract.
+Precondation, function invocation, PostCondation
+Invariant
+
+针对type/subtype
+
+contravariance - method arguments in the subtype 逆变  
+convariance - return type in the subtyp 协变  
+invariants - 不变  
+
+behavioral subtype c#中的泛型  
+
+
+面向对象，面向过程，
+隔离复杂度的影响
+结构化编程 -  从计算机的角度？？？
+
+编程描述的对象是什么？
+	真实世界
+	需求世界
+
+问题域的描述手段
+
+建模
+对象，关系，性质
+
+IS-A, HAS-A, LIKE-A
+
+特征，属性，类型
+本质  <?> 所能接受的操作
+SCIP

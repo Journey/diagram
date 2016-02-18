@@ -22,3 +22,9 @@
 .last-col{
     width: 300px;
 }
+
+/*canvas begin*/
+.ca-grids path{
+    stroke: #aaa;
+    stroke-opacity: 0.3;
+}

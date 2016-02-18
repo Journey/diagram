@@ -84,7 +84,7 @@
 
 
 	// module
-	exports.push([module.id, "*[draggable=true]{\r\n    -moz-user-select:none;\r\n    -khtml-user-drag: element;\r\n    -webkit-user-drag: element;\r\n    -khtml-user-select: none;\r\n    -webkit-user-select: none;\r\n    cursor: move;\r\n}\r\n.diagram-component{\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n.diagram-component>div{\r\n    border: 1px solid #ccc;\r\n}\r\n.first-col{\r\n    width: 300px;\r\n}\r\n.mid-col{\r\n    flex-grow: 1;\r\n}\r\n.last-col{\r\n    width: 300px;\r\n}\r\n", ""]);
+	exports.push([module.id, "*[draggable=true]{\r\n    -moz-user-select:none;\r\n    -khtml-user-drag: element;\r\n    -webkit-user-drag: element;\r\n    -khtml-user-select: none;\r\n    -webkit-user-select: none;\r\n    cursor: move;\r\n}\r\n.diagram-component{\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n.diagram-component>div{\r\n    border: 1px solid #ccc;\r\n}\r\n.first-col{\r\n    width: 300px;\r\n}\r\n.mid-col{\r\n    flex-grow: 1;\r\n}\r\n.last-col{\r\n    width: 300px;\r\n}\r\n\r\n\r\n/*canvas begin*/\r\n.ca-grids path{\r\n    stroke: #ccc;\r\n    stroke-opacity: 0.3;\r\n}", ""]);
 
 	// exports
 
@@ -1419,45 +1419,53 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-			value: true
+	  value: true
 	});
 	exports.Component = undefined;
 
 	var _uuid = __webpack_require__(17);
 
-	var _pallet = __webpack_require__(18);
+	var _Store = __webpack_require__(18);
 
-	var _canvas = __webpack_require__(19);
+	var _pallet = __webpack_require__(23);
 
-	var _property = __webpack_require__(21);
+	var _canvas = __webpack_require__(25);
+
+	var _property = __webpack_require__(30);
 
 	var Component = React.createClass({
-			displayName: "Component",
+	  displayName: "Component",
 
-			render: function render() {
-					return React.createElement(
-							"div",
-							{ className: "diagram-component" },
-							React.createElement(
-									"div",
-									{ className: "first-col" },
-									React.createElement(_pallet.Pallet, { model: this.props.model.palletModel })
-							),
-							React.createElement(
-									"div",
-									{ className: "mid-col" },
-									React.createElement(_canvas.Canvas, {
-											model: this.props.model.canvasModel,
-											getElementImageById: this.props.model.getElementDefaultImageById.bind(this.props.model),
-											getElementSizeById: this.props.model.getElementImageSizeById.bind(this.props.model) })
-							),
-							React.createElement(
-									"div",
-									{ className: "last-col" },
-									React.createElement(_property.Property, { model: this.props.model.propertyModel })
-							)
-					);
-			}
+	  componentDidMount: function componentDidMount() {
+	    //Store.addChangeListener(this._onChange);
+	  },
+	  componentWillUnmount: function componentWillUnmount() {
+	    //Store.removeChangeListener(this._onChange);
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      "div",
+	      { className: "diagram-component" },
+	      React.createElement(
+	        "div",
+	        { className: "first-col" },
+	        React.createElement(_pallet.Pallet, { model: this.props.model.palletModel })
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "mid-col" },
+	        React.createElement(_canvas.Canvas, {
+	          model: this.props.model.canvasModel,
+	          getElementImageById: this.props.model.getElementDefaultImageById.bind(this.props.model),
+	          getElementSizeById: this.props.model.getElementImageSizeById.bind(this.props.model) })
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "last-col" },
+	        React.createElement(_property.Property, { model: this.props.model.propertyModel })
+	      )
+	    );
+	  }
 	});
 
 	exports.Component = Component;
@@ -1493,6 +1501,262 @@
 /* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	   value: true
+	});
+	exports.Store = undefined;
+
+	var _AppDispatcher = __webpack_require__(19);
+
+	var _EventEmitter = __webpack_require__(21);
+
+	var _Constants = __webpack_require__(22);
+
+	var CHANGE_EVENT = "change"; /**
+	                              * @fileOverview The Store for the component. used to bridge the dispatch and the view.
+	                              * @name Store.js
+	                              * @author Journey
+	                              * @license TBD
+	                              */
+
+	var _selectedElement = null; //null mean no element is selected
+	var Store = Object.assign({}, _EventEmitter.EventEmitter.prototype, {
+	   /**
+	    * determine if the selection change on the canvas area.
+	    * @param {ca-element} element
+	    * @returns {bool} 
+	    */
+	   isSelectionChanged: function isSelectionChanged(element) {
+	      if (_selectedElement === element) {
+	         return false;
+	      }
+	      return true;
+	   },
+	   /**
+	    * set the selected element to new element.
+	    * @param {ca-element} element
+	    */
+	   setSelection: function setSelection(element) {
+	      _selectedElement = element;
+	   },
+	   emitChange: function emitChange() {
+	      this.emit(CHANGE_EVENT);
+	   },
+	   addRepositionListener: function addRepositionListener(key, callback) {},
+	   removeRepositionListener: function removeRepositionListener(key, callback) {},
+	   emitReposition: function emitReposition(key, position) {},
+	   addChangeListener: function addChangeListener(callback) {
+	      this.on(CHANGE_EVENT, callback);
+	   },
+	   removeChangeListener: function removeChangeListener(callback) {
+	      this.removeListener(CHANGE_EVENT, callback);
+	   }
+	});
+
+	_AppDispatcher.AppDispatcher.register(function (action) {
+	   switch (action.actionType) {
+	      case _Constants.Constants.SELECTION_CHANGE:
+	         //emit the changed to the view
+	         //Store.();
+	         break;
+	   }
+	});
+
+	exports.Store = Store;
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.AppDispatcher = undefined;
+
+	var _Dispatcher = __webpack_require__(20);
+
+	var AppDispatcher = Object.assign({}, _Dispatcher.Dispatcher.prototype, {
+
+	  /**
+	   * A bridge function between the views and the dispatcher, marking the action as 
+	   * a view action.
+	   * @param {object} action The data coming from the view.
+	   */
+	  handleViewAction: function handleViewAction(action) {
+	    this.dispatch({
+	      source: "VIEW_ACTION",
+	      action: action
+	    });
+	  }
+	}); /**
+	     * @fileOverview Dispatcher instance on app level
+	     * @name AppDispatcher.js
+	     * @author Journey
+	     * @license TBD
+	     */
+
+	exports.AppDispatcher = AppDispatcher;
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/**
+	 * @fileOverview used to dispatch the 
+	 * @name Dispatcher.js
+	 * @author 
+	 * @license 
+	 */
+
+	var Dispatcher = function Dispatcher() {};
+	var _callbacks = [];
+	Object.assign(Dispatcher.prototype, {
+	  /**
+	   * @fileOverview Register a Store's callback so that it maybe invoked by an action.
+	   *  will be used within the stores to register each store's callback.
+	   * @param {} callback
+	   * @returns {} 
+	   */
+	  register: function register(callback) {
+	    _callbacks.push(callback);
+	    return _callbacks.length - 1;
+	  },
+	  /**
+	   * dispatch - will be used within the actions to trigger the invocation of the callbacks
+	   * @param {object} payload The data from the action
+	   */
+	  dispatch: function dispatch(payload) {
+	    var resolves = [];
+	    var rejects = [];
+	    var _promised = _callbacks.map(function (_, inx) {
+	      return new Promise(function (resolve, reject) {
+	        resolves[inx] = resolve;
+	        rejects[inx] = reject;
+	      });
+	    });
+	    _callbacks.forEach(function (callback, i) {
+	      Promise.resolve(callback(payload)).then(function () {
+	        resolves[i](payload);
+	      }).catch(function () {
+	        rejects[i](payload);
+	      });
+	    });
+	    _promised = [];
+	  },
+	  /**
+	   * remove the callback by token
+	   * @param {string} id Token
+	   */
+	  unregister: function unregister(id) {},
+	  /**
+	   *  
+	   * @param {array} promiseIndexed
+	   * @param {function} callback
+	   */
+	  waitFor: function waitFor(promiseIndexes, callback) {
+	    var slectedPromises = promiseIndexes.map(function (index) {
+	      //todo:: transform to promises
+	      return _callbacks[index];
+	    });
+	    return Promise.all(selectedPromises).then(callback);
+	  },
+	  /**
+	   * the status of the Dispatcher
+	   */
+	  isDispatching: function isDispatching() {}
+	});
+
+	exports.Dispatcher = Dispatcher;
+
+/***/ },
+/* 21 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/**
+	 * @fileOverview the simple version of EventEmmiter
+	 * @name EventEmitter.js
+	 * @author Journey
+	 * @license 
+	 */
+	var _registration = new Map();
+	var EventEmitter = function EventEmitter() {};
+	Object.assign(EventEmitter.prototype, {
+	  /**
+	   * registe the actions with the channel infomation. the channel should be an array
+	   * @param {String} channel The channel name.
+	   * @param {Function} action The aciton will be invoked.
+	   */
+	  on: function on(channel, action) {
+	    if (!_registration.has(channel)) {
+	      _registration.set(channel, []);
+	    }
+	    _registration.get(channel).push(action);
+	  },
+	  /**
+	   * trigger the action list which registered on the channel.
+	   * @param {String} channel
+	   */
+	  emit: function emit(channel) {
+	    var actions = _registration.get(channel);
+	    if (actions) {
+	      actions.forEach(function (action, inx) {
+	        action();
+	      });
+	    }
+	  },
+	  /**
+	   * remove the channel, from the registration object. 
+	   * @param {String} channel The channel name.
+	   */
+	  remove: function remove(channel) {
+	    if (_registration.has(channel)) {
+	      _registration.delete(channel);
+	    }
+	  },
+	  /**
+	   * clear the registration object.
+	   */
+	  clear: function clear() {
+	    _registration.clear();
+	  }
+	});
+	exports.EventEmitter = EventEmitter;
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var SELECTION_CHANGE = "SELECTION-CHANGE";
+
+	var Constants = {
+	    "SELECTION_CHANGE": SELECTION_CHANGE
+	};
+
+	exports.Constants = Constants;
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
 	
 	/**
 	 * @Define Pallet Component. The Component is composed by Group Component which is composed by Item Component.
@@ -1509,6 +1773,8 @@
 	exports.Pallet = undefined;
 
 	var _uuid = __webpack_require__(17);
+
+	var _Position = __webpack_require__(24);
 
 	/**
 	* Depends on UUID function
@@ -1532,6 +1798,7 @@
 	  displayName: 'Item',
 
 	  drag: function drag(event) {
+	    _Position.Position.logMistakes(event, ReactDOM.findDOMNode(this));
 	    event.dataTransfer.setData("text/plain", event.target.dataset.id);
 	    event.dataTransfer.dropEffect = "copy";
 	    event.dataTransfer.effectAllowed = "copyMove";
@@ -1598,7 +1865,76 @@
 	exports.Pallet = Pallet;
 
 /***/ },
-/* 19 */
+/* 24 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	   value: true
+	});
+	var _mistake_x = 0;
+	var _mistake_y = 0;
+	var _rootNode = null;
+	var Position = {
+	   setRoot: function setRoot(rootNode) {
+	      _rootNode = rootNode;
+	   },
+	   /**
+	    * store the distance of element's top-left corner and the mouse position
+	    * @param {Event} mouseEvent
+	    * @param {DomElement} sourceElement
+	    */
+	   logMistakes: function logMistakes(mouseEvent, sourceElement) {
+	      var sourcePosition = this._getElementPosition(sourceElement);
+	      var mousePosition = this._getMousePosition(mouseEvent);
+	      this._setMistake(mousePosition, sourcePosition);
+	   },
+	   _getMousePosition: function _getMousePosition(mouseEvent) {
+	      return {
+	         x: mouseEvent.clientX,
+	         y: mouseEvent.clientY
+	      };
+	   },
+	   _getElementPosition: function _getElementPosition(element) {
+	      var clientRect = element.getBoundingClientRect();
+	      return {
+	         x: clientRect.left,
+	         y: clientRect.top
+	      };
+	   },
+	   _setMistake: function _setMistake(mousePosition, sourcePosition) {
+	      _mistake_x = mousePosition.x - sourcePosition.x;
+	      _mistake_y = mousePosition.y - sourcePosition.y;
+	   },
+	   _adjustPostion: function _adjustPostion(mousePosition) {
+	      var rootPosition = this._getElementPosition(_rootNode);
+	      return {
+	         x: mousePosition.x - _mistake_x - rootPosition.x,
+	         y: mousePosition.y - _mistake_y - rootPosition.y
+	      };
+	   },
+	   /**
+	    * cacluate the element position: mouse position/offset/gridsize
+	    * @param {Event} mouseEvent
+	    * @param {Int} gridSize
+	    * @returns {Object} position
+	    */
+	   perfectPosition: function perfectPosition(mouseEvent, gridSize) {
+	      var position = this._getMousePosition(mouseEvent);
+	      position = this._adjustPostion(position);
+	      position.x = this._updatePosition(position.x, gridSize);
+	      position.y = this._updatePosition(position.y, gridSize);
+	      return position;
+	   },
+	   _updatePosition: function _updatePosition(position, gridSize) {
+	      return Math.floor(position / gridSize) * gridSize;
+	   }
+	};
+	exports.Position = Position;
+
+/***/ },
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -1615,7 +1951,13 @@
 
 	var _uuid = __webpack_require__(17);
 
-	var _element = __webpack_require__(20);
+	var _element = __webpack_require__(26);
+
+	var _Grid = __webpack_require__(29);
+
+	var _utility = __webpack_require__(28);
+
+	var _Position = __webpack_require__(24);
 
 	var Canvas = React.createClass({
 	  displayName: "Canvas",
@@ -1635,11 +1977,21 @@
 	    evt.dataTransfer.dropEffect = "move";
 	  },
 	  drop: function drop(event) {
-	    var elementType = event.dataTransfer.getData("text");
-
+	    var info = event.dataTransfer.getData("text");
+	    var position = _Position.Position.perfectPosition(event, this.state.gridSize);
+	    if (_utility.Utility.isReposition(info)) {
+	      //info: the key of the element
+	      this._updateElement(_utility.Utility.getKeyFromReposition(info), position);
+	    } else {
+	      // add new element
+	      this._addNewElement(info, position);
+	    }
+	    event.dataTransfer.clearData();
+	    event.preventDefault();
+	  },
+	  _addNewElement: function _addNewElement(elementType, elementPosition) {
 	    var elementImage = this.props.getElementImageById(elementType);
 	    var elementSize = this.props.getElementSizeById(elementType);
-	    var elementPosition = this.getPosition(event);
 
 	    this.state.elements.push({
 	      width: elementSize.width,
@@ -1651,14 +2003,43 @@
 	      key: (0, _uuid.generateUUID)()
 	    });
 	    this.setState({ "elements": this.state.elements });
-	    event.dataTransfer.clearData();
-	    event.preventDefault();
 	  },
+	  _updateElement: function _updateElement(elementKey, position) {
+	    this.refs[elementKey].reposition(position);
+	  },
+	  /*the element position based on the event when drop the element and the canvas position which relative to the document node.
+	     mouse position - 
+	   */
 	  getPosition: function getPosition(evt) {
+	    var position = this.getRootPosition();
 	    return {
-	      x: 30,
-	      y: 40
+	      x: this.adjustPosition(evt.clientX - position.x),
+	      y: this.adjustPosition(evt.clientY - position.y)
 	    };
+	  },
+	  /*get the position of the canvase(relative to document)*/
+	  getRootPosition: function getRootPosition() {
+	    if (!this.root) {
+	      this.root = ReactDOM.findDOMNode(this);
+	    }
+	    var position = this.root.getBoundingClientRect();
+	    return {
+	      x: position.left,
+	      y: position.top
+	    };
+	  },
+	  componentDidMount: function componentDidMount() {
+	    //Store.addChangeListener();
+	    _Position.Position.setRoot(ReactDOM.findDOMNode(this));
+	  },
+
+	  componentWillUnmount: function componentWillUnmount() {
+	    //Store.removeChangeListener();
+	    _Position.Position.setRootNode(null);
+	  },
+	  /*adjust position based on the gridSize */
+	  adjustPosition: function adjustPosition(position) {
+	    return Math.floor(position / this.state.gridSize) * this.state.gridSize;
 	  },
 	  onElementUpdate: function onElementUpdate() {
 	    console.log("on element update event triggered");
@@ -1667,8 +2048,9 @@
 	    this.setState({ selectedElement: element });
 	  },
 	  createElement: function createElement(element) {
-	    return React.createElement(_element.Element, { config: element, key: element.key, update: "{this.onElementUpdate} onSelect={this.onSelect}" });
+	    return React.createElement(_element.Element, { config: element, ref: element.key, key: element.key, update: "{this.onElementUpdate} onSelect={this.onSelect}" });
 	  },
+
 	  render: function render() {
 	    return React.createElement(
 	      "div",
@@ -1676,6 +2058,7 @@
 	      React.createElement(
 	        "svg",
 	        { width: this.state.width, height: this.state.height, onDrop: this.drop, onDragOver: this.dragOver },
+	        React.createElement(_Grid.Grid, { key: (0, _uuid.generateUUID)(), gridSize: this.state.gridSize, width: this.state.width, height: this.state.height }),
 	        this.state.elements.map(this.createElement)
 	      )
 	    );
@@ -1685,7 +2068,7 @@
 	exports.Canvas = Canvas;
 
 /***/ },
-/* 20 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -1702,33 +2085,62 @@
 
 	var _uuid = __webpack_require__(17);
 
+	var _Actions = __webpack_require__(27);
+
+	var _Store = __webpack_require__(18);
+
+	var _utility = __webpack_require__(28);
+
+	var _Position = __webpack_require__(24);
+
 	var Element = React.createClass({
 	  displayName: "Element",
 
-	  createImageMarkup: function createImageMarkup() {
+	  getInitialState: function getInitialState() {
 	    return {
-	      __html: "<image x=\"0\" y=\"0\" height=" + this.props.config.height + " width=" + this.props.config.width + " xlink:href=" + this.props.config.image + "></image>"
+	      x: this.props.config.x,
+	      y: this.props.config.y
 	    };
 	  },
-	  toggleSelection: function toggleSelection() {
-	    console.log("double click Element");
+	  /**
+	   * event triggered when double clicked on the 
+	   */
+	  dbclick: function dbclick() {
+	    _Actions.Actions.changeSelection(this);
 	  },
+
+	  drag: function drag(event) {
+	    _Position.Position.logMistakes(event, ReactDOM.findDOMNode(this));
+	    event.dataTransfer.setData("text/plain", _utility.Utility.prefixReposition(this.props.config.key));
+	    event.dataTransfer.dropEffect = "copy";
+	    event.dataTransfer.effectAllowed = "copyMove";
+	  },
+	  reposition: function reposition(position) {
+	    this.setState({
+	      x: position.x,
+	      y: position.y
+	    });
+	  },
+
 	  /**
 	   * @description render ca-element with properties
 	   * @param {} function
 	   * @returns {} 
 	   */
 	  render: function render() {
-	    //todo:: react does not support image tag now.
 	    return React.createElement(
 	      "g",
-	      { onDoubleClick: this.toggleSelection, className: "ca-element", transform: "translate(" + this.props.config.x + "," + this.props.config.y + ")" },
+	      { onDoubleClick: this.dbclick, className: "ca-element", transform: "translate(" + this.state.x + "," + this.state.y + ")", draggable: "true", onDragStart: this.drag },
 	      React.createElement(
 	        "g",
 	        { className: "ca-border" },
 	        React.createElement("rect", { width: this.props.config.width, height: this.props.config.width })
 	      ),
-	      React.createElement("g", { className: "ca-img", dangerouslySetInnerHTML: this.createImageMarkup() })
+	      React.createElement(
+	        "g",
+	        { className: "ca-img" },
+	        React.createElement("image", { x: "0", y: "0", height: this.props.config.height, width: this.props.config.width, xlinkHref: this.props.config.image })
+	      )
 	    );
 	  }
 	});
@@ -1736,7 +2148,119 @@
 	exports.Element = Element;
 
 /***/ },
-/* 21 */
+/* 27 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.Actions = undefined;
+
+	var _AppDispatcher = __webpack_require__(19);
+
+	var _Constants = __webpack_require__(22);
+
+	var Actions = {
+	  /**
+	   * event triggerred when dbclick on the element in the canvas area. or click blank space of  the ca-area. 
+	   * @param {ca-element} element the cavas element or null which represent the canvas area.
+	   */
+	  changeSelection: function changeSelection(element) {
+	    _AppDispatcher.AppDispatcher.dispatch({
+	      actionType: _Constants.Constants.SELECTION_CHANGE,
+	      element: element
+	    });
+	  }
+	};
+
+	exports.Actions = Actions;
+
+/***/ },
+/* 28 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	   value: true
+	});
+	var PREFIX_REPOSITION = "REPOSITION::";
+	var Utility = {
+	   prefixReposition: function prefixReposition(sText) {
+	      return "" + PREFIX_REPOSITION + sText;
+	   },
+	   isReposition: function isReposition(sText) {
+	      return sText.startsWith(PREFIX_REPOSITION);
+	   },
+	   getKeyFromReposition: function getKeyFromReposition(sText) {
+	      return sText.substr(PREFIX_REPOSITION.length);
+	   }
+	};
+	function assertNumber(value, key) {};
+	function assertNull() {};
+	function assertUndefined() {};
+
+	function toJSON() {}
+	function prefixReposition(sText) {}
+	function isRepositon(sText) {
+	   if (sText.startsWith(PREFIX_REPOSITION)) {
+	      return true;
+	   }
+	   return false;
+	}
+	exports.Utility = Utility;
+
+/***/ },
+/* 29 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	/**
+	 * @grid lines for canvas
+	 * @name LineForCanvas.jsx
+	 * @author 
+	 * @license 
+	 */
+
+	var Grid = React.createClass({
+	  displayName: "Grid",
+
+	  getLines: function getLines() {
+	    var width = this.props.width;
+	    var height = this.props.height;
+	    var gridSize = this.props.gridSize;
+	    var lines = [];
+	    //generat vertical lines
+	    for (var inx = 1, count = width / gridSize; inx < count; inx++) {
+	      var line = "M" + inx * gridSize + " 0 v" + height + " Z";
+	      lines.push(React.createElement("path", { d: line, className: "grid-line grid-v-line" }));
+	    }
+	    //generate horizontal lines
+	    for (var inx = 1, count = height / gridSize; inx < count; inx++) {
+	      var line = "M0 " + inx * gridSize + " h" + width;
+	      lines.push(React.createElement("path", { d: line, className: "grid-line grid-h-line" }));
+	    }
+	    return lines;
+	  },
+	  render: function render() {
+	    return React.createElement(
+	      "g",
+	      { className: "ca-grids" },
+	      this.getLines()
+	    );
+	  }
+	});
+
+	exports.Grid = Grid;
+
+/***/ },
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
