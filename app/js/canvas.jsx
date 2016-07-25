@@ -9,6 +9,8 @@ import {Element} from "./element.jsx";
 import {Grid} from "./Grid.jsx";
 import {Utility} from "./utility";
 import {Position} from "./Position";
+import {CanvasAction} from "./CanvasAction";
+import {CanvasStore} from "./CanvasStore";
 var Canvas = React.createClass({
   getInitialState: function(){
     return {
@@ -37,6 +39,7 @@ var Canvas = React.createClass({
     event.dataTransfer.clearData();
     event.preventDefault();
   },
+  
   _addNewElement: function(elementType, elementPosition){
     var elementImage = this.props.getElementImageById(elementType);
     var elementSize = this.props.getElementSizeById(elementType);
@@ -77,7 +80,7 @@ var Canvas = React.createClass({
     };
   },
   componentDidMount: function() {
-    //Store.addChangeListener();
+    Store.addChangeListener();
     Position.setRoot(ReactDOM.findDOMNode(this));
   },
 

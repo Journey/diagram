@@ -28,6 +28,10 @@
     height: 50px;
 }
 
+.magnet-ports{
+    cursor: pointer;
+}
+
 
 /*canvas begin*/
 .ca-grids path{

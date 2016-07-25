@@ -36,6 +36,23 @@ var Element = React.createClass({
       y: position.y
     });
   },
+  /**
+   * update the related lines when the element is repositioned
+   * @param {} function
+   * @returns {} 
+   */
+  updateLines: function(){
+    //todo
+    var lines = null;
+  },
+  /**
+   * remove the related lines when element is removed.
+   * @param {} function
+   * @returns {} 
+   */
+  removeLines: function(){
+    //todo
+  },
   
   /**
    * @description render ca-element with properties
@@ -44,14 +61,16 @@ var Element = React.createClass({
    */
   render: function(){
     return (
-      <g onDoubleClick={this.dbclick} className="ca-element" transform={`translate(${this.state.x},${this.state.y})`} draggable="true" onDragStart={this.drag}>
-	<g className="ca-border">
-	  <rect width={this.props.config.width} height={this.props.config.width}></rect>
+      <g onDoubleClick={this.dbclick} className="ca-element" transform={`translate(${this.state.x},${this.state.y})`} >
+	<g draggable="true" onDragStart={this.drag}>
+	  <g className="ca-border">
+	    <rect width={this.props.config.width} height={this.props.config.width}></rect>
+	  </g>
+	  <g className="ca-img">
+	    <image x="0" y="0" height={this.props.config.height} width={this.props.config.width} xlinkHref={this.props.config.image}></image>
+	  </g>
 	</g>
-	<g className="ca-img">
-	  <image x="0" y="0" height={this.props.config.height} width={this.props.config.width} xlinkHref={this.props.config.image}></image>
-	</g>
-	<MagnetPorts />
+	<MagnetPorts parentId={this.props.key} parentX={this.state.x} parentY={this.state.y}/>
       </g>
     );
   }

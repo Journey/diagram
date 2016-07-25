@@ -253,5 +253,8 @@ Line
 * element has magnet point
 * line has 
 
+the line is determined by two ports(magnetport1, point2)
+the line is registerred with an element
+the line has a hover area - when mouse over the area, an delete button will be show, when click the button, line will be deleted
 
 Progress: magnet ports

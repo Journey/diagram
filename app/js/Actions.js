@@ -11,6 +11,36 @@ var Actions = {
 	    actionType:Constants.SELECTION_CHANGE,
 	    element: element
 	});
+    },
+    deleteLine: function(sLineId){
+	AppDispatcher.dispatch({
+	    actionType: "line-delete",
+	    element: sLineId
+	});
+    },
+    updateLine: function(){
+	AppDispatcher.dispatch({
+	    actionType: "line-update",
+	    element: "todo::path"
+	});
+    },
+    selectLine: function(sLineId){
+	AppDispatcher.dispatch({
+	    actionType: "line-select",
+	    element:sLineId
+	});
+    },
+    deselectLine: function(){
+	AppDispatcher.dispatch({
+	    actionType: "line-deselect",
+	    element:null
+	});
+    },
+    drawLineStart: function(startPort){
+	AppDispatcher.dispatch({
+	    actionType: "line-draw-start",
+	    element: startPort
+	});
     }
 };
 

@@ -84,7 +84,7 @@
 
 
 	// module
-	exports.push([module.id, "*[draggable=true]{\r\n    -moz-user-select:none;\r\n    -khtml-user-drag: element;\r\n    -webkit-user-drag: element;\r\n    -khtml-user-select: none;\r\n    -webkit-user-select: none;\r\n    cursor: move;\r\n}\r\n.diagram-component{\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n.diagram-component>div{\r\n    border: 1px solid #ccc;\r\n}\r\n.first-col{\r\n    width: 300px;\r\n}\r\n.mid-col{\r\n    flex-grow: 1;\r\n}\r\n.last-col{\r\n    width: 300px;\r\n}\r\n\r\n.pallet img{\r\n    width: 50px;\r\n    height: 50px;\r\n}\r\n\r\n\r\n/*canvas begin*/\r\n.ca-grids path{\r\n    stroke: #ccc;\r\n    stroke-opacity: 0.3;\r\n}", ""]);
+	exports.push([module.id, "*[draggable=true]{\r\n    -moz-user-select:none;\r\n    -khtml-user-drag: element;\r\n    -webkit-user-drag: element;\r\n    -khtml-user-select: none;\r\n    -webkit-user-select: none;\r\n    cursor: move;\r\n}\r\n.diagram-component{\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n.diagram-component>div{\r\n    border: 1px solid #ccc;\r\n}\r\n.first-col{\r\n    width: 300px;\r\n}\r\n.mid-col{\r\n    flex-grow: 1;\r\n}\r\n.last-col{\r\n    width: 300px;\r\n}\r\n\r\n.pallet img{\r\n    width: 50px;\r\n    height: 50px;\r\n}\r\n\r\n.magnet-ports{\r\n    cursor: pointer;\r\n}\r\n\r\n\r\n/*canvas begin*/\r\n.ca-grids path{\r\n    stroke: #ccc;\r\n    stroke-opacity: 0.3;\r\n}", ""]);
 
 	// exports
 
@@ -1431,7 +1431,7 @@
 
 	var _canvas = __webpack_require__(25);
 
-	var _property = __webpack_require__(31);
+	var _property = __webpack_require__(33);
 
 	var Component = React.createClass({
 	  displayName: "Component",
@@ -1522,6 +1522,9 @@
 	                              */
 
 	var _selectedElement = null; //null mean no element is selected
+	var _isDrawLine = false;
+	var _lineOriginalPort = null;
+
 	var Store = Object.assign({}, _EventEmitter.EventEmitter.prototype, {
 	   /**
 	    * determine if the selection change on the canvas area.
@@ -1959,6 +1962,10 @@
 
 	var _Position = __webpack_require__(24);
 
+	var _CanvasAction = __webpack_require__(31);
+
+	var _CanvasStore = __webpack_require__(32);
+
 	var Canvas = React.createClass({
 	  displayName: "Canvas",
 
@@ -1989,6 +1996,7 @@
 	    event.dataTransfer.clearData();
 	    event.preventDefault();
 	  },
+
 	  _addNewElement: function _addNewElement(elementType, elementPosition) {
 	    var elementImage = this.props.getElementImageById(elementType);
 	    var elementSize = this.props.getElementSizeById(elementType);
@@ -2029,7 +2037,7 @@
 	    };
 	  },
 	  componentDidMount: function componentDidMount() {
-	    //Store.addChangeListener();
+	    Store.addChangeListener();
 	    _Position.Position.setRoot(ReactDOM.findDOMNode(this));
 	  },
 
@@ -2123,6 +2131,23 @@
 	      y: position.y
 	    });
 	  },
+	  /**
+	   * update the related lines when the element is repositioned
+	   * @param {} function
+	   * @returns {} 
+	   */
+	  updateLines: function updateLines() {
+	    //todo
+	    var lines = null;
+	  },
+	  /**
+	   * remove the related lines when element is removed.
+	   * @param {} function
+	   * @returns {} 
+	   */
+	  removeLines: function removeLines() {
+	    //todo
+	  },
 
 	  /**
 	   * @description render ca-element with properties
@@ -2132,18 +2157,22 @@
 	  render: function render() {
 	    return React.createElement(
 	      "g",
-	      { onDoubleClick: this.dbclick, className: "ca-element", transform: "translate(" + this.state.x + "," + this.state.y + ")", draggable: "true", onDragStart: this.drag },
+	      { onDoubleClick: this.dbclick, className: "ca-element", transform: "translate(" + this.state.x + "," + this.state.y + ")" },
 	      React.createElement(
 	        "g",
-	        { className: "ca-border" },
-	        React.createElement("rect", { width: this.props.config.width, height: this.props.config.width })
+	        { draggable: "true", onDragStart: this.drag },
+	        React.createElement(
+	          "g",
+	          { className: "ca-border" },
+	          React.createElement("rect", { width: this.props.config.width, height: this.props.config.width })
+	        ),
+	        React.createElement(
+	          "g",
+	          { className: "ca-img" },
+	          React.createElement("image", { x: "0", y: "0", height: this.props.config.height, width: this.props.config.width, xlinkHref: this.props.config.image })
+	        )
 	      ),
-	      React.createElement(
-	        "g",
-	        { className: "ca-img" },
-	        React.createElement("image", { x: "0", y: "0", height: this.props.config.height, width: this.props.config.width, xlinkHref: this.props.config.image })
-	      ),
-	      React.createElement(_MagnetPorts.MagnetPorts, null)
+	      React.createElement(_MagnetPorts.MagnetPorts, { parentId: this.props.key, parentX: this.state.x, parentY: this.state.y })
 	    );
 	  }
 	});
@@ -2157,7 +2186,7 @@
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+				value: true
 	});
 	exports.Actions = undefined;
 
@@ -2166,16 +2195,46 @@
 	var _Constants = __webpack_require__(22);
 
 	var Actions = {
-	  /**
-	   * event triggerred when dbclick on the element in the canvas area. or click blank space of  the ca-area. 
-	   * @param {ca-element} element the cavas element or null which represent the canvas area.
-	   */
-	  changeSelection: function changeSelection(element) {
-	    _AppDispatcher.AppDispatcher.dispatch({
-	      actionType: _Constants.Constants.SELECTION_CHANGE,
-	      element: element
-	    });
-	  }
+				/**
+	    * event triggerred when dbclick on the element in the canvas area. or click blank space of  the ca-area. 
+	    * @param {ca-element} element the cavas element or null which represent the canvas area.
+	    */
+				changeSelection: function changeSelection(element) {
+							_AppDispatcher.AppDispatcher.dispatch({
+										actionType: _Constants.Constants.SELECTION_CHANGE,
+										element: element
+							});
+				},
+				deleteLine: function deleteLine(sLineId) {
+							_AppDispatcher.AppDispatcher.dispatch({
+										actionType: "line-delete",
+										element: sLineId
+							});
+				},
+				updateLine: function updateLine() {
+							_AppDispatcher.AppDispatcher.dispatch({
+										actionType: "line-update",
+										element: "todo::path"
+							});
+				},
+				selectLine: function selectLine(sLineId) {
+							_AppDispatcher.AppDispatcher.dispatch({
+										actionType: "line-select",
+										element: sLineId
+							});
+				},
+				deselectLine: function deselectLine() {
+							_AppDispatcher.AppDispatcher.dispatch({
+										actionType: "line-deselect",
+										element: null
+							});
+				},
+				drawLineStart: function drawLineStart(startPort) {
+							_AppDispatcher.AppDispatcher.dispatch({
+										actionType: "line-draw-start",
+										element: startPort
+							});
+				}
 	};
 
 	exports.Actions = Actions;
@@ -2246,6 +2305,11 @@
 	var MagnetPorts = React.createClass({
 	  displayName: "MagnetPorts",
 
+	  /**
+	  * get ports positions: top/right/bottom/left
+	  * @param {} function
+	  * @returns {} 
+	  */
 	  getPositions: function getPositions() {
 	    var width = this.props.width;
 	    var height = this.props.height;
@@ -2258,6 +2322,38 @@
 	    positions.push({ x: 0, y: height / 2 });
 	    return positions;
 	  },
+	  /**
+	  * will be triggerred when the mouse move out of the circle. if the mouse left button is down then should draw a line.
+	  * @param {Object} evt
+	  */
+	  onMouseOut: function onMouseOut(evt) {
+	    // the left button is clicked
+	    if (evt.buttons === 1) {
+	      //generate a line the start
+	      var portPosition = this._getPortPosition(evt.target);
+	      _Actions.Actions.drawLineStart(portPosition);
+	    }
+	  },
+
+	  onMouseIn: function onMouseIn(evt) {
+	    if (evt.buttons === 1) {
+	      //todo:: the link end port
+	    }
+	  },
+	  /**
+	   * todo:: get port position via parentId + port position, move it to store
+	   * @param {} function
+	   * @returns {} 
+	   */
+
+	  _getPortPosition: function _getPortPosition(port) {
+	    var x = port.getAttribute("data-x");
+	    var y = port.getAttribute("data-y");
+	    return {
+	      x: parseFloat(x) + this.props.parentX,
+	      y: parseFloat(y) + this.props.parentY
+	    };
+	  },
 
 	  /**
 	   * @description render MagnetPorts
@@ -2267,10 +2363,10 @@
 	  render: function render() {
 	    return React.createElement(
 	      "g",
-	      { className: "magnet-ports" },
-	      this.getPositions().map(function (position) {
-	        return React.createElement("circle", { r: "6", key: (0, _uuid.generateUUID)(), fill: "f1c40f", stroke: "#000", opcity: "0.9", transform: "translate(" + position.x + "," + position.y + ")" });
-	      })
+	      { className: "magnet-ports", draggable: "false" },
+	      this.getPositions().map((function (position) {
+	        return React.createElement("circle", { r: "6", key: (0, _uuid.generateUUID)(), fill: "#f1c40f", stroke: "#000", opcity: "0.9", transform: "translate(" + position.x + "," + position.y + ")", onMouseOut: this.onMouseOut, "data-x": position.x, "data-y": position.y });
+	      }).bind(this))
 	    );
 	  }
 	});
@@ -2344,6 +2440,170 @@
 
 /***/ },
 /* 31 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+				value: true
+	});
+	exports.CanvasActions = undefined;
+
+	var _AppDispatcher = __webpack_require__(19);
+
+	var _Constants = __webpack_require__(22);
+
+	var CanvasActions = {
+				addElement: function addElement() {
+							_AppDispatcher.AppDispatcher.dispatch({
+										actionType: "add-element",
+										content: ""
+							});
+				},
+				removeElement: function removeElement() {
+							_AppDispatcher.AppDispatcher.dispatch({
+										actionType: "remove-element",
+										content: ""
+							});
+				},
+				addLink: function addLink() {
+							_AppDispatcher.AppDispatcher.dispatch({
+										actionType: "add-link",
+										content: ""
+							});
+				},
+				removeLink: function removeLink() {
+							_AppDispatcher.AppDispatcher.dispatch({
+										actionType: "remove-link",
+										content: ""
+							});
+				}
+	};
+
+	exports.CanvasActions = CanvasActions;
+
+/***/ },
+/* 32 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	   value: true
+	});
+	exports.CanvasStore = undefined;
+
+	var _AppDispatcher = __webpack_require__(19);
+
+	var _EventEmitter = __webpack_require__(21);
+
+	var _Constants = __webpack_require__(22);
+
+	/**
+	 * The schema of element {key:"uuid",width,height,x:iXPositiion,y:iYPosition,image:image,typeId:elementType}
+	 * The schema of link {key:"uuid",source:{key:"",position:""},target:{key:"",position:"1/2/3/4"}}--top/right/bottom/left
+	 */
+	var _object = {
+	   width: 1024,
+	   height: 768,
+	   gridSize: 10,
+	   elements: {},
+	   relationships: {}
+	}; /**
+	    * @fileOverview The Store for the Canvas. used to bridge the dispatch and the view.
+	    * @name CanvasStore.js
+	    * @author Journey
+	    * @license TBD
+	    */
+
+	var _selectedObject = null; //element or link
+	var CanvasStore = Object.assign({}, _EventEmitter.EventEmitter.prototype, {
+	   setWidth: function setWidth(iWidth) {
+	      _object.width = iWidth;
+	   },
+	   setHeight: function setHeight(iHeight) {
+	      _object.height = iHeight;
+	   },
+	   setGridSize: function setGridSize(iGridSize) {
+	      _object.gridSize = iGridSize;
+	   },
+	   addElement: function addElement(element) {
+	      _object.elements.push(element);
+	   },
+	   /**
+	    * remove the element, should also remove the links which related with the element.
+	    * @param {string} key The uuid of the element
+	    */
+	   removeElement: function removeElement(key) {
+	      if (_object.elements.hasOwnProperty(key)) {
+	         var relatedLinks = this.getLinksConnectedByElement(key);
+	         relatedLinks.forEach((function (key, inx) {
+	            this.removeLink(key);
+	         }).bind(this));
+	         delete _object.elements[key];
+	      }
+	   },
+	   /**
+	    * get the links which connected with the element
+	    * @param {string} elementKey - the uuid of the element
+	    * @returns {array} the links which related with the element 
+	    */
+	   getLinksConnectedByElement: function getLinksConnectedByElement(elementKey) {
+	      var obj = null;
+	      var selectedLinks = [];
+	      for (var key in _object.relationships) {
+	         obj = _object.relationships[key];
+	         if (obj.source.key === elementKey || obj.target.key === elementKey) {
+	            selectedLinks.push(key);
+	         }
+	      }
+	      return selectedLinks;
+	   },
+	   /**
+	    * removeLink - remvoe the link from the store
+	    * @param {string} key - the uuid of link
+	    */
+	   removeLink: function removeLink(key) {
+	      if (_object.relationships.hasOwnProperty(key)) {
+	         delete _object.relationships[key];
+	      }
+	   },
+	   /**
+	    * addLink - add a link to the canvas
+	    * @param {string} key - an uuid to identify the link
+	    * @param {object} source - {key:"",position:"1/2/3/4"} top/right/bottom/left port
+	    * @param {object} target - {key:"",position:"1/2/3/4"}
+	    */
+	   addLink: function addLink(key, source, target) {
+	      _object.relationships[key] = {
+	         source: source,
+	         target: target
+	      };
+	   }
+	});
+
+	_AppDispatcher.AppDispatcher.register(function (action) {
+	   var content = action.content;
+	   switch (action.actionType) {
+	      case "add-element":
+	         CanvasStore.addElement(content);
+	         break;
+	      case "remove-element":
+	         CanvasStore.removeElement(content);
+	         break;
+	      case "add-link":
+	         CanvasStore.addLink(content.key, content.source, content.target);
+	         break;
+	      case "remove-link":
+	         CanvasStore.removeLink(content);
+	         break;
+	   }
+	});
+
+	exports.CanvasStore = CanvasStore;
+
+/***/ },
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';

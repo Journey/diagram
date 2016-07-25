@@ -10,13 +10,22 @@ SetUp
 `npm install babel-preset-es2015` -- all es2015 features
 
 `npm install css-loader --save-dev` -- add css loader for webpack
+
 `npm install style-loader --save-dev` -- add style loader for webpack
-3. eslint
+
+4. eslint
+5. Redux[link](https://github.com/reactjs/redux)
+
+   `npm install --save redux`
+
+   `npm install --save react-redux`
+
+   `npm install --save-dev redux-devtools`
 
 
 pain point
 ----
-1. test jsx, need react-dom - how 
+1. test jsx, need react-dom - how
 2. jsx/js to browser supported code.
 3. use babel + webpack to transform
 
@@ -90,14 +99,14 @@ Test
 ES5
 --------------------------------------------------
 * func.bind(this, arg1,arg2...) - create a new function.
- 
+
 ES6
 ----------------------------------------------------
 # template string
 `this is ${this.test}`
- 
+
  # const
- 意味着变量标示符的值只能赋值一次   
+ 意味着变量标示符的值只能赋值一次
 const a = 5;
 
 
@@ -111,7 +120,7 @@ class constructor/get/set/static
 
 Symbol - a kind of js data types like Bool
 
-Set/[] and Map/{} - 
+Set/[] and Map/{} -
 
 React
 --------------------------------------------------
@@ -161,19 +170,19 @@ easy read: one way data binding, more code/explicit code -- `code is read far mo
 + ui component hirachy list: single responsibility
 + build a static ui version: with no interaction
 + build data models: props & state -- `dry: do not repeat yourself`
-  * props  
-    passed from parent by props  
-    not muatable  
+  * props
+    passed from parent by props
+    not muatable
 
   * state - mutable
-+ which component belongs state?  
++ which component belongs state?
 the common compoent in the top level
 * steps
 1. identify every component will use the state
 2. find the common owner component
 3. if not exist, create a new component which satified step 2
 
-+ add inverse data flow  
++ add inverse data flow
 so the state change event will be passed from the common component in the top level too.
 
 # Flux
@@ -273,18 +282,18 @@ OOP
 ---
 * open/close priciple,开闭原则 - 对扩展开放，对修改关闭。information hidding(信息隐藏)。
 利用抽象类，接口 + 继承实现
-description 1: Meyer's open/closed principle  
-	对修改关闭-  
+description 1: Meyer's open/closed principle
+	对修改关闭-
 		前提是模块是well-defined, statble description(the interface in the sense of information hiding); 有一个定义良好，描述清晰的接口.
 		在这一原则下，当该模块被其他模块引用之后，该模块不该发生改动
 	对扩展open - add fields/functions
 
-description 2: Polymorphic open/close principle.接口/抽象类不会变， 实现可变  
+description 2: Polymorphic open/close principle.接口/抽象类不会变， 实现可变
 	user abstract class - define interface, and the infterface is closed.
 	use inheritance from abstrat base classes as the open
 
 * Liskov substitution principle,李氏替换原则 -
-问题由来 - FunctionA is solved by Class A; Function(FunctionA & FunctionA') is the extsion of FunctionA which solved by Class  A', and A' is the extision of A, then A' may break Function  
+问题由来 - FunctionA is solved by Class A; Function(FunctionA & FunctionA') is the extsion of FunctionA which solved by Class  A', and A' is the extision of A, then A' may break Function
 `Let q(x) be a property provable about objects x of type T. Then q(y) should be true for objects y of type S where S is a subtype of T.`
 子类可以增加自己的方法，但是不可以覆盖父类的非抽象方法，如果重写的话，要保证输入参数（前置条件）比父类的宽松，输出参数（后置条件）比父类的严格
 解决方式 - Design By Contract.
@@ -293,11 +302,11 @@ Invariant
 
 针对type/subtype
 
-contravariance - method arguments in the subtype 逆变  
-convariance - return type in the subtyp 协变  
-invariants - 不变  
+contravariance - method arguments in the subtype 逆变
+convariance - return type in the subtyp 协变
+invariants - 不变
 
-behavioral subtype c#中的泛型  
+behavioral subtype c#中的泛型
 
 
 面向对象，面向过程，

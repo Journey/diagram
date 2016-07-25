@@ -9,6 +9,9 @@ import {EventEmitter} from "./EventEmitter";
 import {Constants} from "./Constants";
 var CHANGE_EVENT = "change";
 var _selectedElement = null;//null mean no element is selected
+var _isDrawLine = false;
+var _lineOriginalPort = null;
+
 var Store = Object.assign({},EventEmitter.prototype,{
     /**
      * determine if the selection change on the canvas area.
